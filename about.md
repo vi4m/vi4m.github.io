@@ -2,10 +2,15 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
 
-Wow.This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Marcin Kliks
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+Passionate programmer since Commodore 64.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+Coding since *XX* century. I believe in the open source, tasty software without compromises, and simplicity.
+
+I am the Lead Programmer in Ralph DCIM software http://ralph.allegrogroup.com and couple of other [Open Source projects].
+
+
