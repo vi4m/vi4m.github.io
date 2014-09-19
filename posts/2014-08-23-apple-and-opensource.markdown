@@ -1,5 +1,8 @@
-Apple and Opensource
-====================
+---
+title: Apple and Opensource
+layout: post
+---
+
 
 Apple is known for being the most closed company in the world. But let's see what is the truth about it. 
 
