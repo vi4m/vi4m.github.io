@@ -1,6 +1,7 @@
 ---
 title: IOS 8
 layout: post
+comments: true
 ---
 
 Things i like about IOS8 so far:
