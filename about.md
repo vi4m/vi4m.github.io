@@ -15,8 +15,8 @@ Be commited to the [Software Craftmanship](http://manifesto.softwarecraftsmanshi
 
 Marcin Kliks
 
-Passionate programmer since Commodore 64.
+Passionate programmer since Commodore 64. 
 
 I believe in the open source, [tasty](http://40hz.se/fatmanifesto/principles.html) software without compromises, and [simplicity](http://legacy.python.org/dev/peps/pep-0020/ "Python Zen").
 
-I am the Lead Programmer of [Ralph DCIM/CMDB software]( http://ralph.allegrogroup.com) and couple of other [Open Source projects](/projects)
+I am the Lead Programmer of [Ralph DCIM/CMDB software]( http://ralph.allegrogroup.com) and couple of other [Open Source projects](/projects). I love Python programming language.
