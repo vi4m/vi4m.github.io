@@ -5,6 +5,11 @@ permalink: /about/
 published: true
 ---
 
+
+This site is dedicated to the Sexy Software Craftmanship. 
+Don't do Agile, TDD, software that only 'works'. Be excited and contributed to the (Software Craftmanship)[http://manifesto.softwarecraftsmanship.org] and make software fast, ustable and sexy!
+
+
 Marcin Kliks
 
 Passionate programmer since Commodore 64.
