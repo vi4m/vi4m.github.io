@@ -6,8 +6,11 @@ published: true
 ---
 
 
-This site is dedicated to the Sexy Software Craftmanship. 
-Don't do Agile, TDD, software that only 'works'. Be excited and contributed to the (Software Craftmanship)[http://manifesto.softwarecraftsmanship.org] and make software fast, ustable and sexy!
+This site is dedicated to the *Sexy Software Craftmanship*. 
+Don't do just Agile, TDD, software that only 'works' and is clunky, slow and/or bloated. 
+
+Be excited and contributed to the smallest details of user experience, internal design, and performance.
+Be commited to the (Software Craftmanship)[http://manifesto.softwarecraftsmanship.org] and make software fast, ustable and sexy!
 
 
 Marcin Kliks
