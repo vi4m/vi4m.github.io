@@ -31,12 +31,10 @@ It's complicated.
 * They don't provide built-in package manager. But the community resolved this with `homebrew` and `macports`. 
 
 * *KTHML/Webkit* Apple from time to time hihack some open source project with the leader together, than develop it in-house without much integration with the community. The case were for example when Apple decided to fork KHTML into the Webkit. The stigma of this remains for today, where KDE team develop in parallel own fork of Webkit. 
-
-* *Clang / LLVM* is an example of live project so far, they accept pull request quite fast.
-
+* *Clang / LLVM* is an example of live project so far, they accept pull request quite fast
 * *CUPS* - live well, all community around the CUPS lives great.
 * *SWIFT* - we will see if this new project will see the open source light soon. The community request it [already!]( http://www.infoworld.com/article/2682425/application-development/application-development-7-reasons-apple-should-open-source-swift-and-7-reasons-it-won-t.html)
-* OpenCL - industry standard for GPU computing language, probably one of the most important today.
+* *OpenCL* - industry standard for GPU computing language, probably one of the most important today - fully opensourced from Apple.
 
 
 
