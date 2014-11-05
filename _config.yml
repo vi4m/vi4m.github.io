@@ -12,3 +12,12 @@ is_user_page: true
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+
+author :
+  name : Marcin Kliks
+  email : spamlist@icloud.com
+  github : vi4m
+  twitter : vi4m
+  linkedin: marcin.kliks
+  stackoverflow: vi4m
