@@ -6,6 +6,15 @@ comments: true
 
 Things i like about IOS8 so far:
 
-* finally someone discovers truth about widgets - it is unconfortable to mix application launchers with widgets on home screen
-* it's better to move widgets to the *notification area* to be shown only when really you want to get information
-* SWIFT programming language is really fast, Python-like and easy.
+* Swift! Finally something better than 30 years old, f**ed up ObjectiveC. Finally something more Python-like. Bring it to the Android!
+* Widgets not on home screen, but on notification bar. It's much easier to scroll than the mixed icons/widgets home screens.
+* Customizability. Well, that was a long trip to the *custom keyboards and widgets*, but it was worth of it. You can extend the apps using built-in parts architecture (for example Photos app can "grant access" to the picture without doubling the resources)
+
+
+The BAD things:
+* It's slow as hell on Iphone 4s
+* Unstable on every device
+
+
+So you have, Android on Iphone :)
+
