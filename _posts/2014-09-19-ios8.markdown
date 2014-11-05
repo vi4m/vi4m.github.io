@@ -12,6 +12,7 @@ Things i like about IOS8 so far:
 
 
 The BAD things:
+
 * It's slow as hell on Iphone 4s
 * Unstable on every device
 
