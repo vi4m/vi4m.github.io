@@ -36,6 +36,7 @@ It's complicated.
 
 * *CUPS* - live well, all community around the CUPS lives great.
 * *SWIFT* - we will see if this new project will see the open source light soon. The community request it [already!]( http://www.infoworld.com/article/2682425/application-development/application-development-7-reasons-apple-should-open-source-swift-and-7-reasons-it-won-t.html)
+* OpenCL - industry standard for GPU computing language, probably one of the most important today.
 
 
 
