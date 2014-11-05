@@ -1,7 +1,7 @@
 # Site settings
-title: Marcin 'vi4m' Kliks blog
+title: Software Craftmanship made sexy
 email: spamlist@icloud.com
-description: "Marcin Kliks homepage"
+description: "How to make performant, usable and sexy software using Python"
 baseurl: "http://vi4m.github.io"
 url: "http://marcinkliks.pl"
 highlighter: pygments
