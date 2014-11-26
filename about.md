@@ -45,3 +45,5 @@ http://pywaw.org/site_media/upload/slides/pywaw-42-droga-do-lepszego-oprogramowa
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/Eyc_rwQrrKY" frameborder="0" allowfullscreen></iframe>
 
+* Przemysław Wysota says a lot about CMDB module for Ralph on his [website](http://it5m.wordpress.com/2014/07/16/ralph-lord-of-the-cis-vol-1/)
+
