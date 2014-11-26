@@ -25,6 +25,12 @@ I am the Lead Programmer of [Ralph DCIM/CMDB software]( http://ralph.allegrogrou
 Media / Publications
 ====================
 
+* 11.2014 pywaw #42 Droga do lepszego oprogramowania(PL) / The road towards better software
+
+<script async class="speakerdeck-embed" data-id="8b88fa6057c501321a5a322b8d7f48cd" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+http://pywaw.org/site_media/upload/slides/pywaw-42-droga-do-lepszego-oprogramowania.pdf
+
 * 11.2014 Pyra #14 Ralph, Tipboard, and other Open Source projects 
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/9GH4ba1rYS8" frameborder="0" allowfullscreen></iframe>
