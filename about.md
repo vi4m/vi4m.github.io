@@ -26,11 +26,14 @@ Media / Publications
 ====================
 
 * 11.2014 Pyra #14 Ralph, Tipboard, and other Open Source projects 
+
 <iframe width="560" height="315" src="//www.youtube.com/embed/9GH4ba1rYS8" frameborder="0" allowfullscreen></iframe>
 
 * 03.2014 My talk about Understanding the user
+
 <iframe width="560" height="315" src="//www.youtube.com/embed/nuQaOKzVdyM" frameborder="0" allowfullscreen></iframe>
 
 * 02.2014 Pyra #7 Keynote Ralph, Selena and open source projects @ Allegro
+
 <iframe width="560" height="315" src="//www.youtube.com/embed/Eyc_rwQrrKY" frameborder="0" allowfullscreen></iframe>
 
