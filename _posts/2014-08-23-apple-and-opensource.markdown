@@ -6,7 +6,7 @@ layout: post
 
 Apple is known for being the most closed company in the world. But let's see what is the truth about it. 
 
-Let's take a look into the openess of Apple from 3 perspectives.
+Let's take a quick look into the openess of Apple from 3 perspectives.
 
 1. Development
 2. Community 
