@@ -8,7 +8,7 @@ published: true
 
 ## This site 
 
-This site is dedicated to the *UnSexy Software Craftmanship*. 
+This site is dedicated to the *Sexy Software Craftmanship*. 
 
 Don't do just Agile, TDD, software that only 'works' and is clunky, slow and/or bloated. 
 Be excited and contributed to the smallest details of user experience, internal design, and performance.
