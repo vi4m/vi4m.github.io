@@ -25,7 +25,7 @@ Last week Swift 1.2 was released so i decided to write small benchmark game for
 It was delightfull to simultanously write code for 4 platforms in multisplit code editor window :-)
 The alghorithm is faily easy - creating 1M array and filling with the incremental integers(64 bit ints). Then, creating another array which consits of sum of every 2 elements from first array. It de facto tests memory read / write access time. Then again, try to sum ap all of the array reading every 100th element - it should be very difficult to inline it properly, but who knows what Swift can do :->
 
-![first](https://cloud.githubusercontent.com/assets/552398/6321021/40071842-baef-11e4-8a9e-c825642ca15c.png)
+![first](https://cloud.githubusercontent.com/assets/552398/6321021/40071842-baef-11e4-8a9e-c825642ca15c.png){: .center-image }
 
 # Code differences
 
@@ -49,7 +49,7 @@ Unfortunatelly my favorite language - Python - sadly needed 34,5 times more than
 The performance difference is so big, you can image, when swift/go finish the program in one day, and the CPython counterpart needs a *MONTH* to do the same thing.
 
 
-![second](https://cloud.githubusercontent.com/assets/552398/6321023/5160183c-baef-11e4-9deb-48cdd9689155.png)
+![second](https://cloud.githubusercontent.com/assets/552398/6321023/5160183c-baef-11e4-9deb-48cdd9689155.png){: .center-image }
 
 = Conclusions
 
@@ -59,4 +59,4 @@ The performance difference is so big, you can image, when swift/go finish the pr
 - I can't wait for Chris Lattner to open-source Swift.
 
 
-![third](https://cloud.githubusercontent.com/assets/552398/6321026/6045d224-baef-11e4-9c42-75a8a8b36ed2.png)
+![third](https://cloud.githubusercontent.com/assets/552398/6321026/6045d224-baef-11e4-9c42-75a8a8b36ed2.png){: .center-image }
