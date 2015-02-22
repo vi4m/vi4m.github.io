@@ -58,7 +58,7 @@ Let's compare it to the fastes implementation.
 
 _In this particular test - Python is 34 times slower than Swift._
 
-# Conclusions
+# Conclusion
 
 - Swift is really fast today for scripting *and* high computing purposes.
 - Type inference is a must nowadays. 
