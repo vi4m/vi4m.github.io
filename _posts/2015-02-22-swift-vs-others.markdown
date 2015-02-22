@@ -58,7 +58,7 @@ Let's compare it to the fastes implementation.
 
 *In this particular tests - Python is 34 times slower than Swift.*
 
-= Conclusions
+# Conclusions
 
 - Type inference is a must nowadays. 
 - PyPy is real surprise for me - and i wonder why it is still not the reference Python implemenatation ?
