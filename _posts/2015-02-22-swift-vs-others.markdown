@@ -3,7 +3,7 @@ title: Swift vs Go vs Python battle
 layout: post
 ---
 
-# Motivation
+## Motivation
 
 Swift is the new programming language brought to you by Apple last year. 
 As a Polyglot Programmer, I read whole Swift book just after Apple Keynote streaming - it was so fascinating to see
@@ -27,12 +27,12 @@ The alghorithm is faily easy - creating 1M array and filling with the incrementa
 
 ![first](https://cloud.githubusercontent.com/assets/552398/6321021/40071842-baef-11e4-8a9e-c825642ca15c.png){: .center-image }
 
-# Code differences
+## Code differences
 
-## Go
+# Go
 As you can see, the Go code is the longest one, but not much longer that the others. The source code is fairly short whatsover. But we can see, that mandatory `package()` and `main` function description is there. The weird part of Go is that the Rob Pike decided to not make `Print` a keyword, but rather library function. That's why you should import `fmt` module. Appart from this, array functions are quite limited in comparison to Python and Swift. By default, *Go's arrays are not resizable - as in C*. They provide `append` keyword for resizing arrays but don't agree on single vectors implementation. For example you can use [Slices pattern](http://golang.org/doc/effective_go.html#slices). WTF. After 30 years language designers should provide *one* efficient generics implementation! But let's go on. The way we declare the variable is bizzare - inside `for` loops declare local variable without `var`. But you can use `a := 1` and `var a = 1` the same way. Really messy.
 
-## Swift
+# Swift
 Swift has as well type inference everywhere, hence the short syntax for type definitions.
 `append()` is a method, not keyword, just like in Python. The thing i love is to optional OOP - source code without structure of module, entry point is just compiled and evaluated like script. In fact adding header `#!/usr/bin/xcrun swift` followed by `chmod +x test.swift` allows us to do just `./test.swift` without compilation. *Wow*. 
 What else... Println and print - are a keywords, your fingers will appreciate it. I really like the Range operators which are lazy evaluated, and handle custom iterations steps in performant manner. 
@@ -41,7 +41,7 @@ What else... Println and print - are a keywords, your fingers will appreciate it
 I really love Python, but the lack of optional typing, type inference, and compilation is lacking here. 
 But where the language shines is - the source code is the shortest and the cleanest. `var y: Array<Int> = []` looks really iffy in comparison to the simple `y = []` in Python. But on the other hand, in Swift we can deal with that writing `var y : [Int] = []` which is slighty better on the eyes. I really love the Python clarity here. `xrange` operator is here with the similar purpose as `Range<Int>` in Swift.
 
-# Performance
+## Performance
 
 I run loop 30 times to be sure. The results are mixed. Python is more than 30x slower than Swift! On the other hand, Swift and Go comes so close, it doesn't matter - but in this microbenchmark Swift was 60% faster than Go. 
 Pypy amazed my how performant it was - more than 5 times faster than ordinar CPython implementation. Wow. 
@@ -58,7 +58,7 @@ Let's compare it to the fastes implementation.
 
 _In this particular test - Python is 34 times slower than Swift._
 
-# Conclusion
+## Conclusion
 
 - Swift is really fast today for scripting *and* high computing purposes.
 - Type inference is a must nowadays. 
