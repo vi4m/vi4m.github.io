@@ -56,10 +56,11 @@ Let's compare it to the fastes implementation.
 
 ![third](https://cloud.githubusercontent.com/assets/552398/6321026/6045d224-baef-11e4-9c42-75a8a8b36ed2.png){: .center-image }
 
-*In this particular tests - Python is 34 times slower than Swift.*
+_In this particular test - Python is 34 times slower than Swift._
 
 # Conclusions
 
+- Swift is really fast today for scripting *and* high computing purposes.
 - Type inference is a must nowadays. 
 - PyPy is real surprise for me - and i wonder why it is still not the reference Python implemenatation ?
 - Swift faster than Go is really surprising too because Go is *3 years ahead of Swift in public development*.
