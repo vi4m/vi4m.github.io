@@ -22,3 +22,8 @@ Last week Swift 1.2 was released so i decided to write small benchmark game for
 
 It was delightfull to simultanously write code for 4 platforms in multisplit code editor window :-)
 
+![first](https://cloud.githubusercontent.com/assets/552398/6321021/40071842-baef-11e4-8a9e-c825642ca15c.png)
+
+![second](https://cloud.githubusercontent.com/assets/552398/6321023/5160183c-baef-11e4-9deb-48cdd9689155.png)
+
+![third](https://cloud.githubusercontent.com/assets/552398/6321026/6045d224-baef-11e4-9c42-75a8a8b36ed2.png)
