@@ -1,4 +1,3 @@
-
 ---
 title: Swift vs Go vs Python battle
 layout: post
