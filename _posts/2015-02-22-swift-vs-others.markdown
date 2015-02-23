@@ -18,8 +18,7 @@ Apple compared Swift to Python in one picture during the presentation. Why?
 ![wcdxk-2](https://cloud.githubusercontent.com/assets/552398/6324247/b2d2f7cc-bb37-11e4-91b8-dc7c33b5fef3.jpg){: .center-image }
 
 
-But the way it differs from Python is the internals. 
-Swift underlaying technology is based on LLVM, which handles all of data structures, compiling and optimization tasks on its own.
+Swift underlaying technology is based on LLVM, which handles all of data structures, compiling and optimization tasks on its own. LLVM is used also by PyPy, CLang and other languages as well.
 
 ## Is it really as fast as advertised?
 
