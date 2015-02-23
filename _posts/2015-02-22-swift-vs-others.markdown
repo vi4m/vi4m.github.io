@@ -64,4 +64,4 @@ _In this particular test - Python is 34 times slower than Swift._
 - Type inference is a must nowadays. 
 - PyPy is real surprise for me - and i wonder why it is still not the reference Python implemenatation ?
 - Swift faster than Go is really surprising too because Go is *3 years ahead of Swift in public development*.
-- I can't wait for Chris Lattner to open-source Swift.
+- I can't wait for [http://nondot.org/sabre/](Chris Lattner) to open-source Swift.
