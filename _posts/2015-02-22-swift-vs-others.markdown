@@ -5,19 +5,20 @@ layout: post
 
 ## Motivation
 
-Swift is the new programming language brought to you by Apple last year. It brings freshness to the world of C, Python, Ruby, Rust, Go world with the new ideas. The language is *not* as beautiful as Python, and is *not* as fast as raw C, but the main motivation is to have something between C and Python. I strongly recommend to read the Swift Book[https://dl.dropboxusercontent.com/u/20996794/Swift%20Programming%20Language.pdf](for example here).
+Swift is the new programming language brought to you by Apple last year. It brings freshness to the world of C, Python, Ruby, Rust, Go world with the new ideas. The language is *not* as beautiful as Python, and is *not* as fast as raw C, and compile speed is noting to compete with Go outstanding compilation speed. But the Swift's motivation was to hit the sweet spot between C , Python and go. I strongly recommend to read the Swift Book[https://dl.dropboxusercontent.com/u/20996794/Swift%20Programming%20Language.pdf](for example here).
 
-Apple compared Swift to Python in one picture during the presentation. Why?
+Apple put Swift side by side with Python during the presentation. Why?
 
-- it shares the same language simplicity (for example print is the keyword, OOP programming is optional)
-- great interactive interpreter built into the runtime( `swift` vs `swiftc`)
-- can be used for scripting purposes (`#!/usr/bin/xcrun swift`)
-- but the performance differs between these languages.
+- both languages share the same language simplicity (for example print is the keyword, OOP programming is optional)
+- both are great interactive interpreters( `swift` vs `swiftc`)
+- both can be used for scripting purposes (`#!/usr/bin/xcrun swift`)
+- but the performance differs between these languages and
+- Swift is not Open Source yet, Booo!
 
 ![wcdxk-2](https://cloud.githubusercontent.com/assets/552398/6324247/b2d2f7cc-bb37-11e4-91b8-dc7c33b5fef3.jpg){: .center-image }
 
 
-Swift underlaying technology is based on LLVM, which handles all of data structures, compiling and optimization tasks on its own. LLVM is used also by PyPy, CLang and other languages as well.
+Swift underlaying technology is based on LLVM, which handles all of the data structures, all compiling and optimization tasks on its own. LLVM is used also by PyPy, CLang and other languages as well.
 
 ## Is it really as fast as advertised?
 
