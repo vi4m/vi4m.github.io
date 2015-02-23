@@ -35,8 +35,9 @@ The good part is the _compiler speed_ - it's the fastest compiler i have ever se
 
 # Swift
 Swift has as well type inference everywhere, hence the short syntax for type definitions.
-`append()` is a method, not keyword, just like in Python. The thing i love is to optional OOP - source code without structure of module, entry point is just compiled and evaluated like script. In fact adding header `#!/usr/bin/xcrun swift` followed by `chmod +x test.swift` allows us to do just `./test.swift` without compilation. *Wow*. 
-What else... Println and print - are a keywords, your fingers will appreciate it. I really like the Range operators which are lazy evaluated, and handle custom iterations steps in performant manner. 
+`append()` is a method, not keyword, just like in Python. The thing i love is an optional OOP not enforced on you. 
+No package, no module, not even main function required. Furthermore - adding header `#!/usr/bin/xcrun swift` followed by `chmod +x test.swift` allows us to do just run `./test.swift` without compilation, just like Python. *Wow*. 
+What else... Println and print - are a keywords, your fingers will appreciate it. I really like the Range operators which are lazy evaluated, and handle custom iterations steps in performant manner. Arrays works as expected, and live interpreter has nifty editing capabilities better than Python(multiline handling) and even code completion inffered from types(uuh).
 
 # Python
 I really love Python, but the lack of optional typing, type inference, and compilation is lacking here. 
