@@ -5,8 +5,7 @@ layout: post
 
 ## Motivation
 
-Swift is the new programming language brought to you by Apple last year. 
-I read whole Swift book just after Apple Keynote streaming - because Another(TM) Programming(TM) Language(TM) could teach you  new techniques or open your mind to the new ideas.
+Swift is the new programming language brought to you by Apple last year. It brings freshness to the world of C, Python, Ruby, Rust, Go world with the new ideas. The language is *not* as beautiful as Python, and is *not* as fast as raw C, but the main motivation is to have something between C and Python. I strongly recommend to read the Swift Book[https://dl.dropboxusercontent.com/u/20996794/Swift%20Programming%20Language.pdf](for example here).
 
 Apple compared Swift to Python in one picture during the presentation. Why?
 
