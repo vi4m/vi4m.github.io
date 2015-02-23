@@ -5,7 +5,7 @@ layout: post
 
 ## Motivation
 
-Swift is the new programming language brought to you by Apple last year. It brings freshness to the world of C, Python, Ruby, Rust, Go world with the new ideas. The language is *not* as beautiful as Python, and is *not* as fast as raw C, and compile speed is noting to compete with Go outstanding compilation speed. But the Swift's motivation was to hit the sweet spot between C , Python and go. I strongly recommend to read the Swift Book[https://dl.dropboxusercontent.com/u/20996794/Swift%20Programming%20Language.pdf](for example here).
+Swift is the new programming language brought to you by Apple last year. It brings freshness to the world of C, Python, Ruby, Rust, Go world with the new ideas. The language is *not* as beautiful as Python, and is *not* as fast as raw C, and compile speed is noting to compete with Go outstanding compilation speed. But the Swift's motivation was to hit the sweet spot between C , Python and go. I strongly recommend to read the Swift Book [for example here](https://dl.dropboxusercontent.com/u/20996794/Swift%20Programming%20Language.pdf)
 
 Apple put Swift side by side with Python during the presentation. Why?
 
