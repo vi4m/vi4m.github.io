@@ -6,8 +6,13 @@ layout: post
 ## Motivation
 
 Swift is the new programming language brought to you by Apple last year. 
-As a Polyglot Programmer, I read whole Swift book just after Apple Keynote streaming - it was so fascinating to see
-another Sexy Programming language. Apple compared Swift to the Python - because:
+I read whole Swift book just after Apple Keynote streaming - because Another(TM) Programming(TM) Language(TM) could tech you some new techniques.
+
+Apple compared Swift to Python in one picture during the presentation:
+
+![wcdxk-2](https://cloud.githubusercontent.com/assets/552398/6324247/b2d2f7cc-bb37-11e4-91b8-dc7c33b5fef3.jpg){: .center-image }
+
+Why?
 
 - it shares the same language simplicity (for example print is the keyword, OOP programming is optional)
 - great interactive interpreter built into the runtime( `swift` vs `swiftc`)
@@ -15,6 +20,8 @@ another Sexy Programming language. Apple compared Swift to the Python - because:
 
 But the way it differs from Python is the internals. 
 Swift underlaying technology is based on LLVM, which handles all of data structures, compiling and optimization tasks on its own.
+
+## Is it really as fast as advertised?
 
 Last week Swift 1.2 was released so i decided to write small benchmark game for 
 - Swift
