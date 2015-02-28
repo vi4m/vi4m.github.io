@@ -5,7 +5,7 @@ layout: post
 
 ## Motivation
 
-Swift is the new programming language brought to you by Apple last year. It brings freshness to the world of C, Python, Ruby, Rust, Go world with the new ideas. The language is *not* as beautiful as Python, and is *not* as fast as raw C, and compile speed is noting to compete with Go outstanding compilation speed. But the Swift's motivation was to hit the sweet spot between C , Python and go. I strongly recommend to read the Swift Book [for example here](https://dl.dropboxusercontent.com/u/20996794/Swift%20Programming%20Language.pdf)
+Swift is the new programming language brought to you by Apple last year. It brings freshness to the world of C, Python, Ruby, Rust, Go world with the new ideas. The language is *not* as beautiful as Python, and is *not* as fast as raw C, and compile speed is noting to compete with Go. But the Swift's motivation was to hit the sweet spot between C , Python and go. I strongly recommend to read the Swift Book [for example here](https://dl.dropboxusercontent.com/u/20996794/Swift%20Programming%20Language.pdf)
 
 Apple put Swift side by side with Python during the presentation. Why?
 
@@ -51,9 +51,9 @@ But where the language shines is - the source code is the shortest and the clean
 
 ## Performance
 
-I run loop 30 times to be sure. The results are mixed. Python is more than 30x slower than Swift! On the other hand, Swift and Go comes so close, it doesn't matter - but in this microbenchmark Swift was 60% faster than Go. 
+I run loop 30 times. The results are mixed. 
+CPython required 35x more time to finish the benchmark. Yes, it was 35 slower than Swift! On the other hand, Swift and Go comes so close, it doesn't matter - but in this particular microbenchmark Swift was 60% faster than Go. 
 Pypy amazed my how performant it was - more than 5 times faster than ordinar CPython implementation. Wow. 
-Unfortunatelly my favorite language - Python - sadly needed 34,5 times more than Swift, to finish the same program. 
 The performance difference is so big, you can image, when swift/go finish the program in one day, and the CPython counterpart needs a *MONTH* to do the same thing.
 
 The run times for all implementations:
@@ -66,10 +66,12 @@ Let's compare it to the fastes implementation.
 
 _In this particular test - Python is 34 times slower than Swift._
 
-## Conclusion
+## Conclusions
 
-- Swift is really fast today for scripting *and* high computing purposes.
-- Type inference is a must nowadays. 
-- PyPy is real surprise for me - and i wonder why it is still not the reference Python implemenatation ?
-- Swift faster than Go is really surprising too because Go is *3 years ahead of Swift in public development*.
-- I can't wait for [http://nondot.org/sabre/](Chris Lattner) to open-source Swift.
+- It's just one simple benchmark, the real life is another story, BUT:
+- Swift performance looks like a good fit not only for scripting, but high computing purposes also.
+- I liked its type inference.
+- PyPy's performance is better than expected. It's just 6x slower than Swift, but also 6x faster than generic CPython. Why it's not the default Python interpreter ;-) ? 
+- Swift being faster than Go is quite surprising too because Go is *3 years ahead of Swift in public development*.
+- I can't wait for [Chris Lattner][http://nondot.org/sabre/] to open-source Swift.
+- Swift is so young (6 months) that it has still some nasty bugs, rough edges. I will write it another story.
