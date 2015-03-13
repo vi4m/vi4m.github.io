@@ -10,7 +10,7 @@ published: true
 
 This site is dedicated to the *Sexy Software Craftmanship*. 
 
-It's the way of contributing to the smallest details of user experience, internal design, and performance.
+SSC is the way of contributing to the smallest details of user experience, internal design, and performance.
 It's the way of thinking opposite to make shitty(but working), underperformant, bloated agile MVP software.
 Read more about [Software Craftmanship](http://manifesto.softwarecraftsmanship.org) and make software fast, usable and sexy!
 
