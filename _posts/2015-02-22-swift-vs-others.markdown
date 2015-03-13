@@ -25,13 +25,15 @@ Technology underlying Swift is based on LLVM, which handles all of the data stru
 
 Last week Swift 1.2 was released so I decided to write a small benchmark game for:
 
-- Swift
-- Google's GO
-- CPython
-- PyPy
+- Swift 1.2
+- Google's Go 1.4.2
+- CPython 2.7.9
+- PyPy 2.5.0 - Python 2.7.8
 
 It was delightfull to simultanously write the code for 4 platforms in multisplit code editor window :-)
-The alghorithm is fairly easy - creating 1M array and filling it with the incremented integers(64 bit ints). Then, creating another array, which consits of sum of every 2 elements from the first array. De facto it tests memory read / write access time. Then comes the next step: summing up every 100th element of the array - it should be very difficult to inline it properly, but who knows what Swift can do ? :->
+The alghorithm is fairly easy - creating 1M array and filling it with the incremented integers(64 bit ints). Then, creating another array, which consits of sum of every 2 elements from the first array. De facto it tests memory read / write access time. Then comes the next step: summing up every 100th element of the array - it should be very difficult to inline it properly, but who knows what Swift can do ? :-> 
+
+* Note: I haven't used the list comprehensions, not to favor any language. I will prepare this variant later.
 
 ![first](https://cloud.githubusercontent.com/assets/552398/6321021/40071842-baef-11e4-8a9e-c825642ca15c.png){: .center-image }
 
