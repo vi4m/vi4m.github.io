@@ -60,18 +60,18 @@ The run times for all implementations:
 
 ![second](https://cloud.githubusercontent.com/assets/552398/6321023/5160183c-baef-11e4-9deb-48cdd9689155.png){: .center-image }
 
-Let's compare it to the fastes implementation.
+Let's put the results together:
 
 ![third](https://cloud.githubusercontent.com/assets/552398/6321026/6045d224-baef-11e4-9c42-75a8a8b36ed2.png){: .center-image }
 
-_In this particular test - Python is 34 times slower than Swift._
+_In this particular test - Python is 34x slower than Swift._
 
 ## Conclusions
 
-- It's just one simple benchmark, the real life is another story, BUT:
-- Swift performance looks like a good fit not only for scripting, but high computing purposes also.
+- It's just one simple benchmark, real life is another story, BUT:
+- Swift performance looks like a good fit not only for scripting, but high computing purposes too.
 - I liked its type inference.
-- PyPy's performance is better than expected. It's just 6x slower than Swift, but also 6x faster than generic CPython. Why it's not the default Python interpreter ;-) ? 
-- Swift being faster than Go is quite surprising too because Go is *3 years ahead of Swift in public development*.
-- I can't wait for [Chris Lattner][http://nondot.org/sabre/] to open-source Swift.
-- Swift is so young (6 months) that it has still some nasty bugs, rough edges. I will write it another story.
+- PyPy's performance is better than expected. It's just 6x slower than Swift, but also 6x faster than generic CPython. If it is so fast perhaps we should ask why it's not the default Python interpreter ;-) 
+- Swift being faster than Go is quite surprising because Go is *3 years ahead of Swift in public development*.
+- I can't wait to see [Chris Lattner][http://nondot.org/sabre/] open-source Swift.
+- Swift is so young (6 months) that it still has some nasty bugs and rough edges. I will write about it another day.
