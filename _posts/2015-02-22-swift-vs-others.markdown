@@ -7,7 +7,7 @@ layout: post
 
 Swift is the new programming language brought to you by Apple last year. It brings a refreshing air of novelty to the world of C, Python, Ruby, Rust and Go. The language is neither as beautiful as Python nor as fast as raw C, and the compile speed is  cannot compete with Go. But the motivation behind Swift was to hit the sweet spot between C, Python and Go. I strongly recommend reading the Swift Book [for example here](https://dl.dropboxusercontent.com/u/20996794/Swift%20Programming%20Language.pdf)
 
-Apple prepared thorough comparison of Swift and Python during the presentation. Much as they are similar, they are different by two yet essential characteristic features:
+Apple prepared a thorough comparison of Swift and Python during the presentation. Much as they are similar, they are different by two yet essential characteristic features:
 
 - both languages share the same language simplicity (for example, `print` is the keyword, OOP programming is optional)
 - both are great interactive interpreters( `swift` vs `swiftc`)
