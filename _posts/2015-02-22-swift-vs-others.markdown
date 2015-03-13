@@ -23,7 +23,8 @@ Technology underlying Swift is based on LLVM, which handles all of the data stru
 
 ## Is it really as fast as advertised?
 
-Last week Swift 1.2 was released so I decided to write a small benchmark game for 
+Last week Swift 1.2 was released so I decided to write a small benchmark game for:
+
 - Swift
 - Google's GO
 - CPython
