@@ -10,9 +10,9 @@ published: true
 
 This site is dedicated to the *Sexy Software Craftmanship*. 
 
-Don't do just Agile, TDD, software that only 'works' and is clunky, slow and/or bloated. 
-Be excited and contributed to the smallest details of user experience, internal design, and performance.
-Be commited to the [Software Craftmanship](http://manifesto.softwarecraftsmanship.org) and make software fast, usable and sexy!
+It's the way of contributing to the smallest details of user experience, internal design, and performance.
+It's the way of thinking opposite to make shitty(but working), underperformant, bloated agile MVP software.
+Read more about [Software Craftmanship](http://manifesto.softwarecraftsmanship.org) and make software fast, usable and sexy!
 
 
 ## Marcin Kliks
