@@ -21,7 +21,7 @@ Passionate programmer since Commodore 64.
 
 I believe in the open source, [tasty](http://40hz.se/fatmanifesto/principles.html) software without compromises, and [simplicity](http://legacy.python.org/dev/peps/pep-0020/ "Python Zen").
 
-I am the Lead Programmer of [Ralph DCIM/CMDB software]( http://ralph.allegrogroup.com) and couple of other [Open Source projects](/projects). I love Python programming language.
+I am the Lead Programmer of [Ralph DCIM/CMDB software]( http://ralph.allegrogroup.com) and couple of other [Open Source projects](/projects). I love Python programming language, and Swift.
 
 
 ## Media / Publications
@@ -46,4 +46,6 @@ http://pywaw.org/site_media/upload/slides/pywaw-42-droga-do-lepszego-oprogramowa
 <iframe width="560" height="315" src="//www.youtube.com/embed/Eyc_rwQrrKY" frameborder="0" allowfullscreen></iframe>
 
 * Przemysław Wysota says a lot about CMDB module for Ralph on his [website](http://it5m.wordpress.com/2014/07/16/ralph-lord-of-the-cis-vol-1/)
+
+<a class="twitter-timeline" href="https://twitter.com/vi4m" data-widget-id="697501719907987456">Tweets by @vi4m</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
