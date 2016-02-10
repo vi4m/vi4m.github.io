@@ -26,6 +26,9 @@ I am the Lead Programmer of [Ralph DCIM/CMDB software]( http://ralph.allegrogrou
 
 ## Media / Publications
 
+* 02/2015 - FOSDEM 2016 - Ralph - DCIM Asset Management System 
+
+<iframe width="560" height="315" src="//www.youtube.com/watch?v=j_OQxIoCPgw" frameborder="0" allowfullscreen></iframe>
 
 * 11.2014 pywaw #42 Droga do lepszego oprogramowania(PL) / The road towards better software
 
