@@ -187,7 +187,7 @@ Now let's write full-featured http app with routing:
 	
 Read more about the routes [here](https://github.com/Zewo/Router)
 
-To build your packages, type: `swift build`. Dependencies are downloaded into Packages directory, as a git checked out for given git tags. 
+To build your packages, type: `swift build`. Dependencies are downloaded into Packages directory, as a full-featured git repositories, checked out for given git tags. 
 
 	ls Packages/
 	C7-0.8.1                      HTTPParser-0.7.4              POSIX-0.5.1                   
@@ -214,7 +214,7 @@ Hurray, it's your first Zewo / Swift app!
 
 ## Reusing / tagging
 
-To share your app/library with others, you just simply put the repo somewhere (to the github for example) and make ordinary git tag (following the SemVer schema). 
+To share your app/library with others, just push the repo somewhere (to the github for example) and make ordinary git tag (following the SemVer schema). 
 
 For example:
 
@@ -228,12 +228,12 @@ You can use this repo in other projects with simple:
 	        
 You can point specific patchLevel version as a argument, but it's not recommended. Ommiting it gives you ability to be always up to date with the current minorVersion of the library, which should not break compatibility.
 	
-## Tuing performance
+## Tuning performance
 	
 	
-Zewo framework is very performant, it uses the same strategy as Go framework, using CSP coroutines. 
+Zewo framework is very performant, it uses the same concurrency strategy as GO language, using [CSP](https://en.wikipedia.org/wiki/Communicating_sequential_processes) coroutines. 
 
-By default it uses only one core, but you can change it very easily with 'reusePort' parametere. It balances incoming requests between many zewo processes. Remember to run as many processes as needed.
+By default it uses only one core, but you can change it easily with 'reusePort' parameter. It informs operating system to balance incoming socket requests, around many zewo processes. Remember to run as many processes as needed, operating system will take care of the rest.
 
 	try Server(host: "0.0.0.0", port: 8080, reusePort: true, responder: app).start()
 
