@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Swift 3 on linux tutorial
+title: Swift 3 on Linux tutorial - part1
 ---
 
 
