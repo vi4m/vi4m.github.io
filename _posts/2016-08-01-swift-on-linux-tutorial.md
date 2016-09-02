@@ -105,6 +105,7 @@ Now generate barebones of the package:
 	
 
 Sources dir is opinionated name. When main.swift is located in the dir, it's used as executable target, not library. The simple logic is located here:
+
 	
 	> cat Sources/main.swift
 	print("Hello, world!")
@@ -135,7 +136,7 @@ When ready to release, you can compile it without debugging symbols(faster, and 
 
 ## Writing http server
 
-We will use Zewo framework, which is reusable, server-side components.
+We will use Zewo framework, which contains over 50+ reusable, server-side components such as HTTP Server, JSON handling, storage-drivers (mysql, postgres), posix functions and [much much more](https://github.com/Zewo).
 
 	> cat Packages.swift
 	
@@ -147,7 +148,7 @@ We will use Zewo framework, which is reusable, server-side components.
 	
 We will use various Zewo components in separation. But remember:
 
-> Try to use the same (0.7 for example) package version for all used Zewo modules. Mixing different versions of Zewo components might create a dependency hell.
+> Try to use the same version (0.7 for example) or Zewo modules used in your project. Mixing different versions of Zewo components might create a dependency hell.
 
 We will create simple http server app, using JSON, routers, and creating some files.
 
@@ -215,8 +216,6 @@ You can use this repo in other projects with simple:
 
 	        .Package(url: "https://github.com/user/hello.git", majorVersion: 0, minor: 1)
 	        
-
-
 	
 # Performance
 	
