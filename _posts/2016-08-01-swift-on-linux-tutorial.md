@@ -92,7 +92,7 @@ Choose swift version to use:
 	> cat .swift-version 
 	DEVELOPMENT-SNAPSHOT-2016-05-31-a
 	
-Now generate barebones of the package:
+Now, let's generate barebones of the package:
 
 	> swift package init --type executable
 	
@@ -103,8 +103,9 @@ Now generate barebones of the package:
 	Creating Sources/main.swift
 	Creating Tests/
 	
+If you need generic library, choose "--type library". 
 
-Sources dir is opinionated name. When main.swift is located in the dir, it's used as executable target, not library. The simple logic is located here:
+Sources dir is currently opinionated name of all Sources directory. At the same time, when swift compiler detecs main.swift file, it assumes, executable is desired. Let's see how main.swift file looks in practice:
 
 	
 	> cat Sources/main.swift
