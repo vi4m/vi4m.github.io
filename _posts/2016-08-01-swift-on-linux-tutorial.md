@@ -242,6 +242,6 @@ By default it uses only one core, but you can change it very easily with 'reuseP
 
 
 Don't miss part 2 of tutorial!
-We will use File manipulation, coroutines, String manipulation, and JSON usage.
+We will use files manipulation, coroutines, operations on strings, and JSON.
 
 	
