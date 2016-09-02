@@ -15,7 +15,7 @@ Swiftenv allows using different Swift versions, alongside different projects. Sw
 
 First, install it from [here](https://github.com/kylef/swiftenv).
  
-Then, make sture to install Swift 3 snapshot which is stable enough to use with Zewo. I recommend to use 07-25 snapshot.
+Then, make sure to install Swift 3 snapshot which is stable enough to use with Zewo. I recommend to use 07-25 snapshot.
 
 	swiftenv install DEVELOPMENT-SNAPSHOT-2016-07-25-a
 
