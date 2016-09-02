@@ -212,10 +212,9 @@ Now point your browser to: `http://localhost:8080/hello/zewo`
 Hurray, it's your first Zewo / Swift app!
 
 
-# Tagging app
+## Reusing / tagging
 
-
-To share your app/library with others, you just simply put the repo somewhere (to the github for example) and make ordinary git tag (SemVer). 
+To share your app/library with others, you just simply put the repo somewhere (to the github for example) and make ordinary git tag (following the SemVer schema). 
 
 For example:
 
@@ -227,8 +226,9 @@ You can use this repo in other projects with simple:
 
 	.Package(url: "https://github.com/user/hello.git", majorVersion: 0, minor: 1)
 	        
+You can point specific patchLevel version as a argument, but it's not recommended. Ommiting it gives you ability to be always up to date with the current minorVersion of the library, which should not break compatibility.
 	
-# Performance
+## Tuing performance
 	
 	
 Zewo framework is very performant, it uses the same strategy as Go framework, using CSP coroutines. 
@@ -238,7 +238,7 @@ By default it uses only one core, but you can change it very easily with 'reuseP
 	try Server(host: "0.0.0.0", port: 8080, reusePort: true, responder: app).start()
 
 
-# Part 2
+## Part 2
 
 
 Don't miss part 2 of tutorial!
