@@ -6,41 +6,47 @@ title: Swift 3 on linux tutorial
 
 # Swift 3 Linux tutorial - part 1
 
-This tutorial shows how to make Server Side swift http service using Zewo framework.
+This tutorial shows how to make Server Side Swift HTTP service using Zewo framework.
 
 
 ## Swiftenv
 
-It allows using different swift versions alongside the projects. Swiftenv wraps `swift` commandline to point to given swift version defined in .swiftenv file.
+Swiftenv allows using different swift versions, alongside different projects. Swiftenv wraps `swift` commandline to always point to the specifi swift version defined in .swiftenv file.
 
-First, install it from [here](https://github.com/kylef/swiftenv) 
-With swiftenv we will install Swift 3 snapshot which is somehow stable :) 
+First, install it from [here](https://github.com/kylef/swiftenv).
+ 
+Then, make sture to install Swift 3 snapshot which is stable enough to use with Zewo. I recommend to use 07-25 snapshot.
 
 	swiftenv install DEVELOPMENT-SNAPSHOT-2016-07-25-a
 
-`swiftenv versions` will show you all system-wide versions similar to this:
+"swiftenv versions" presents all installed snapshots available, asterisk points to the global default version:
 
-    3.0-dev
+	3.0-dev
 	DEVELOPMENT-SNAPSHOT-2016-05-31-a
 	DEVELOPMENT-SNAPSHOT-2016-06-20-a
 	*DEVELOPMENT-SNAPSHOT-2016-07-25-a (set by .swiftenv/version)
- 	3.0
- 	2.2
+	3.0
+	2.2
 
 
 
 ## SPM - swift package manager. 
 
-SPM is official package manager for swift, which is really simple and useful, because it uses GIT and Semantic Versioning, nothing else. In addition - it is installed with the swift distribution itself, so nothing to install.
+SPM is official package manager for Swift, which is really simple and useful.
+It follows convention over configuration, and strictly follows SemVer as a versioning schema, and GIT as a storage solution. It presents decentralized approach to package indexing, so you always point complete http/git url to the repository. 
+
+In addition - it is installed with the swift distribution itself, so nothing to install.
 
 Extra features:
 
-* manages external C dependencies
-* very easy to write manifest
+* can compile c code, integrates with apt-get and homebrew
+* manifests are written in pure-swift, and are easly readable
+* can generate xcode project file (snapshot version needs workaround, because it has a bug)
 
 
 ### Using SPM
 
+Overview:
 
 	OVERVIEW: Perform operations on Swift packages
 
@@ -195,6 +201,23 @@ Now point your browser to: `http://localhost:8080/hello/zewo`
 
 Hurray, it's your first Zewo / Swift app!
 
+# Tagging app
+
+To share your app/library with others, you just simply put the repo somewhere (to the github for example) and make ordinary git tag (SemVer). 
+
+For example:
+
+	git tag 0.1.0
+	git push origin master
+	git push origin --tags
+	
+You can use this repo in other projects with simple:
+
+	        .Package(url: "https://github.com/user/hello.git", majorVersion: 0, minor: 1)
+	        
+
+
+	
 # Performance
 	
 Zewo framework is very performant, it uses the same strategy as Go framework, using CSP coroutines. 
@@ -206,5 +229,6 @@ By default it uses only one core, but you can change it very easily with 'reuseP
 # Part 2
 
 Don't miss part 2 of tutorial!
+We will use File manipulation, coroutines, String manipulation, and JSON usage.
 
 	
