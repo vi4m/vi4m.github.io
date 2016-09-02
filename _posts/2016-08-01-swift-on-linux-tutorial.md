@@ -11,7 +11,7 @@ This tutorial shows how to make Server Side Swift HTTP service using Zewo framew
 
 ## Swiftenv
 
-Swiftenv allows using different swift versions, alongside different projects. Swiftenv wraps `swift` commandline to always point to the specifi swift version defined in .swiftenv file.
+Swiftenv allows using different Swift versions, alongside different projects. Swiftenv wraps `swift` commandline to always point to the specific Swift version defined in .swiftenv file.
 
 First, install it from [here](https://github.com/kylef/swiftenv).
  
@@ -19,7 +19,7 @@ Then, make sture to install Swift 3 snapshot which is stable enough to use with 
 
 	swiftenv install DEVELOPMENT-SNAPSHOT-2016-07-25-a
 
-"swiftenv versions" presents all installed snapshots available, asterisk points to the global default version:
+"swiftenv versions" presents all installed snapshots, asterisk points to the global default version. You can easily switch versions, per directory.
 
 	3.0-dev
 	DEVELOPMENT-SNAPSHOT-2016-05-31-a
