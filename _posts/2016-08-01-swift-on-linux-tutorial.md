@@ -78,16 +78,16 @@ Overview:
 ## Hello world app
 
 Now, let's writing simple http service / web app. 
-
 Create your project dir:
 
 	> mkdir hello && cd hello
 	
 Choose swift version to use:
+
 	> swiftenv install DEVELOPMENT-SNAPSHOT-2016-07-25-a
 	> swiftenv local DEVELOPMENT-SNAPSHOT-2016-05-31-a
 	
-.swift-version in current dir will point to:
+".swift-version" in current dir will point to:
 
 	> cat .swift-version 
 	DEVELOPMENT-SNAPSHOT-2016-05-31-a
@@ -134,7 +134,8 @@ When ready to release, you can compile it without debugging symbols(faster, and 
 	> swift build --configuration release
 	
 
-## Writing http server
+## Writing HTTP server
+
 
 We will use Zewo framework, which contains over 50+ reusable, server-side components such as HTTP Server, JSON handling, storage-drivers (mysql, postgres), posix functions and [much much more](https://github.com/Zewo).
 
@@ -152,7 +153,7 @@ We will use various Zewo components in separation. But remember:
 
 We will create simple http server app, using JSON, routers, and creating some files.
 
-Update your Package.swift file with:
+Now, update your Package.swift file with:
 
 	import PackageDescription
 	
@@ -189,12 +190,20 @@ Read more about the routes [here](https://github.com/Zewo/Router)
 To build your packages, type: `swift build`. Dependencies are downloaded into Packages directory, as a git checked out for given git tags. 
 
 	ls Packages/
-	C7-0.8.1                      HTTPParser-0.7.4              POSIX-0.5.1                   String-0.7.3
-	CHTTPParser-0.5.0             HTTPSerializer-0.7.2          POSIXRegex-0.7.0              StructuredData-0.8.3
-	CLibvenice-0.5.0              HTTPServer-0.7.2              PathParameterMiddleware-0.7.0 TCP-0.7.4
-	CURIParser-0.5.0              IP-0.7.0                      RegexRouteMatcher-0.7.0       TrieRouteMatcher-0.7.1
-	File-0.7.5                    JSON-0.9.0                    Router-0.7.2                  URI-0.8.1
-	HTTP-0.7.2                    MediaType-0.8.0               S4-0.8.0                      Venice-0.7.2
+	C7-0.8.1                      HTTPParser-0.7.4              POSIX-0.5.1                   
+	CHTTPParser-0.5.0             HTTPSerializer-0.7.2          POSIXRegex-0.7.0              
+	CLibvenice-0.5.0              HTTPServer-0.7.2              PathParameterMiddleware-0.7.0 
+	CURIParser-0.5.0              IP-0.7.0                      RegexRouteMatcher-0.7.0       
+	File-0.7.5                    JSON-0.9.0                    Router-0.7.2                  
+	HTTP-0.7.2                    MediaType-0.8.0               S4-0.8.0     
+	
+	String-0.7.3
+	StructuredData-0.8.3
+	TCP-0.7.4
+	TrieRouteMatcher-0.7.1
+	URI-0.8.1
+	Venice-0.7.2
+	                 
 
 > Tip: You can make modifications to the Packages/ dir, and push it back to the repo.
 
@@ -202,7 +211,9 @@ Now point your browser to: `http://localhost:8080/hello/zewo`
 
 Hurray, it's your first Zewo / Swift app!
 
+
 # Tagging app
+
 
 To share your app/library with others, you just simply put the repo somewhere (to the github for example) and make ordinary git tag (SemVer). 
 
@@ -214,10 +225,11 @@ For example:
 	
 You can use this repo in other projects with simple:
 
-	        .Package(url: "https://github.com/user/hello.git", majorVersion: 0, minor: 1)
+	.Package(url: "https://github.com/user/hello.git", majorVersion: 0, minor: 1)
 	        
 	
 # Performance
+	
 	
 Zewo framework is very performant, it uses the same strategy as Go framework, using CSP coroutines. 
 
@@ -225,7 +237,9 @@ By default it uses only one core, but you can change it very easily with 'reuseP
 
 	try Server(host: "0.0.0.0", port: 8080, reusePort: true, responder: app).start()
 
+
 # Part 2
+
 
 Don't miss part 2 of tutorial!
 We will use File manipulation, coroutines, String manipulation, and JSON usage.
