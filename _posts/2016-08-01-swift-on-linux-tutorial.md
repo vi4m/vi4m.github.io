@@ -143,6 +143,7 @@ When ready to release, you can compile it without debugging symbols(faster, and 
 
 We will use Zewo framework, which contains over 50+ reusable, server-side components such as HTTP Server, JSON handling, storage-drivers (mysql, postgres), posix functions and [much much more](https://github.com/Zewo).
 
+
 	> cat Packages.swift
 	
 	import PackageDescription
@@ -159,37 +160,42 @@ We will create simple http server app, using JSON, routers, and creating some fi
 
 Now, update your Package.swift file with:
 
-	import PackageDescription
-	
-	let package = Package(
-	    name: "hello", 
-	    dependencies: [
-	        .Package(url: "https://github.com/Zewo/Router.git", majorVersion: 0, minor: 7),
-	        .Package(url: "https://github.com/VeniceX/HTTPServer.git", majorVersion: 0, minor: 7),
-	        .Package(url: "https://github.com/Zewo/JSON.git", majorVersion: 0, minor: 9),
-	        .Package(url: "https://github.com/VeniceX/File.git", majorVersion: 0, minor: 7)
-	    ]
-	)
+```swift
 
-Now let's write full-featured http app with routing:
+import PackageDescription
+	
+let package = Package(
+    name: "hello", 
+    dependencies: [
+        .Package(url: "https://github.com/Zewo/Router.git", majorVersion: 0, minor: 7),
+        .Package(url: "https://github.com/VeniceX/HTTPServer.git", majorVersion: 0, minor: 7),
+        .Package(url: "https://github.com/Zewo/JSON.git", majorVersion: 0, minor: 9),
+        .Package(url: "https://github.com/VeniceX/File.git", majorVersion: 0, minor: 7)
+    ]
+)
+```
+
+Now let's write full-featured http app with routing. We use only 2 modules from Zewo - HTTPServer and Router. We expose parametrized endpoint `/hello/[whatever]`  to demonstrate full - featured url parameters handling, rendering http response, and returning http status codes.  
 
 
-	import Router
-	import HTTPServer
+```swift
+
+import Router
+import HTTPServer
 	
-	let app = Router { route in
-	    route.get("/hello/:name") { request in
-	        guard let name = request.pathParameters["name"] else {
-	            return Response(status: .internalServerError)
-	        }
-	        return Response(body: "Nice to meet you, \(name)!")
-	    }
-	}
+let app = Router { route in
+    route.get("/hello/:name") { request in
+        guard let name = request.pathParameters["name"] else {
+            return Response(status: .internalServerError)
+        }
+        return Response(body: "Nice to meet you, \(name)!")
+    }
+}
 	
-	try Server(app).start()
+try Server(app).start()
+```	
 	
-	
-Read more about the routes [here](https://github.com/Zewo/Router)
+Read more about [routing](https://github.com/Zewo/Router) and [HTTP server](https://github.com/VeniceX/HTTPServer/blob/master/Source/Server.swift) for more details.
 
 To build your packages, type: `swift build`. Dependencies are downloaded into Packages directory, as a full-featured git repositories, checked out for given git tags. 
 
@@ -209,14 +215,14 @@ To build your packages, type: `swift build`. Dependencies are downloaded into Pa
 	Venice-0.7.2
 	                 
 
-> Tip: You can make modifications to the Packages/ dir, and push it back to the repo.
+> Tip: You can modify any of the Packages/ repository, and push it back to the repo. It simplifies development a lot.
 
 Now point your browser to: `http://localhost:8080/hello/zewo`
 
-Hurray, it's your first Zewo / Swift app!
+Hurray, it's your first Swift HTTP app with routing and status codes handling.
 
 
-## Reusing / tagging
+## Packaging
 
 To share your app/library with others, just push the repo somewhere (to the github for example) and make ordinary git tag (following the SemVer schema). 
 
@@ -230,17 +236,18 @@ You can use this repo in other projects with simple:
 
 	.Package(url: "https://github.com/user/hello.git", majorVersion: 0, minor: 1)
 	        
-You can point specific patchLevel version as a argument, but it's not recommended. Ommiting it gives you ability to be always up to date with the current minorVersion of the library, which should not break compatibility.
+You can specify also patchLevel as an argument, but it's not recommended. When ommited, SPM always uses the  latest version, which is backward compatible. 
 	
 ## Tuning performance
 	
 	
 Zewo framework is very performant, it uses the same concurrency strategy as GO language, using [CSP](https://en.wikipedia.org/wiki/Communicating_sequential_processes) coroutines. 
 
-By default it uses only one core, but you can change it easily with 'reusePort' parameter. It informs operating system to balance incoming socket requests, around many zewo processes. Remember to run as many processes as needed, operating system will take care of the rest.
+But you can find, that by default, it uses only one core. You can change it very easily with 'reusePort' parameter. It informs operating system to balance incoming socket requests, around many application instances . Remember only to run as many processes as needed, operating system will take care of the rest.
 
-	try Server(host: "0.0.0.0", port: 8080, reusePort: true, responder: app).start()
-
+```swift
+try Server(host: "0.0.0.0", port: 8080, reusePort: true, responder: app).start()
+```
 
 ## Part 2
 
