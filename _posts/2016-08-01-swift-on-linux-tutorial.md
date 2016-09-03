@@ -159,13 +159,13 @@ When ready to release, you can compile it without debugging symbols(faster, and 
 We will use Zewo framework, which contains over 50+ reusable, server-side components such as HTTP Server, JSON handling, storage-drivers (mysql, postgres), posix functions and [much much more](https://github.com/Zewo).
 
 ```
-	> cat Packages.swift
-	
-	import PackageDescription
+> cat Packages.swift
 
-	let package = Package(
-		name: "hello"
-	)
+import PackageDescription
+
+let package = Package(
+        name: "hello"
+)
 ```
 	
 We will use various Zewo components in separation. But remember:
