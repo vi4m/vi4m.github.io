@@ -6,8 +6,22 @@ title: Swift 3 on Linux tutorial - part1
 
 # Swift 3 Linux tutorial - part 1
 
-This tutorial shows how to make Server Side Swift HTTP service using Zewo framework.
+This tutorial shows how to write HTTP micro-service with Swift on Linux, thanks to the beautiful Zewo framework.
 
+## Zewo
+
+Zewo is a extremely modular, set of server side libraries for swift programs. It includes everything that's needed to 
+write full featured microservices in Swift, as well as commandline applications, including:
+
+* HTTP and websocket server
+* https and http client
+* couroutines library based on libmill
+* database drivers, and ORM mapper
+* templating engine
+* zeromq, redis
+* dozen of helper libraries 
+
+> Beware - it's not stable, nor have documentation yet, but the Sources are really readable.  
 
 ## Swiftenv
 
@@ -78,7 +92,7 @@ NOTE: Use `swift build` to build packages, and `swift test` to test packages
 ```
     
 
-## Hello world app
+## Start with "Hello world" app!
 
 Enough theory! Now, let's build simple HTTP app. 
 
