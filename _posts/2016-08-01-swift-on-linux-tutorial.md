@@ -22,13 +22,14 @@ How to use it?
 
 3. To see all installed swift versions, just type `swiftenv versions`. Version selected with `*` is the current one.
 
-	3.0-dev
-	DEVELOPMENT-SNAPSHOT-2016-05-31-a
-	DEVELOPMENT-SNAPSHOT-2016-06-20-a
-	*DEVELOPMENT-SNAPSHOT-2016-07-25-a (set by .swiftenv/version)
-	3.0
-	2.2
-
+```
+3.0-dev
+DEVELOPMENT-SNAPSHOT-2016-05-31-a
+DEVELOPMENT-SNAPSHOT-2016-06-20-a
+*DEVELOPMENT-SNAPSHOT-2016-07-25-a (set by .swiftenv/version)
+3.0
+2.2
+```
 
 ## SPM - swift package manager. 
 
@@ -49,93 +50,107 @@ SemVer is the *only* versioning schema you can use, so there is a strict standar
 
 Overview:
 
-	OVERVIEW: Perform operations on Swift packages
+```
+OVERVIEW: Perform operations on Swift packages
 
-	USAGE: swift package [command] [options]
-	
-	COMMANDS:
-	  init [--type <type>]                   Initialize a new package
-	                                         (type: library|executable|system-module)
-	  fetch                                  Fetch package dependencies
-	  update                                 Update package dependencies
-	  generate-xcodeproj [--output <path>]   Generates an Xcode project
-	  show-dependencies [--format <format>]  Print the resolved dependency graph
-	                                         (format: text|dot|json)
-	  dump-package [--input <path>]          Print parsed Package.swift as JSON
-	
-	OPTIONS:
-	  -C, --chdir <path>        Change working directory before any other operation
-	  --color <mode>            Specify color mode (auto|always|never)
-	  -v, --verbose             Increase verbosity of informational output
-	  --version                 Print the Swift Package Manager version
-	  -Xcc <flag>               Pass flag through to all C compiler invocations
-	  -Xlinker <flag>           Pass flag through to all linker invocations
-	  -Xswiftc <flag>           Pass flag through to all Swift compiler invocations
-	
-	NOTE: Use `swift build` to build packages, and `swift test` to test packages
-	
-	
+USAGE: swift package [command] [options]
+
+COMMANDS:
+  init [--type <type>]                   Initialize a new package
+                                         (type: library|executable|system-module)
+  fetch                                  Fetch package dependencies
+  update                                 Update package dependencies
+  generate-xcodeproj [--output <path>]   Generates an Xcode project
+  show-dependencies [--format <format>]  Print the resolved dependency graph
+                                         (format: text|dot|json)
+  dump-package [--input <path>]          Print parsed Package.swift as JSON
+
+OPTIONS:
+  -C, --chdir <path>        Change working directory before any other operation
+  --color <mode>            Specify color mode (auto|always|never)
+  -v, --verbose             Increase verbosity of informational output
+  --version                 Print the Swift Package Manager version
+  -Xcc <flag>               Pass flag through to all C compiler invocations
+  -Xlinker <flag>           Pass flag through to all linker invocations
+  -Xswiftc <flag>           Pass flag through to all Swift compiler invocations
+
+NOTE: Use `swift build` to build packages, and `swift test` to test packages
+```
+    
 
 ## Hello world app
 
 Enough theory! Now, let's build simple HTTP app. 
 
-
 Create your project dir:
 
-	> mkdir hello && cd hello
+```
+> mkdir hello && cd hello
+````
 	
 Choose swift version to use:
 
-	> swiftenv install DEVELOPMENT-SNAPSHOT-2016-05-31-a
-	> swiftenv local DEVELOPMENT-SNAPSHOT-2016-05-31-a
+```
+> swiftenv install DEVELOPMENT-SNAPSHOT-2016-05-31-a
+> swiftenv local DEVELOPMENT-SNAPSHOT-2016-05-31-a
+```
 	
 ".swift-version" in current dir will point to:
 
-	> cat .swift-version 
-	DEVELOPMENT-SNAPSHOT-2016-05-31-a
+```
+> cat .swift-version 
+DEVELOPMENT-SNAPSHOT-2016-05-31-a
+```
 	
 Now, let's generate barebones of the package:
 
-	> swift package init --type executable
-	
-	Creating executable package: hello
-	Creating Package.swift
-	Creating .gitignore
-	Creating Sources/
-	Creating Sources/main.swift
-	Creating Tests/
-	
+```
+> swift package init --type executable
+
+Creating executable package: hello
+Creating Package.swift
+Creating .gitignore
+Creating Sources/
+Creating Sources/main.swift
+Creating Tests/
+```
+    
 If you need generic library, choose "--type library". 
 
 Sources dir is currently opinionated name of all Sources directory. At the same time, when swift compiler detecs main.swift file, it assumes, executable is desired. Let's see how main.swift file looks in practice:
 
-	
-	> cat Sources/main.swift
-	print("Hello, world!")
-
+```	
+> cat Sources/main.swift
+print("Hello, world!")
+```
 
 Now build the hello world app - 
 
-	> swift build 
-	
-	Compile Swift Module 'hello' (1 sources)
+```
+> swift build 
 
-Hurray! Hello world app is ready.
-Output executable, with debug symbols is located here:	
-	> ls .build/debug
-	
-	ModuleCache       hello.build       hello.swiftdoc    hello.swiftmodule 	helloTests.xctest
+Compile Swift Module 'hello' (1 sources)
+```
 
+Hurray! Hello world app is ready. Output executable, with debug symbols is located here:	
+
+```
+> ls .build/debug
+  
+ModuleCache       hello.build       hello.swiftdoc    hello.swiftmodule 	helloTests.xctest
+```
 
 Run it:
 
-	> ./.build/debug/hello
-	Hello, world!
+```
+> ./.build/debug/hello
+Hello, world!
+
+```
 	
 When ready to release, you can compile it without debugging symbols(faster, and smaller executable)
 
-	> swift build --configuration release
+    > swift build --configuration release
 	
 
 ## Writing HTTP server
@@ -143,7 +158,7 @@ When ready to release, you can compile it without debugging symbols(faster, and 
 
 We will use Zewo framework, which contains over 50+ reusable, server-side components such as HTTP Server, JSON handling, storage-drivers (mysql, postgres), posix functions and [much much more](https://github.com/Zewo).
 
-
+```
 	> cat Packages.swift
 	
 	import PackageDescription
@@ -151,6 +166,7 @@ We will use Zewo framework, which contains over 50+ reusable, server-side compon
 	let package = Package(
 		name: "hello"
 	)
+```
 	
 We will use various Zewo components in separation. But remember:
 
