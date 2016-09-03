@@ -1,10 +1,10 @@
 # Site settings
-title: Software Craftmanship made sexy
+title: Software Craftsmanship made sexy
 email: spamlist@icloud.com
-description: "How to make performant, usable and sexy software using Python"
+description: "How to make performant, usable and sexy software using Python, Swift and others."
 baseurl: "http://vi4m.github.io"
 url: "http://marcinkliks.pl"
-highlighter: pygments
+highlighter: rouge
 is_user_page: true
 
 
