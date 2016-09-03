@@ -11,15 +11,16 @@ This tutorial shows how to make Server Side Swift HTTP service using Zewo framew
 
 ## Swiftenv
 
-Swiftenv allows using different Swift versions, alongside different projects. Swiftenv wraps `swift` commandline to always point to the specific Swift version defined in .swiftenv file.
+Swiftenv is swift wrapper similar to pyenv. It allows using different Swift versions, alongside different projects. Swiftenv takes care of replacing your `swift` command with the desired swift version, defined in the `.swiftenv` file.
 
-First, install it from [here](https://github.com/kylef/swiftenv).
- 
-Then, make sure to install Swift 3 snapshot which is stable enough to use with Zewo. I recommend to use 07-25 snapshot.
+How to use it?
 
-	swiftenv install DEVELOPMENT-SNAPSHOT-2016-07-25-a
+1. First, install swiftenv from [here](https://github.com/kylef/swiftenv).
+2. Then, make sure to install Swift 3 snapshot which is stable enough to use with Zewo. I recommend to use 05-31 snapshot.
 
-"swiftenv versions" presents all installed snapshots, asterisk points to the global default version. You can easily switch versions, per directory.
+	swiftenv install DEVELOPMENT-SNAPSHOT-2016-05-31-a
+
+3. To see all installed swift versions, just type `swiftenv versions`. Version selected with `*` is the current one.
 
 	3.0-dev
 	DEVELOPMENT-SNAPSHOT-2016-05-31-a
@@ -29,15 +30,15 @@ Then, make sure to install Swift 3 snapshot which is stable enough to use with Z
 	2.2
 
 
-
 ## SPM - swift package manager. 
 
 SPM is official package manager for Swift, which is really simple and useful.
-It follows convention over configuration, and strictly follows SemVer as a versioning schema, and GIT as a storage solution. It presents decentralized approach to package indexing, so you always point complete http/git url to the repository. 
 
-In addition - it is installed with the swift distribution itself, so nothing to install.
-
-Extra features:
+1. It follows convention over configuration, so there is no need to configure directory paths, or versioning schema. 
+SemVer is the *only* versioning schema you can use, so there is a strict standard around packages to follow. An example could be: 0.1.2 version. 0 is the major version, 1 - the minor, and patch level - 2.
+2. Packages are stored in the generic GIT repository, so no central - hub, or packages index is needed. Just use generic http+git url for package location.
+3. SPM is the part of swift distribution itself, so there is no need to install anything.
+4. Some extra features: 
 
 * can compile c code, integrates with apt-get and homebrew
 * manifests are written in pure-swift, and are easly readable
@@ -77,14 +78,16 @@ Overview:
 
 ## Hello world app
 
-Now, let's writing simple http service / web app. 
+Enough theory! Now, let's build simple HTTP app. 
+
+
 Create your project dir:
 
 	> mkdir hello && cd hello
 	
 Choose swift version to use:
 
-	> swiftenv install DEVELOPMENT-SNAPSHOT-2016-07-25-a
+	> swiftenv install DEVELOPMENT-SNAPSHOT-2016-05-31-a
 	> swiftenv local DEVELOPMENT-SNAPSHOT-2016-05-31-a
 	
 ".swift-version" in current dir will point to:
