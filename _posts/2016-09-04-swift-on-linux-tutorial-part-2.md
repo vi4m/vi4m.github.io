@@ -209,6 +209,29 @@ Still computing.
 Result: 198491369⏎                      
 ```
 
+## Explanation
 
+The essence of our program is the usage of this coroutine:
+
+
+```swift
+
+co {
+    let computedPrime = nextPrime(intValue)
+    channel.send(computedPrime)
+}
+``` 
+
+* nextPrime() function tries to behave nice, yielding the control of program to other coroutines, with the `yield` function. 
+Without it, it would preempt entire CPU time for one coroutine.
+
+* using guards to unpack Optionals makes a program really readable
+
+* we used select() function which doesn't wait until channel is filled up, so we can always answer HTTP requests as fast as possible
+
+
+## Summary
+
+Congratulations! You completed part 2 of the tutorial. Don't miss part 3 with Filesystem functions!
 
 	
