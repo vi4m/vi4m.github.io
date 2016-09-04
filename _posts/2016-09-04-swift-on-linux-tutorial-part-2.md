@@ -61,7 +61,8 @@ Run it and:
 Waiting for the result...
 Got Optional(1) !
 ```
-Keep in mindrecieving 
+Keep in mind, that recieving a value from the channel is a _blocking operation_. To check buffer for presence of data without blocking,
+ you can use `select` function described later on.
 
 
 ## DIY - worker
