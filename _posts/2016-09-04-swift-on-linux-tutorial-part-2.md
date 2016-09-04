@@ -15,7 +15,7 @@ In this tutorial we will continue exploring Zewo framewrok, focusing this time o
 
 ## Coroutines
 
-Unlike Go, Swift 3 does not come with coroutines out of the box, but uses separate library called [VeniceX](https://github.com/VeniceX). Worry no, the usage is quite similar, and performance is great, scaling up to milions coroutines on single hardware. 
+Unlike Go, Swift 3 does not come with coroutines out of the box, but uses separate library called [VeniceX](https://github.com/VeniceX). Worry no, the usage is quite similar, and performance is great, scaling up to milions coroutines on single host. 
 
 Zewo follows CSP model, similar to Golang implementing [CSP model](https://en.wikipedia.org/wiki/Communicating_sequential_processes) coroutines incorporting wonderful [libmill](http://libmill.org) C library.
 
