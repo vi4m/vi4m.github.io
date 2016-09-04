@@ -7,18 +7,17 @@ tags: swift
 
 # Swift 3 Linux tutorial - part 2
 
-In this tutorial we will continue to explore Zewo framewok, focusing this time on:
+In this tutorial we will continue exploring Zewo framewrok, focusing this time on:
 
-* files manipulation
 * JSON handling
 * coroutines
 
 
 ## Coroutines
 
-Unlike Go, Swift 3 does not come with coroutines out of the box, but remains library function(we will use https://github.com/VeniceX). Worry no, the usage is quite similar, and performance is great, without side-effects.
+Unlike Go, Swift 3 does not come with coroutines out of the box, but provides library functions instead (we will use https://github.com/VeniceX). Worry no, the usage is quite similar, and performance is great, scaling up to milions coroutines on single hardware. 
 
-Zewo follows CSP model, similar to Golang. [CSP](https://en.wikipedia.org/wiki/Communicating_sequential_processes) coroutines incorporting wonderful [libmill](http://libmill.org) C library.
+Zewo follows CSP model, similar to Golang implementing [CSP model](https://en.wikipedia.org/wiki/Communicating_sequential_processes) coroutines incorporting wonderful [libmill](http://libmill.org) C library.
 
 
 
