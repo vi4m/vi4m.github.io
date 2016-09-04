@@ -15,7 +15,7 @@ In this tutorial we will continue exploring Zewo framewrok, focusing this time o
 
 ## Coroutines
 
-Unlike Go, Swift 3 does not come with coroutines out of the box, but uses separate library called [VeniceX](https://github.com/VeniceX). Worry no, the usage is quite similar, and performance is great, scaling up to milions coroutines on single host. 
+Unlike Go, Swift 3 does not come with coroutines out of the box, but uses separate library called [VeniceX](https://github.com/VeniceX). Worry no, the usage is quite similar to go, and performance is great, scaling up to milions coroutines on single host. 
 
 Zewo follows CSP model, similar to Golang implementing [CSP model](https://en.wikipedia.org/wiki/Communicating_sequential_processes) coroutines incorporting wonderful [libmill](http://libmill.org) C library.
 
@@ -35,7 +35,7 @@ for i in 1...100 {
 }
 ```
 
-To comunicate with the coroutine, use channel for sending / recieving values(for example numbers):
+To comunicate with the coroutine, we use channels, for sending / recieving values of specific type(for example Int):
 
 ```swift
 import Venice
@@ -59,13 +59,14 @@ Run it and:
 Waiting for the result...
 Got Optional(1) !
 ```
+Keep in mindrecieving 
 
 
 ## DIY - worker
 		
-In part1 of the tutorial, we've built synchronous http service which immediately returned a value. In this tutorial, we will try to make prime numbers web-service! Computing of prime numbers takes a lot time, and we don't want to have API HTTP timeouts. That's why we cannot do it synchronusly, rather defering computation tasks to the background. 
+In the first part of the tutorial, we've built synchronous http service which immediately returned a value. In this tutorial, we will try to make prime numbers web-service! Computing of prime numbers takes a lot time, and we don't want to have API HTTP timeouts. That's why we cannot do it synchronusly. We will defer computation tasks to the background instead. 
 
-How to do it? Do we need some worker solution, similar to Python RQ, Celery or something? The answer is - not at all! Zewo with Swift does the trick without any other tricks!
+How to do it? Do we need some worker solution, similar to Python RQ, Celery, threads, Redis or something? The answer is - not at all! Zewo with Swift does the trick without any other components!
 
 Let's begin with the endpoints:
 
@@ -89,10 +90,6 @@ import UUID
 
 var messages:[String:Channel<Int>] = [:]
 
-func prime(number: Int) {
-
-}
-
 
 let app = Router { route in
     route.post("/task/new") { request in 
@@ -104,9 +101,9 @@ let app = Router { route in
             "taskId": .string(taskId)
         ]
         co {
-            let result = prime(123333)
-            nap(for: 3.seconds)
-            channel.send(123)
+            let result = nextPrime(123333)
+        
+            channel.send(result)
         }
         messages[taskId] = channel
 
@@ -176,9 +173,16 @@ func nextPrime(_ curentCandidate: Int) -> Int {
 
 ```
 
+Both files(main.swift, computation.swift) share common namespace, without need of importing files each other. 
+
+Now, compile the code and let's try our computation. 
+
+
+
+```
 curl -XPOST http://localhost:8080//task/start?value=198491329
 
-
+```
 
 
 
