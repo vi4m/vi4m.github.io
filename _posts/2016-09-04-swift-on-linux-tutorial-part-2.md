@@ -173,7 +173,8 @@ func nextPrime(_ curentCandidate: Int) -> Int {
 
 ```
 
-Both files(main.swift, computation.swift) share common namespace, without need of importing files each other. 
+
+Both files(main.swift, computation.swift) share common namespace, without a need for importing files each other. 
 
 Now, compile the code and let's try our computation. 
 
