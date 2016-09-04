@@ -73,8 +73,8 @@ How to do it? Do we need some worker solution, similar to Python RQ, Celery, thr
 Let's begin with the endpoints:
 
 
-* `/task/start?value=[number]` endpoint will schedule long-running computation in the background. The only thing returned synchronusly is task id as a JSON
-* `/task/[uid]` - this endpoint will be used by the clients, while waiting for the result.
+* `/task/start?value=[number]` endpoint will schedule long-running computation in the background. The only thing returned synchronusly is task id as a JSON. We handle POST requests here, thus "creating" task resource.
+* `/task/[uid]` - this endpoint will be used by the clients polling the result. It will return 
 
 
 ### The code
@@ -88,38 +88,42 @@ import Router
 import HTTPServer
 import JSON
 import UUID
-
+import String
 
 var messages:[String:Channel<Int>] = [:]
 
 
 let app = Router { route in
+
     route.post("/task/new") { request in 
-        let taskId = UUID().description
-
-        let channel = Channel<Int>()
-
-        let json: JSON = [
-            "taskId": .string(taskId)
-        ]
-        co {
-            let result = nextPrime(123333)
-        
-            channel.send(result)
+        var body = request.body
+        let data = try body.becomeBuffer()
+        let content = try JSONParser().parse(data: data)
+        guard let value = content["value"]?.stringValue else {
+            return Response(body: "Missing value", status: .badRequest)
         }
+        guard let intValue = Int(value) else {
+            return Response(body: "\(value) is not a number".data, status: .badRequest)
+        }
+        
+        let taskId = UUID().description
+        let channel = Channel<Int>()
         messages[taskId] = channel
 
-        return Response(body: JSONSerializer().serializeToString(json: json).data, 
+        co {
+            let computedPrime = nextPrime(intValue)
+            channel.send(computedPrime)
+        }
+
+        return Response(body: JSONSerializer().serialize(json: ["taskId": .string(taskId)]), 
             headers: ["Content-type": "application/json"])
     }
-    
+
     route.get("/task/:taskid") { request in
         guard let taskid = request.pathParameters["taskid"] else {
-            print("Internal")
             return Response(status: .internalServerError)
         }
         guard let channel = messages[taskid] else {
-            print("channel")
             return Response(body: "Routine not found", status: .notFound)
         }
         var response: Response?
@@ -132,7 +136,6 @@ let app = Router { route in
                 response = Response(body: "Still computing.")
             }
         }
-        print("koniec")
         return response!
     }
 }
@@ -144,6 +147,7 @@ try Server(host: "0.0.0.0", port: 8080, reusePort: true, responder: app).start()
 Create file `computation.swift`:
 
 ```swift
+import Venice
 
 /// Returns true if number is prime number, false otherwise
 func isPrime(_ number: Int) -> Bool {
@@ -153,6 +157,9 @@ func isPrime(_ number: Int) -> Bool {
     var prime = true
     var i = 2
     while i < number {
+        if i % 1000 == 0 {
+            yield
+        }
         if number % i == 0 {
             prime = false
             break
@@ -163,16 +170,17 @@ func isPrime(_ number: Int) -> Bool {
 }
 
 /// Returns the first next prime number greater than given number
-func nextPrime(_ curentCandidate: Int) -> Int {
+func nextPrime(_ previousPrime: Int) -> Int {
+        var currentCandidate = previousPrime
 	var found = false
 	while found == false {
 	    currentCandidate += 1
-	    if prime(currentCandidate) == true {
+	    if isPrime(currentCandidate) == true {
 	        found = true
 	    }
 	}
-	print(primeNumber)
-
+	return currentCandidate
+}
 ```
 
 
@@ -183,8 +191,21 @@ Now, compile the code and let's try our computation.
 
 
 ```
-curl -XPOST http://localhost:8080//task/start?value=198491329
+> curl -XPOST  "http://127.0.0.1:8080/task/new" -d '{"value": "198491329"}' -v
 
+{"taskId":"7398EFF1-838A-495E-AB9C-AC7C5C73BE3"}
+
+> curl "http://127.0.0.1:8080/task/7398EFF1-838A-495E-AB9C-AC7C5C73BE3"
+
+Still computing.
+
+```
+
+[after a while]
+
+```
+> curl "http://127.0.0.1:8080/task/7398EFF1-838A-495E-AB9C-AC7C5C73BE3"
+Result: 198491369⏎                      
 ```
 
 
