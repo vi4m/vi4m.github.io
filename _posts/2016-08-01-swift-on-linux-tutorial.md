@@ -111,7 +111,7 @@ Choose swift version to use:
 > swiftenv local DEVELOPMENT-SNAPSHOT-2016-05-31-a
 ```
 	
-".swift-version" in current dir will point to:
+".swift-version" in the current directory will point to:
 
 ```
 > cat .swift-version 
