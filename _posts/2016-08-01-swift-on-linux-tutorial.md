@@ -6,24 +6,26 @@ title: Swift 3 on Linux tutorial - part1
 
 # Swift 3 Linux tutorial - part 1
 
-This tutorial shows how to write HTTP micro-service with Swift on Linux, thanks to the beautiful Zewo framework.
+This tutorial shows how to write HTTP micro-service with Swift on Linux, thanks to the powerful Zewo framework.
 
 ## Zewo
 
-Zewo is a extremely modular, set of server side libraries for swift programs. It includes everything that's needed to 
+Zewo is an extremely modular set of server side libraries for server side development. It includes everything that's needed to 
 write full featured microservices in Swift, as well as commandline applications, including:
 
-* HTTP and websocket server
-* https and http client
-* couroutines library based on libmill
-* database drivers, and ORM mapper
-* templating engine
+* HTTP and websocket servers
+* https and http clients
+* couroutines (library "Venice" based on libmill)
+* database drivers, and ORM mappers
+* templating engine("Mustache")
 * zeromq, redis
 * dozen of helper libraries 
 
-> Beware - it's not stable, nor have documentation yet, but the Sources are really readable.  
+> Beware - it's neither stable, nor have documentation yet, but the Sources are really readable. The components are slick, boundaries well defined, but the real deal is - it's really easy to play with, customize, hack something working quickly. Thanks to Swift generics and protocols it's a joy to use. 
 
 ## Swiftenv
+
+Swift is evolving really quickly, during 3.x development source compatibility was frequently broken. Swiftenv helps to manage different Swift versions across the system, before 3.x land completely. 
 
 Swiftenv is swift wrapper similar to pyenv. It allows using different Swift versions, alongside different projects. Swiftenv takes care of replacing your `swift` command with the desired swift version, defined in the `.swiftenv` file.
 
@@ -51,7 +53,7 @@ SPM is official package manager for Swift, which is really simple and useful.
 
 1. It follows convention over configuration, so there is no need to configure directory paths, or versioning schema. 
 SemVer is the *only* versioning schema you can use, so there is a strict standard around packages to follow. An example could be: 0.1.2 version. 0 is the major version, 1 - the minor, and patch level - 2.
-2. Packages are stored in the generic GIT repository, so no central - hub, or packages index is needed. Just use generic http+git url for package location.
+2. Packages are stored in the generic GIT repositories, so no central - hub, or packages index is needed. Just use generic http+git url for package location.
 3. SPM is the part of swift distribution itself, so there is no need to install anything.
 4. Some extra features: 
 
