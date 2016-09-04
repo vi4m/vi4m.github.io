@@ -23,7 +23,7 @@ Zewo follows CSP model, similar to Golang implementing [CSP model](https://en.wi
 
 ## Example coroutines
 
-This code is run in the "background" as a lightweight coroutine. Unlike threads, you can run literally milions of these on the modern hardware, it's so performant.
+This code runs in the "background" as a lightweight coroutine. Unlike threads, you can run literally milions of these on the modern hardware, it's so performant.
 
 ```swift
 import Venice
