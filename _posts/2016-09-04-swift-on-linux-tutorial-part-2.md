@@ -7,10 +7,12 @@ tags: swift
 
 # Swift 3 Linux tutorial - part 2
 
-In this tutorial we will continue exploring Zewo framewrok, focusing this time on:
+In this tutorial we will continue exploring more advanced parts of Zewo framework, including:
 
+* concurrency
 * JSON handling
-* coroutines
+* communication via channels
+
 
 
 ## Coroutines
