@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Swift 3on Linux tutorial -part 2"
+title: "Swift 3 on Linux tutorial -part 2"
 tags: swift
 ---
 
