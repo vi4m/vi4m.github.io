@@ -75,7 +75,7 @@ Let's begin with the endpoints:
 
 
 * `/task/start?value=[number]` endpoint will schedule long-running computation in the background. The only thing returned synchronusly is task id as a JSON. We handle POST requests here, thus "creating" task resource.
-* `/task/[uid]` - this endpoint will be used by the clients polling the result. It will return 
+* `/task/[uid]` - this endpoint will be used by the clients polling the result. 
 
 
 ### The code
