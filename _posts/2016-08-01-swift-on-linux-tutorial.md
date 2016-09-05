@@ -13,12 +13,12 @@ This tutorial shows how to write HTTP micro-service with Swift on Linux, thanks 
 Zewo is an extremely modular set of server side libraries for server side development. It includes everything that's needed to 
 write full featured microservices in Swift, as well as commandline applications, including:
 
-* HTTP and websocket servers
-* https and http clients
+* HTTP and WebSocket servers
+* HTTP/S clients
 * couroutines (library "Venice" based on libmill)
 * database drivers, and ORM mappers
 * templating engine("Mustache")
-* zeromq, redis
+* Zeromq, Redis support
 * dozen of helper libraries 
 
 > Beware - it's neither stable, nor have documentation yet, but the Sources are really readable. The components are slick, boundaries well defined, but the real deal is - it's really easy to play with, customize, hack something working quickly. Thanks to Swift generics and protocols it's a joy to use. 
