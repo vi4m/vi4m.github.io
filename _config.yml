@@ -1,9 +1,9 @@
 # Site settings
-title: Software Craftsmanship made sexy
+title: Software Craftsmanship by Marcin Kliks
 email: spamlist@icloud.com
 description: "How to make performant, usable and sexy software using Python, Swift and others."
 baseurl: "http://vi4m.github.io"
-url: "http://marcinkliks.pl"
+url: "http://www.marcinkliks.pl"
 highlighter: rouge
 is_user_page: true
 
