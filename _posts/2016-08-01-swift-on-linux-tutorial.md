@@ -236,10 +236,13 @@ You can specify also patchLevel as an argument, but it's not recommended. When o
 	
 Zewo framework is very performant, it uses the same concurrency strategy as GO language, using [CSP](https://en.wikipedia.org/wiki/Communicating_sequential_processes) coroutines. 
 
-But you can find, that by default, it uses only one core. You can change it very easily with 'reusePort' parameter. It informs operating system to balance incoming socket requests, around many application instances . Remember only to run as many processes as needed, operating system will take care of the rest.
+But you can find, that by default, it uses only one core. You can change it very easily with 'reusePort' parameter. It informs operating system to balance incoming socket requests, around many application instances. Remember only to run as many processes as needed, operating system will take care of the rest. You can run multiple http servers and/or run multiple processes of our app with configuration below:
 
 ```swift
-try Server(host: "0.0.0.0", port: 8080, reusePort: true, responder: app).start()
+try Server(reusePort: true, port: 8080, responder: app).startInBackground()
+try Server(reusePort: true, port: 8080, responder: app).startInBackground()
+try Server(reusePort: true, port: 8080, responder: app).startInBackground()
+try Server(reusePort: true, port: 8080, responder: app).start()
 ```
 
 ## Part 2
