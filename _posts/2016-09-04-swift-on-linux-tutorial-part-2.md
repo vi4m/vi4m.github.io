@@ -74,7 +74,7 @@ How to do it? Do we need some worker solution, similar to Python RQ, Celery, thr
 Let's begin with the endpoints:
 
 
-* `/task/start?value=[number]` endpoint will schedule long-running computation in the background. The only thing returned synchronusly is task id as a JSON. We handle POST requests here, thus "creating" task resource.
+* `/task/new` endpoint will schedule long-running computation in the background. The only thing returned synchronusly is task id as a JSON. We handle POST requests here, thus "creating" task resource.
 * `/task/[uid]` - this endpoint will be used by the clients polling the result. 
 
 
@@ -82,31 +82,27 @@ Let's begin with the endpoints:
 
 File main.swift:
 
-
-```swift
-
-import Router
+```
+import Axis
 import HTTPServer
-import JSON
-import UUID
-import String
+import Foundation
 
 var messages:[String:Channel<Int>] = [:]
 
 
-let app = Router { route in
+let app = BasicRouter { route in
 
     route.post("/task/new") { request in 
         var body = request.body
-        let data = try body.becomeBuffer()
-        let content = try JSONParser().parse(data: data)
-        guard let value = content["value"]?.stringValue else {
-            return Response(body: "Missing value", status: .badRequest)
+        let data = try body.becomeBuffer(deadline: 30.seconds)
+        let content = try JSONMapParser().parse(data)
+        guard let value = content?["value"].string else {
+            return Response(status: .badRequest, body: "Missing value")
         }
         guard let intValue = Int(value) else {
-            return Response(body: "\(value) is not a number".data, status: .badRequest)
+            return Response(status: .badRequest, body: "\(value) is not a number")
         }
-        
+
         let taskId = UUID().description
         let channel = Channel<Int>()
         messages[taskId] = channel
@@ -116,8 +112,10 @@ let app = Router { route in
             channel.send(computedPrime)
         }
 
-        return Response(body: JSONSerializer().serialize(json: ["taskId": .string(taskId)]), 
-            headers: ["Content-type": "application/json"])
+        return Response(
+            headers: ["Content-type": "application/json"],
+            body: try! JSONMapSerializer.serialize(["taskId": .string(taskId)])
+        )
     }
 
     route.get("/task/:taskid") { request in
@@ -125,11 +123,14 @@ let app = Router { route in
             return Response(status: .internalServerError)
         }
         guard let channel = messages[taskid] else {
-            return Response(body: "Routine not found", status: .notFound)
+            return Response(
+                status: .notFound,
+                body: "Routine not found"
+            )
         }
         var response: Response?
         select { when in
-            when.received(valueFrom: channel) { message in
+            when.receive(from: channel) { message in
                 response = Response(body: "Result: \(message)")
                 messages[taskid] = nil
             }
@@ -142,6 +143,7 @@ let app = Router { route in
 }
 
 try Server(host: "0.0.0.0", port: 8080, reusePort: true, responder: app).start()
+
 ```
 
 
