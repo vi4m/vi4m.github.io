@@ -23,29 +23,6 @@ write full featured microservices in Swift, as well as commandline applications,
 
 > Beware - it's neither stable, nor have documentation yet, but the Sources are really readable. The components are slick, boundaries well defined, but the real deal is - it's really easy to play with, customize, hack something working quickly. Thanks to Swift generics and protocols it's a joy to use. 
 
-## Swiftenv
-
-Swift is evolving really quickly, during 3.x development source compatibility was frequently broken. Swiftenv helps to manage different Swift versions across the system, before 3.x land completely. 
-
-Swiftenv is swift wrapper similar to pyenv. It allows using different Swift versions, alongside different projects. Swiftenv takes care of replacing your `swift` command with the desired swift version, defined in the `.swiftenv` file.
-
-How to use it?
-
-1. First, install swiftenv from [here](https://github.com/kylef/swiftenv).
-2. Then, make sure to install Swift 3 snapshot which is stable enough to use with Zewo. I recommend to use 05-31 snapshot.
-
-	swiftenv install DEVELOPMENT-SNAPSHOT-2016-05-31-a
-
-3. To see all installed swift versions, just type `swiftenv versions`. Version selected with `*` is the current one.
-
-```
-3.0-dev
-DEVELOPMENT-SNAPSHOT-2016-05-31-a
-DEVELOPMENT-SNAPSHOT-2016-06-20-a
-*DEVELOPMENT-SNAPSHOT-2016-07-25-a (set by .swiftenv/version)
-3.0
-2.2
-```
 
 ## SPM - swift package manager. 
 
@@ -103,20 +80,6 @@ Create your project dir:
 ```
 > mkdir hello && cd hello
 ````
-	
-Choose swift version to use:
-
-```
-> swiftenv install DEVELOPMENT-SNAPSHOT-2016-05-31-a
-> swiftenv local DEVELOPMENT-SNAPSHOT-2016-05-31-a
-```
-	
-".swift-version" in the current directory will point to:
-
-```
-> cat .swift-version 
-DEVELOPMENT-SNAPSHOT-2016-05-31-a
-```
 	
 Now, let's generate barebones of the package:
 
@@ -199,10 +162,9 @@ import PackageDescription
 let package = Package(
     name: "hello", 
     dependencies: [
-        .Package(url: "https://github.com/Zewo/Router.git", majorVersion: 0, minor: 7),
-        .Package(url: "https://github.com/VeniceX/HTTPServer.git", majorVersion: 0, minor: 7),
-        .Package(url: "https://github.com/Zewo/JSON.git", majorVersion: 0, minor: 9),
-        .Package(url: "https://github.com/VeniceX/File.git", majorVersion: 0, minor: 7)
+      .Package(url: "https://github.com/Zewo/Axis.git", majorVersion: 0, minor: 14),
+      .Package(url: "https://github.com/Zewo/HTTPServer.git", majorVersion: 0, minor: 14)
+  
     ]
 )
 ```
@@ -212,10 +174,9 @@ Now let's write full-featured http app with routing. We use only 2 modules from 
 
 ```swift
 
-import Router
 import HTTPServer
-	
-let app = Router { route in
+    
+let app = BasicRouter { route in
     route.get("/hello/:name") { request in
         guard let name = request.pathParameters["name"] else {
             return Response(status: .internalServerError)
@@ -223,8 +184,8 @@ let app = Router { route in
         return Response(body: "Nice to meet you, \(name)!")
     }
 }
-	
-try Server(app).start()
+    
+try Server(responder: app).start()
 ```	
 	
 Read more about [routing](https://github.com/Zewo/Router) and [HTTP server](https://github.com/VeniceX/HTTPServer/blob/master/Source/Server.swift) for more details.
