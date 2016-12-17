@@ -82,7 +82,8 @@ Let's begin with the endpoints:
 
 File main.swift:
 
-```
+```swift
+
 import Axis
 import HTTPServer
 import Foundation
