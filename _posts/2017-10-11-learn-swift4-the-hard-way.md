@@ -1,4 +1,4 @@
-## Swift 4 on Linux - Foundation tutorial
+## Swift 4 by example - Foundation tutorial
 
 Swift is powerful, fast and safe programming language. From version 2 it's open source, and officialy supported on Linux. Its native performance, type safety, interactive (REPL) playground and scripting posibility, is a joy to use. 
 
@@ -72,9 +72,11 @@ How to run it?
 #### Printing to stdin
 
 ```swift
+
 	FileHandle.standardError.write("test".data(using: .utf8)!)
 	FileHandle.standardInput.write("test".data(using: .utf8)!)
 	FileHandle.standardOutput.write("test".data(using: .utf8)!)
+	
 ```
 
 ### Executing shell commands
@@ -128,6 +130,7 @@ This example prints system logs for 10 seconds, and then exits.
 #### Redirect stdin / stdout
 
 ```swift
+
 	import Foundation
 	  
 	let p = Process()
