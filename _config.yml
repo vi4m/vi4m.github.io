@@ -11,7 +11,7 @@ is_user_page: true
 # Build settings
 markdown: kramdown
 permalink: pretty
-
+theme: minima
 
 author :
   name : Marcin Kliks
