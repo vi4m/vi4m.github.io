@@ -39,49 +39,48 @@ How to run it?
 ### Printing text
 
 ```swift
+>print("Hello world!")
+Hello world
 
-	>print("Hello world!")
-	Hello world
-	
-	>print("""
-	Hello\nworld!
-	""") 	
-	Hello
-	world
-	
-	>print("one", "two", "three")
-	one two three
-	
-	>print("one", "two", "three", separator: ",")
-	one,two,three
-	
-	>print("one", "two", "three", separator: "\n")
-	one
-	two
-	three
-	
-	>print(1, "and", 2)
-	1 and 2
+>print("""
+Hello\nworld!
+""") 	
+Hello
+world
+
+>print("one", "two", "three")
+one two three
+
+>print("one", "two", "three", separator: ",")
+one,two,three
+
+>print("one", "two", "three", separator: "\n")
+one
+two
+three
+
+>print(1, "and", 2)
+1 and 2
 ```
 	
 #### Printing to stderr
 
 ```swift
 
-    import Foundation
-    FileHandle.standardError.write("test".data(using: .utf8)!)
+import Foundation
+FileHandle.standardError.write("test".data(using: .utf8)!)
 ```
 
 #### Printing to stdin
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    FileHandle.standardError.write("test".data(using: .utf8)!)
-    FileHandle.standardInput.write("test".data(using: .utf8)!)
-    FileHandle.standardOutput.write("test".data(using: .utf8)!)
-	
+FileHandle.standardError.write("test".data(using: .utf8)!)
+FileHandle.standardInput.write("test".data(using: .utf8)!)
+FileHandle.standardOutput.write("test".data(using: .utf8)!)
+
 ```
 
 ### Executing shell commands
@@ -90,30 +89,30 @@ How to run it?
 
 ```swift
 	
-    import Foundation
+import Foundation
 
-    let p = Process()
-    p.launchPath = "/usr/bin/wc"
-    p.arguments = ["-l", "/etc/passwd"]
-    p.launch()
-    p.waitUntilExit()
+let p = Process()
+p.launchPath = "/usr/bin/wc"
+p.arguments = ["-l", "/etc/passwd"]
+p.launch()
+p.waitUntilExit()
 ```	
 	
 #### Suspend and resume process in background
 
 ```swift
 
-    import Foundation
-    	
-    let p = Process()
-    p.launchPath = "/bin/cat"
-    p.arguments = ["/var/log/system.log"]
-    p.launch()
-    p.suspend()
-    sleep(1)
-    p.resume()
-    sleep(1)
-    p.terminate()
+import Foundation
+
+let p = Process()
+p.launchPath = "/bin/cat"
+p.arguments = ["/var/log/system.log"]
+p.launch()
+p.suspend()
+sleep(1)
+p.resume()
+sleep(1)
+p.terminate()
 ```
 
 #### Monitor process running in background
@@ -122,38 +121,38 @@ This example prints system logs for 10 seconds, and then exits.
 
 ```swift
     
-    import Foundation
-    	
-    let p = Process()
-    p.launchPath = "/usr/bin/tail"
-    p.arguments = ["-f", "/var/log/system.log"]
-    p.launch()
-    	
-    var elapsedSeconds = 10
-    while p.isRunning && elapsedSeconds > 0  {
-    	print("Running")
-    	sleep(1)
-    	elapsedSeconds -= 1
-    }
+import Foundation
+
+let p = Process()
+p.launchPath = "/usr/bin/tail"
+p.arguments = ["-f", "/var/log/system.log"]
+p.launch()
+
+var elapsedSeconds = 10
+while p.isRunning && elapsedSeconds > 0  {
+  print("Running")
+  sleep(1)
+  elapsedSeconds -= 1
+}
 ```
 	
 #### Redirect stdin / stdout
 
 ```swift
     
-    import Foundation
-      
-    let p = Process()
-    p.launchPath = "/bin/cat"
-    p.arguments = ["-"]
-    	
-    let pp = Pipe()
-    	
-    p.standardInput = pp
-    	
-    p.launch()
-    pp.fileHandleForWriting.write("test\n\u{4}".data(using: .utf8)!)
-    p.waitUntilExit()
+import Foundation
+
+let p = Process()
+p.launchPath = "/bin/cat"
+p.arguments = ["-"]
+
+let pp = Pipe()
+
+p.standardInput = pp
+
+p.launch()
+pp.fileHandleForWriting.write("test\n\u{4}".data(using: .utf8)!)
+p.waitUntilExit()
 ```
 	
 ### Networking
@@ -162,35 +161,35 @@ This example prints system logs for 10 seconds, and then exits.
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    let downloadURL = URL(string: "http://www.google.com")!
-    let contents = String(contentsOf: downloadURL, encoding: .utf8)
-    print(contents)
+let downloadURL = URL(string: "http://www.google.com")!
+let contents = String(contentsOf: downloadURL, encoding: .utf8)
+print(contents)
 ```
 
 #### Download HTTP document and autodetect(sniff) encoding
   
  ```swift
      
-    import Foundation
+import Foundation
 
-    var x: String.Encoding = String.Encoding.ascii 
-    let url = "https://www.ecma-inational.org/publications/files/ECMA-ST/Ecma-128.pdf"
-    try? String(contentsOf: URL.init(
-        string: url)!, 
-        usedEncoding: &x) 
-      
-    print(x) 
+var x: String.Encoding = String.Encoding.ascii 
+let url = "https://www.ecma-inational.org/publications/files/ECMA-ST/Ecma-128.pdf"
+try? String(contentsOf: URL(
+            string: url)!, 
+            usedEncoding: &x) 
+
+print(x) 
 ```
 
 #### Download binary file
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    let fileContents = Data(contentsOf: URL("http://filea.x")!)
+let fileContents = Data(contentsOf: URL("http://filea.x")!)
 ```
 
 *Note*:  It uses RAM memory to store entire file in it, it can be handy for smaller files / quick scripts.
@@ -199,18 +198,17 @@ This example prints system logs for 10 seconds, and then exits.
 
 ```swift
     
-    import Foundation
-    import Dispatch
-    	
-    let config = URLSessionConfiguration.default
-    let s = URLSession(configuration: config)
- 
-    let task = s.downloadTask(with: URL(string: "http://www.wp.pl")!) { url, response, err in
-            count += 1
-            print(count)
-	
-    }
-    task.resume()
+import Foundation
+import Dispatch
+
+let config = URLSessionConfiguration.default
+let s = URLSession(configuration: config)
+
+let task = s.downloadTask(with: URL(string: "http://google.com")!) { url, response, err in
+    count += 1
+    print(count)
+}
+task.resume()
 
 ```
 	
@@ -221,89 +219,89 @@ This example prints system logs for 10 seconds, and then exits.
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    let binaryData = Data(contentsOf: URL(fileURLWithPath: "/tmp/a.x")) 
+let binaryData = Data(contentsOf: URL(fileURLWithPath: "/tmp/a.x")) 
 ```
 
 #### Read text file
 	
 ```swift
     
-    import Foundation
+import Foundation
 
-    let textFile = String(contentsOf: URL(fileURLWithPath: "/etc/passwd")) 
+let textFile = String(contentsOf: URL(fileURLWithPath: "/etc/passwd")) 
 ```
 	
 #### Write to text file
 
 ```swift
 
-    import Foundation
+import Foundation
 
-    "hello world".write(toFile: "/etc/xxx", atomically: true, encoding: .utf8)
+"hello world".write(toFile: "/etc/xxx", atomically: true, encoding: .utf8)
 ```
 	
 #### Write to stderr
 
 ```swift
 
-    import Foundation
+import Foundation
 
-    FileHandle.standardError.write("test".data(using: .utf8)!)
+FileHandle.standardError.write("test".data(using: .utf8)!)
 ```
 
 #### Write to stdin
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    FileHandle.standardError.write("test".data(using: .utf8)!)
-    FileHandle.standardInput.write("test".data(using: .utf8)!)
-    FileHandle.standardOutput.write("test".data(using: .utf8)!)
+FileHandle.standardError.write("test".data(using: .utf8)!)
+FileHandle.standardInput.write("test".data(using: .utf8)!)
+FileHandle.standardOutput.write("test".data(using: .utf8)!)
 ```
 	
 #### Read data in chunks
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    let f = FileHandle(forReadingAtPath: "/etc/passwd")
-    f!.readData(ofLength: 10)
-    
-    // all: 
-    f!.readDataToEndOfFile()
+let f = FileHandle(forReadingAtPath: "/etc/passwd")
+f!.readData(ofLength: 10)
+
+// all: 
+f!.readDataToEndOfFile()
 ```
 	
 #### Check if file is readable
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    if FileManager.default.isReadableFile(atPath: "/etc/fstab") {
-    	
-    }
+if FileManager.default.isReadableFile(atPath: "/etc/fstab") {
+
+}
 ```
 	
 #### Remove file
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    FileManager.default.removeItem(at: URL(fileURLWithPath: "/tmp/x")!)
+FileManager.default.removeItem(at: URL(fileURLWithPath: "/tmp/x")!)
 ```
 
 #### Copy file
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    FileManager.default.copyItem(atPath: "from.txt", toPath: "to.txt")
+FileManager.default.copyItem(atPath: "from.txt", toPath: "to.txt")
 ```
 
 
@@ -311,9 +309,9 @@ This example prints system logs for 10 seconds, and then exits.
 
 ```swift
 
-    import Foundation
+import Foundation
 
-    FileManager.default.copyItem(atPath: "/etc/", toPath: "/etc.backup")
+FileManager.default.copyItem(atPath: "/etc/", toPath: "/etc.backup")
 ```
 
  
@@ -322,16 +320,16 @@ This example prints system logs for 10 seconds, and then exits.
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    // Shallow list without folders
-    for entry in FileManager.default.contentsOfDirectory(atPath: "/") {
-    	
-    }
-    	
-    // deep list
-    for item in  FileManager.default.enumerator(atPath: "/etc")! {  
-       print(item) 
+// Shallow list without folders
+for entry in FileManager.default.contentsOfDirectory(atPath: "/") {
+
+}
+
+// deep list
+for item in  FileManager.default.enumerator(atPath: "/etc")! {  
+  print(item) 
 }
 ```
 
@@ -339,24 +337,24 @@ This example prints system logs for 10 seconds, and then exits.
 
 ```swift
 
-    import Foundation
+import Foundation
 
-    FileManager.default.subpathsOfDirectory(atPath: "/root/")
+FileManager.default.subpathsOfDirectory(atPath: "/root/")
 ```
 
 #### Create directory with permissions
 
 ```swift
     
-    import Foundation
+import Foundation
 
-    let permission = 0o700 as NSNumber
-    	
-    FileManager.default.createDirectory(
-        atPath: "/tmp/my/brand/new/directory", 
-        withIntermediateDirectories: true, 
-        attributes: [.posixPermissions: permission]
-    )
+let permission = 0o700 as NSNumber
+
+FileManager.default.createDirectory(
+  atPath: "/tmp/my/brand/new/directory", 
+  withIntermediateDirectories: true, 
+  attributes: [.posixPermissions: permission]
+)
 ```
 
 ## Coroutines / threads / 
@@ -367,24 +365,24 @@ Swift comes with LibDispatch which uses threads and queues for dealing with asyn
 
 ```swift
         
-    import Foundation
-    import Dispatch
-    	
-    let config = URLSessionConfiguration.default
-    	
-    let s = URLSession(configuration: config)
-    	
-    var count = 0
-    for i in 1...100 {
-    	
-            let task = s.downloadTask(with: URL(string: "http://www.wp.pl")!) { url, response, err in
-                    count += 1
-                    print(count)
-    	
-            }
-            task.resume()
-            print("Started")
-    	
+import Foundation
+import Dispatch
+
+let config = URLSessionConfiguration.default
+
+let s = URLSession(configuration: config)
+
+var count = 0
+for i in 1...100 {
+
+let task = s.downloadTask(with: URL(string: "http://www.wp.pl")!) { url, response, err in
+  count += 1
+  print(count)
+
+}
+task.resume()
+print("Started")
+
 }
 dispatchMain()
 ```
@@ -397,20 +395,20 @@ Just create swift file:
 	
 ```swift
     
-    touch /tmp/hello && chmod a+x /tmp/hello
+touch /tmp/hello && chmod a+x /tmp/hello
 ```
 	
 With contents:
 
 ```swift
     
-    #!/usr/bin/xcrun swift
-      
-    import Foundation
-    
-    print("Hello, what's your name?")
-    let name = readLine(strippingNewline: true)
-    print("Hello, \(name)")
+#!/usr/bin/xcrun swift
+  
+import Foundation
+
+print("Hello, what's your name?")
+let name = readLine(strippingNewline: true)
+print("Hello, \(name)")
 ```
 	
 Run it with `/tmp/hello` 
