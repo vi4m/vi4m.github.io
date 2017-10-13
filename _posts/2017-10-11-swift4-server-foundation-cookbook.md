@@ -33,17 +33,16 @@ docker run --rm --privileged -ti swiftdocker/swift:latest /usr/bin/swift -I /usr
 
 ### How to use this tutorial
 
-* This tutorial is about using Foundation API's, not language guide. Make sure you alredy know [this great intro to Swift 4](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID1)
-* This tutorial doesn't cover writing web app in swift, follow [this one]
+* **Make sure you read [this great intro to Swift 4](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID1)** 
+* This tutorial is about using Foundation API's, it's not a language guide. 
+* This tutorial doesn't cover writing web app in swift, though - it's coming soon!
 
+To play with examples in this tutorial, you can use swift [REPL](https://pl.wikipedia.org/wiki/REPL). You also compile the code with `swiftc [file.swift]`
 
-To play with examples in this tutorial, you can use swift [REPL](https://pl.wikipedia.org/wiki/REPL) or just compile it with swiftc [file.swift]
-How to run it?
-
-1. Pure text mode terminal:
+1. To run REPL:
 	1. On Mac - just type `swift`
-	2. Linux - type: `swift -I /usr/lib/swift/clang/include/`
-2. XCode playground - fire up Xcode, then `File -> New -> Playground`
+	2. Linux - type: `swift -I /usr/lib/swift/clang/include/` 
+2. You can also use XCode playground - fire up Xcode, then `File -> New -> Playground`
 
 [More capabilities of Swift REPL here](https://swift.org/getting-started/#using-the-repl)
 	
