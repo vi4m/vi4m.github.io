@@ -66,6 +66,8 @@ How to run it?
 #### Printing to stderr
 
 ```swift
+
+    import Foundation
     FileHandle.standardError.write("test".data(using: .utf8)!)
 ```
 
@@ -73,6 +75,8 @@ How to run it?
 
 ```swift
     
+    import Foundation
+
     FileHandle.standardError.write("test".data(using: .utf8)!)
     FileHandle.standardInput.write("test".data(using: .utf8)!)
     FileHandle.standardOutput.write("test".data(using: .utf8)!)
@@ -85,6 +89,8 @@ How to run it?
 
 ```swift
 	
+    import Foundation
+
     let p = Process()
     p.launchPath = "/usr/bin/wc"
     p.arguments = ["-l", "/etc/passwd"]
@@ -155,6 +161,8 @@ This example prints system logs for 10 seconds, and then exits.
 
 ```swift
     
+    import Foundation
+
     let downloadURL = URL(string: "http://www.google.com")!
     let contents = String(contentsOf: downloadURL, encoding: .utf8)
     print(contents)
@@ -164,6 +172,8 @@ This example prints system logs for 10 seconds, and then exits.
   
  ```swift
      
+    import Foundation
+
     var x: String.Encoding = String.Encoding.ascii 
     let url = "https://www.ecma-inational.org/publications/files/ECMA-ST/Ecma-128.pdf"
     try? String(contentsOf: URL.init(
@@ -177,6 +187,8 @@ This example prints system logs for 10 seconds, and then exits.
 
 ```swift
     
+    import Foundation
+
     let fileContents = Data(contentsOf: URL("http://filea.x")!)
 ```
 
@@ -210,6 +222,8 @@ session.
 
 ```swift
     
+    import Foundation
+
     let binaryData = Data(contentsOf: URL(fileURLWithPath: "/tmp/a.x")) 
 ```
 
@@ -217,12 +231,16 @@ session.
 	
 ```swift
     
+    import Foundation
+
     let textFile = String(contentsOf: URL(fileURLWithPath: "/etc/passwd")) 
 ```
 	
 #### Write to text file
 
 ```swift
+
+    import Foundation
 
     "hello world".write(toFile: "/etc/xxx", atomically: true, encoding: .utf8)
 ```
@@ -231,6 +249,8 @@ session.
 
 ```swift
 
+    import Foundation
+
     FileHandle.standardError.write("test".data(using: .utf8)!)
 ```
 
@@ -238,6 +258,8 @@ session.
 
 ```swift
     
+    import Foundation
+
     FileHandle.standardError.write("test".data(using: .utf8)!)
     FileHandle.standardInput.write("test".data(using: .utf8)!)
     FileHandle.standardOutput.write("test".data(using: .utf8)!)
@@ -247,6 +269,8 @@ session.
 
 ```swift
     
+    import Foundation
+
     let f = FileHandle(forReadingAtPath: "/etc/passwd")
     f!.readData(ofLength: 10)
     
@@ -258,6 +282,8 @@ session.
 
 ```swift
     
+    import Foundation
+
     if FileManager.default.isReadableFile(atPath: "/etc/fstab") {
     	
     }
@@ -267,6 +293,8 @@ session.
 
 ```swift
     
+    import Foundation
+
     FileManager.default.removeItem(at: URL(fileURLWithPath: "/tmp/x")!)
 ```
 
@@ -274,6 +302,8 @@ session.
 
 ```swift
     
+    import Foundation
+
     FileManager.default.copyItem(atPath: "from.txt", toPath: "to.txt")
 ```
 
@@ -281,6 +311,8 @@ session.
 #### Copy directory
 
 ```swift
+
+    import Foundation
 
     FileManager.default.copyItem(atPath: "/etc/", toPath: "/etc.backup")
 ```
@@ -291,6 +323,8 @@ session.
 
 ```swift
     
+    import Foundation
+
     // Shallow list without folders
     for entry in FileManager.default.contentsOfDirectory(atPath: "/") {
     	
@@ -306,6 +340,8 @@ session.
 
 ```swift
 
+    import Foundation
+
     FileManager.default.subpathsOfDirectory(atPath: "/root/")
 ```
 
@@ -313,6 +349,8 @@ session.
 
 ```swift
     
+    import Foundation
+
     let permission = 0o700 as NSNumber
     	
     FileManager.default.createDirectory(
