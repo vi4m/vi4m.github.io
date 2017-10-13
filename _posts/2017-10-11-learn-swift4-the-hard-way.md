@@ -15,8 +15,7 @@ There are 2 ways to install Swift 4 for server side applications:
 2. You can also use Docker instead, (it runs on all distros)
 
 ```bash
-	docker run --rm --privileged -ti swiftdocker/swift:latest /bin/bash swift -I /usr/lib/swift/clang/include/
-	swift -I /usr/lib/swift/clang/include/
+docker run --rm --privileged -ti swiftdocker/swift:latest /usr/bin/swift -I /usr/lib/swift/clang/include/
 ```
 	
 ### How to use this tutorial
