@@ -46,7 +46,7 @@ How to run it?
 	
 	>print("""
 	Hello\nworld!
-	") 	
+	""") 	
 	Hello
 	world
 	
@@ -214,8 +214,6 @@ This example prints system logs for 10 seconds, and then exits.
     task.resume()
 
 ```
-
-session.
 	
 	
 ### Filesystem operations
