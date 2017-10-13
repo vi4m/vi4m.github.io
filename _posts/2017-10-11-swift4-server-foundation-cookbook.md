@@ -21,7 +21,16 @@ There are 2 ways to install Swift 4 for server side applications:
 ```bash
 docker run --rm --privileged -ti swiftdocker/swift:latest /usr/bin/swift -I /usr/lib/swift/clang/include/
 ```
-	
+
+### What's so special about Swift 4 ? 
+
+* expressive, high level language with generics
+* safe by design(type safety, [optionals](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html), [error handling](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/ErrorHandling.html#//apple_ref/doc/uid/TP40014097-CH42-ID508), undefined behavior detection)
+* native code compilation with [high](http://www.marcinkliks.pl/2015/02/22/swift-vs-others/) [runtime performance](http://benchmarksgame.alioth.debian.org/u64q/swift.html)
+* seamless, zero cost C language interoperability without [ha](https://golang.org/cmd/cgo/)[ck](http://cffi.readthedocs.io/en/latest/overview.html#purely-for-performance-api-level-out-of-line)[s](https://stackoverflow.com/questions/7699020/what-makes-jni-calls-slow)
+* efficient memory management [arc](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html) and [ownership](https://github.com/apple/swift/blob/master/docs/OwnershipManifesto.md)
+* functional paradigms [included](https://www.raywenderlich.com/114456/introduction-functional-programming-swift) 
+
 ### How to use this tutorial
 
 * This tutorial is about using Foundation API's, not language guide. Make sure you alredy know [this great intro to Swift 4](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html#//apple_ref/doc/uid/TP40014097-CH2-ID1)
