@@ -181,7 +181,16 @@ a:visited { color: #205caa; }
   margin-top: 5px;
 }
 
-.post-content { margin: 0 0 30px; }
+.post-content { 
+  
+  
+  margin: 0 0 30px; 
+  word-wrap: break-word;
+  /* word-break: break-all; */
+  white-space: normal;
+  -webkit-hyphens: none;
+
+}
 
 .post-content > * { margin: 20px 0; }
 
@@ -401,5 +410,13 @@ a:visited { color: #205caa; }
     clear: both;
     width: auto;
     margin: 0 0 15px; }
-
 }
+
+.logo {
+  display: inline;
+  float: right;
+  margin-left: 35px;
+  margin-top: 8px;
+}
+
+
