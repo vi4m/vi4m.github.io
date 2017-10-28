@@ -16,6 +16,11 @@ layout: default
   </header>
 
   <article class="post-content">
+     {{ if page.logo }}
+    <div class="display: inline; float: right">
+    <img width=160 height=120  src="{{page.logo}}"></img>
+    </div>
+    {{ endif }}
   {{ content }}
   </article>
   {{ if page.comments }}
