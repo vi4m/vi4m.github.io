@@ -27,4 +27,4 @@ defaults:
       path: ""      # empty string for all files
       type: posts   # limit to posts
     values:
-      logo: false
+      logo: ""
