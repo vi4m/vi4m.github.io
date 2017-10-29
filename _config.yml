@@ -20,3 +20,11 @@ author :
   twitter : vi4m
   linkedin: marcin.kliks
   stackoverflow: vi4m
+  
+defaults:
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: posts   # limit to posts
+    values:
+      logo: false
