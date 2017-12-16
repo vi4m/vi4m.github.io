@@ -16,14 +16,14 @@ layout: default
   </header>
 
   <article class="post-content">
-     {{ if page.logo and page.logo != blank }}
+     {% if page.logo and page.logo != blank %}
     <div class="logo">
-    <img width=160 height=120  src="{{page.logo}}"></img>
+    <img width=180 src="{{page.logo}}"></img>
     </div>
-    {{ endif }}
+    {% endif %}
   {{ content }}
   </article>
-  {{ if page.comments }}
+  {% if page.comments %}
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -38,6 +38,6 @@ layout: default
     </script>
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-  {{ endif }}
+  {% endif %}
 
 </div>

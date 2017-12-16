@@ -8,11 +8,11 @@ layout: default
 
   <article class="post-content">
     <div>
-    {{ if page.logo }}
+    {% if page.logo and page.logo != blank %}
     <div class="logo">
-    <img width=160 height=120  src="{{page.logo}}"></img>
+    <img width=180 src="{{ page.logo }}"></img>
     </div>
-    {{ endif }}
+    {% endif %}
   {{ content }}
     </div>
   </article>

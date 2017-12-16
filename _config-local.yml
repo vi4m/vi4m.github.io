@@ -1,0 +1,30 @@
+# Site settings
+title: Software Craftsmanship by Marcin Kliks
+email: spamlist@icloud.com
+description: "How to make performant, usable and sexy software using Python, Swift and others."
+baseurl: ""
+url: "http://www.marcinkliks.pl"
+highlighter: rouge
+is_user_page: true
+
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+theme: minima
+
+author :
+  name : Marcin Kliks
+  email : spamlist@icloud.com
+  github : vi4m
+  twitter : vi4m
+  linkedin: marcin.kliks
+  stackoverflow: vi4m
+  
+defaults:
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: posts   # limit to posts
+    values:
+      logo: ""
