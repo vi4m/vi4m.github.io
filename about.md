@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 published: true
+logo: https://user-images.githubusercontent.com/552398/34072535-4fee4702-e289-11e7-9498-472951be485f.jpeg
 ---
 
 

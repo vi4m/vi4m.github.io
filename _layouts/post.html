@@ -16,7 +16,7 @@ layout: default
   </header>
 
   <article class="post-content">
-     {{ if page.logo }}
+     {{ if page.logo and page.logo != blank }}
     <div class="logo">
     <img width=160 height=120  src="{{page.logo}}"></img>
     </div>
