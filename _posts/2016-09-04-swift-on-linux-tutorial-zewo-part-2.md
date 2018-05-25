@@ -2,6 +2,7 @@
 layout: post
 title: "Swift 3 on Linux tutorial - Zewo - part 2"
 tags: swift
+comments: true
 ---
 
 
