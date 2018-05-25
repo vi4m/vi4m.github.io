@@ -1,6 +1,7 @@
 ---
 title: Swift vs Go vs Python battle
 layout: post
+comments: true
 ---
 
 ## Sweet spot
@@ -78,4 +79,4 @@ _In this particular test - Python is 34x slower than Swift._
 - PyPy's performance is better than expected. It's just 6x slower than Swift, but also 6x faster than generic CPython. If it is so fast perhaps we should ask why it's not the default Python interpreter ;-) 
 - Swift being faster than Go is quite surprising because Go is *3 years ahead of Swift in public development*.
 - I can't wait to see [Chris Lattner][http://nondot.org/sabre/] open-source Swift.
-- Swift is so young (6 months) that it still has some nasty bugs and rough edges. I will write about it another day.
+- Swift is so young (6 months) that it still has some nasty bugs and rough edges. I will write about it another day
