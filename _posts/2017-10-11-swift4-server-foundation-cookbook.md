@@ -3,6 +3,7 @@ layout: post
 title: "Swift 4 Cookbook - Linux & MacOS, part 1"
 tags: swift
 logo: https://user-images.githubusercontent.com/552398/31557278-5deba14c-b048-11e7-9ab0-b2d115d15bc9.png
+comments: true
 ---
 
 
