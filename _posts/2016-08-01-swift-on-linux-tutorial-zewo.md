@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Swift 3 on Linux tutorial - Zewo - part1
+comments: true
 ---
 
 
