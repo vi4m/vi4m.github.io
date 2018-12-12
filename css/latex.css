@@ -21,42 +21,42 @@ https://github.com/AndrewBelt/WiTeX
 	font-family: 'Latin Modern Roman';
 	font-weight: normal;
 	font-style: normal;
-	src: url('/css/fonts/lmroman10-regular.woff') format('woff');
+	src: url('/css/lmroman10-regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Latin Modern Roman';
 	font-weight: bold;
 	font-style: normal;
-	src: url('/css/fonts/lmroman10-bold.woff') format('woff');
+	src: url('/css/lmroman10-bold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Latin Modern Roman';
 	font-weight: normal;
 	font-style: italic;
-	src: url('/css/fonts/lmroman10-italic.woff') format('woff');
+	src: url('/css/lmroman10-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Latin Modern Roman';
 	font-weight: bold;
 	font-style: italic;
-	src: url('/css/fonts/lmroman10-bolditalic.woff') format('woff');
+	src: url('/css/lmroman10-bolditalic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Latin Modern Mono';
 	font-weight: normal;
 	font-style: normal;
-	src: url('/css/fonts/lmmono10-regular.woff') format('woff');
+	src: url('/css/lmmono10-regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Latin Modern Mono';
 	font-weight: normal;
 	font-style: italic;
-	src: url('/css/fonts/lmmono10-italic.woff') format('woff');
+	src: url('/css/lmmono10-italic.woff') format('woff');
 }
 
 /* Page Layout */
@@ -243,4 +243,3 @@ pre, code {
 sup {
 	text-indent: 0;
 }
-
