@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 
 ## Książki warte przeczytania / 2018
