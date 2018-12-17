@@ -42,6 +42,6 @@ Jak precyzyjnie niczym laser wyrażać myśli na piśmie, aby docierać do odbio
 
 ## Coders at work - Peter Seibel
 
-![images.jpeg]({{site.baseurl}}/assets/images.jpeg) {: .center-image }
+![images.jpeg]({{site.baseurl}}/assets/images.jpeg){: .center-image }
 
 Okazuje się, że programista programiście nierówny. Nawet Ci najlepsi programiści programują zupełnie inaczej. Brendan Eich lubi programować w stylu eksploracyjnym, a twórca Linuksowego XSavera - pisze w niskopoziomowym C ciurkiem, od góry do dołu. Obaj są legandami. Wspaniałe wywiady z wieloma znakomitymi programistami, które inspirują i dodają nadzieji, że każdy może odnieść sukces.
