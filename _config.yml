@@ -28,3 +28,10 @@ defaults:
       type: posts   # limit to posts
     values:
       logo: ""
+      
+      
+prose:
+  rooturl: '_posts'
+  siteurl: 'http://vi4m.github.io/'
+  media: 'assets'
+ 
