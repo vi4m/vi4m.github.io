@@ -32,7 +32,7 @@ defaults:
       
 prose:
   rooturl: '_posts'
-  siteurl: 'http://vi4m.github.io/'
+  siteurl: 'http://www.marcinkliks.pl/'
   media: 'assets'
   metadata:
   _posts:
