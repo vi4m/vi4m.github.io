@@ -2,11 +2,12 @@
 published: true
 layout: post
 comments: true
+title: Książki warte przeczytania
 ---
 
 ## Książki warte przeczytania / 2018
 
-![books.jpeg]({{site.baseurl}}/_drafts/books.jpeg)
+![./assets/books.jpeg]({{site.baseurl}}/assets/books.jpeg)
 
 # 12 Rules of Life / 12 życiowych zasad -  J. Peterson
 
