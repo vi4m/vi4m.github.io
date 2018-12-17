@@ -5,6 +5,12 @@ comments: true
 title: Książki warte przeczytania
 ---
 
+<style type="text/css">
+  .small-image {
+    max-width: 100px; float: left;
+  }
+  
+</style>
 # Książki warte przeczytania / 2018
 
 ![./assets/books.jpeg]({{site.baseurl}}/assets/books.jpeg)
@@ -42,6 +48,6 @@ Jak precyzyjnie niczym laser wyrażać myśli na piśmie, aby docierać do odbio
 
 ## Coders at work - Peter Seibel
 
-![images.jpeg]({{site.baseurl}}/assets/images.jpeg){: .center-image }
+![images.jpeg]({{site.baseurl}}/assets/images.jpeg){: .small-image }
 
 Okazuje się, że programista programiście nierówny. Nawet Ci najlepsi programiści programują zupełnie inaczej. Brendan Eich lubi programować w stylu eksploracyjnym, a twórca Linuksowego XSavera - pisze w niskopoziomowym C ciurkiem, od góry do dołu. Obaj są legandami. Wspaniałe wywiady z wieloma znakomitymi programistami, które inspirują i dodają nadzieji, że każdy może odnieść sukces.
