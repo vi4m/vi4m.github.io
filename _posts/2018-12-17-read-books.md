@@ -7,7 +7,7 @@ title: Książki warte przeczytania
 
 <style type="text/css">
   .small-image {
-    max-width: 100px; float: left; margin: 20px;
+    max-width: 100px; float: left; margin-left: 20px; margin-right: 20px; 
   }
   
 </style>
