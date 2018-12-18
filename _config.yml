@@ -31,23 +31,22 @@ defaults:
       
       
 prose:
-  rooturl: '_posts'
-  siteurl: 'http://www.marcinkliks.pl/'
+  siteurl: "http://www.marcinkliks.pl"
   media: 'assets'
   metadata:
-  _posts:
-    - name: "title"
-      field:
-        element: "text"
-        label: "title"
-    - name: "comments"
-      field:
-        element: "hidden"
-        label: "true"
+    _posts:
+      - name: "title"
+        field:
+          element: "text"
+          label: "title"
+      - name: "comments"
+        field:
+          element: "hidden"
+          label: "true"
         
-    - name: "layout"
-      field:
-        element: "hidden"
-        value: "post"
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "post"
         
     
