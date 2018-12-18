@@ -27,8 +27,12 @@ Książka znakomitego profesora psychologii o 12 pięknych zasadach, które nie 
 
 ## Siła nawyku - Charles Duhigg
 
-Nawyki nami rządzą - jak sprawić by działałby na naszą korzyść?
+![sila-nawyku.jpg]({{site.baseurl}}/assets/sila-nawyku.jpg){: .small-image}
+Nawyki nami rządzą - jak sprawić by działałby na naszą korzyść? 
+Kilka prostych tricków - "ustaw buty koło łóżka", które skutecznie walczą z alter-ego.
+Pozycja dość znana, ale polecam do niej wracać co pewien czas.
 
+<div style="clear:both;"></div>
 
 ## Homo deus - Yuval Noah Harari
 
