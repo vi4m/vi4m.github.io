@@ -28,7 +28,7 @@ Nawyki nami rządzą - jak sprawić by działałby na naszą korzyść?
 
 ## Homo deus - Yuval Noah Harari
 
-![homo-deus.jpg]({{site.baseurl}}/assets/homo-deus.jpg)
+![homo-deus.jpg]({{site.baseurl}}/assets/homo-deus.jpg){: .small-image }
 Futurystyczna acz ponura wizja przyszłości w której nie ma chorób i błędów, nie jednostka podejmuje decyzje, tylko "system" - co da doskonałą przyszłość nadludzi. Książka polecana przez Billa Gatesa, Zuckerberga ;-)
 
 
