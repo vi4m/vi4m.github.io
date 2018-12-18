@@ -5,6 +5,7 @@ published: true
 title: Książki warte przeczytania
 ---
 
+
 <style type="text/css">
   .small-image {
     max-width: 100px; float: left; margin-left: 20px; margin-right: 20px; 
@@ -16,10 +17,13 @@ title: Książki warte przeczytania
 ![./assets/books.jpeg]({{site.baseurl}}/assets/books.jpeg)
 
 ## 12 Rules of Life / 12 życiowych zasad -  J. Peterson
+![12rules.jpg]({{site.baseurl}}/assets/12rules.jpg){: .small-image}
 
 Dlaczego strukturami społecznymi ludzi rządzą te same zasady co społeczności ... krabów?
 W jaki sposób silny kręgosłup moralny pozwala odnieść sukces? 
 Książka znakomitego profesora psychologii o 12 pięknych zasadach, które nie ułatwiają, ale na pewno nadają nowy sens życiu.
+<div style="clear:both;"></div>
+
 
 ## Siła nawyku - Charles Duhigg
 
@@ -35,17 +39,25 @@ Futurystyczna acz ponura wizja przyszłości w której nie ma chorób i błędó
 
 ## Dlaczego Zalando? - Hagen Seidel
 
+![dlaczego-zalando.jpg]({{site.baseurl}}/assets/dlaczego-zalando.jpg){: .small-image}
+
 Ciekawa historia startupu, który nie boi się ekspansji i planowania długoterminowego zamiast szybkiego zarobku.
+<div style="clear:both;"></div>
 
 
 ## Labirynty Scruma - Jacek Wieczorek
 
+![labirynty-scruma.jpg]({{site.baseurl}}/assets/labirynty-scruma.jpg){: .small-image}
+
 Scruma znamy wszyscy - co można jeszcze wymyślić? Ano, jeśli uważasz, że twój Scrum (daily, retro, planning) działa dobrze, to przeczytaj książkę. Odczarujesz złudzenia i samego siebie. Książka bardziej skuteczna niż katechizm przed spowiedzią!
+<div style="clear:both;"></div>
 
 
 ## The pyramid principle - Barbara Minto
+![pyramid-principle.jpg]({{site.baseurl}}/assets/pyramid-principle.jpg){ :.small-image}
 
 Jak precyzyjnie niczym laser wyrażać myśli na piśmie, aby docierać do odbiorców. Jeśli szykujesz pitch do CEO - nie możesz tej pozycji pominąć.
+<div style="clear:both;"></div>
 
 
 ## Coders at work - Peter Seibel
