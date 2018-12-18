@@ -8,7 +8,7 @@ title: Książki warte przeczytania
 
 <style type="text/css">
   .small-image {
-    max-width: 100px; float: left; margin-left: 0px; margin-right: 20px; 
+    max-width: 100px; float: left; margin-left: 0px; margin-right: 20px; margin-bottom: 40px; 
   }
   
 </style>
@@ -54,7 +54,7 @@ Scruma znamy wszyscy - co można jeszcze wymyślić? Ano, jeśli uważasz, że t
 
 
 ## The pyramid principle - Barbara Minto
-![pyramid-principle.jpg]({{site.baseurl}}/assets/pyramid-principle.jpg){ :.small-image}
+![pyramid-principle.jpg]({{site.baseurl}}/assets/pyramid-principle.jpg){: .small-image}
 
 Jak precyzyjnie niczym laser wyrażać myśli na piśmie, aby docierać do odbiorców. Jeśli szykujesz pitch do CEO - nie możesz tej pozycji pominąć.
 <div style="clear:both;"></div>
