@@ -1,7 +1,7 @@
 ---
-published: true
 layout: post
 comments: true
+published: true
 title: Książki warte przeczytania
 ---
 
@@ -30,6 +30,7 @@ Nawyki nami rządzą - jak sprawić by działałby na naszą korzyść?
 
 ![homo-deus.jpg]({{site.baseurl}}/assets/homo-deus.jpg){: .small-image }
 Futurystyczna acz ponura wizja przyszłości w której nie ma chorób i błędów, nie jednostka podejmuje decyzje, tylko "system" - co da doskonałą przyszłość nadludzi. Książka polecana przez Billa Gatesa, Zuckerberga ;-)
+<div style="clear:both;"></div>
 
 
 ## Dlaczego Zalando? - Hagen Seidel
