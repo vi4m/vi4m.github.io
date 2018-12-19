@@ -38,9 +38,7 @@ It took some time to measure the part but it was really quick and easy to print 
 
 Small life hacks here and there. Bathroom improvements.
 
-![54663018022__ACE20FC8-1EA1-4131-9089-979FF5A8F279-kopia.jpg]
-
-({{site.baseurl}}/assets/54663018022__ACE20FC8-1EA1-4131-9089-979FF5A8F279-kopia.jpg)
+![54663018022__ACE20FC8-1EA1-4131-9089-979FF5A8F279-kopia.jpg]({{site.baseurl}}/assets/54663018022__ACE20FC8-1EA1-4131-9089-979FF5A8F279-kopia.jpg)
 
 
 ### Boxes
@@ -94,7 +92,6 @@ Small life hacks here and there. Bathroom improvements.
 ### 
 
 
-![54663018336__5DC693D7-4D41-4F05-892A-8F50D3250512-kopia.jpg]({{site.baseurl}}/assets/54663018336__5DC693D7-4D41-4F05-892A-8F50D3250512-kopia.jpg)
 
 
 
