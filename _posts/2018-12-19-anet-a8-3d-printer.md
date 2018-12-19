@@ -1,7 +1,8 @@
 ---
 layout: post
-published: false
+published: true
 title: anet-a8-3d-printer
+comments: true
 ---
 ## A year with Anet A8 3D Printer
 
