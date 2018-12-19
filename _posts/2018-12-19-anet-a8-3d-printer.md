@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: anet-a8-3d-printer
+title: Anet A8 3D Printer - 1 year later
 comments: true
 ---
 ## A year with Anet A8 3D Printer
