@@ -1,8 +1,8 @@
 ---
 layout: post
+comments: true
 published: true
 title: Anet A8 3D Printer - 1 year later
-comments: true
 ---
 ## A year with Anet A8 3D Printer
 
@@ -12,24 +12,15 @@ Today, you can buy 3dprinter just under 200$ (Anet A8 self assembly required in 
 
 ![IMG_6584-kopia.jpg]({{site.baseurl}}/assets/IMG_6584-kopia.jpg)
 
-
-
-### Broken IKEA doors 
-
-My IKEA dishwasher has been broken one day. Quick diagnostic showed broken door. One small plastic cap broke I half after many cycles of opening and closing. I decided to measure it, and print it out. It worked great for 2 weeks, than broke again. It showed that the problem was with construction - the arc was too small to bear with weight of doors. Having my part modeled was the best part of the game - I just changed one border to enlarge it and - voila. Printed 4 parts in advance at once.  Working great till today. 
-
 ### Dishwasher
 
-My dishwasher door broke one day. The problem was with one small plastic part, which is quite often material used by IKEA furniture. I decided to give my 3D printer a try.  Tinkercad was chosen as the simplest app to quickly prototype part. I had no previous 3D-modeling experience whatsoever. 
+My IKEA dishwasher door broke one day. The problem was with one small plastic part, which is quite often material used by IKEA furniture. I decided to give my 3D printer a try.  Tinkercad was chosen as the simplest app to quickly prototype part. I had no previous 3D-modeling experience whatsoever. 
 
 ![IMG_8047-kopia.jpg]({{site.baseurl}}/assets/IMG_8047-kopia.jpg)
 ![IMG_8039-kopia.jpg]({{site.baseurl}}/assets/IMG_8039-kopia.jpg)
 ![IMG_7933-kopia.jpg]({{site.baseurl}}/assets/IMG_7933-kopia.jpg)
 ![IMG_1895-kopia.jpg]({{site.baseurl}}/assets/IMG_1895-kopia.jpg)
 ![IMG_1890-kopia.jpg]({{site.baseurl}}/assets/IMG_1890-kopia.jpg)
-
-
-
 
 
 It took some time to measure the part but it was really quick and easy to print it out. I took 3 tries to improve it further to make it slightly bolder than original to not broke anymore. 
@@ -43,10 +34,14 @@ Small life hacks here and there. Bathroom improvements.
 
 ### Boxes
 
+I've used wood-based filament, quite expensive but worth it: https://3dreaktor.pl/filament-WOOD/Fiberlogy-FiberWood-750g-175
+
+I had to increase printing head diameter to 0.5, to not constanly get stuck. 
+But it made the difference in overall outlook of the product! Looks like real wood!
+
 ![IMG_1512-kopia.jpg]({{site.baseurl}}/assets/IMG_1512-kopia.jpg)
 ![IMG_1816-kopia.jpg]({{site.baseurl}}/assets/IMG_1816-kopia.jpg)
 ![IMG_1828-kopia.jpg]({{site.baseurl}}/assets/IMG_1828-kopia.jpg)
-
 
 
 ### Figures
@@ -88,4 +83,3 @@ Small life hacks here and there. Bathroom improvements.
 
 ![IMG_1369-kopia.jpg]({{site.baseurl}}/assets/IMG_1369-kopia.jpg)
 ![IMG_1404-kopia.jpg]({{site.baseurl}}/assets/IMG_1404-kopia.jpg)
-
