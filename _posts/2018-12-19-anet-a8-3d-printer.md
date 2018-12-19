@@ -89,9 +89,3 @@ Small life hacks here and there. Bathroom improvements.
 ![IMG_1369-kopia.jpg]({{site.baseurl}}/assets/IMG_1369-kopia.jpg)
 ![IMG_1404-kopia.jpg]({{site.baseurl}}/assets/IMG_1404-kopia.jpg)
 
-### 
-
-
-
-
-
