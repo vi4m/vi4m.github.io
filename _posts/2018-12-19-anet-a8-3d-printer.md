@@ -25,6 +25,11 @@ My dishwasher door broke one day. The problem was with one small plastic part, w
 ![IMG_8047-kopia.jpg]({{site.baseurl}}/assets/IMG_8047-kopia.jpg)
 ![IMG_8039-kopia.jpg]({{site.baseurl}}/assets/IMG_8039-kopia.jpg)
 ![IMG_7933-kopia.jpg]({{site.baseurl}}/assets/IMG_7933-kopia.jpg)
+![IMG_1895-kopia.jpg]({{site.baseurl}}/assets/IMG_1895-kopia.jpg)
+![IMG_1890-kopia.jpg]({{site.baseurl}}/assets/IMG_1890-kopia.jpg)
+
+
+
 
 
 It took some time to measure the part but it was really quick and easy to print it out. I took 3 tries to improve it further to make it slightly bolder than original to not broke anymore. 
@@ -49,14 +54,12 @@ Small life hacks here and there. Bathroom improvements.
 ### Figures
 
 ![IMG_3046-kopia.jpg]({{site.baseurl}}/assets/IMG_3046-kopia.jpg)
-
-
-
+![IMG_1869-kopia.jpg]({{site.baseurl}}/assets/IMG_1869-kopia.jpg)
 
 ## Toys for my daughter
 
 ![IMG_3284-kopia.jpg]({{site.baseurl}}/assets/IMG_3284-kopia.jpg)
-
+![IMG_1202-kopia.jpg]({{site.baseurl}}/assets/IMG_1202-kopia.jpg)
 
 ## Printer self-improvements :-)
 
@@ -67,26 +70,28 @@ Small life hacks here and there. Bathroom improvements.
 ![IMG_3895-kopia.jpg]({{site.baseurl}}/assets/IMG_3895-kopia.jpg)
 
 
-
-### 
-
-
-
-![IMG_1895-kopia.jpg]({{site.baseurl}}/assets/IMG_1895-kopia.jpg)
-![IMG_1890-kopia.jpg]({{site.baseurl}}/assets/IMG_1890-kopia.jpg)
+### Tools
 
 ![IMG_8272-kopia.jpg]({{site.baseurl}}/assets/IMG_8272-kopia.jpg)
+![IMG_7966-kopia.jpeg]({{site.baseurl}}/assets/IMG_7966-kopia.jpeg)
+
+
+### Iphone Cover
+
 ![IMG_0257-kopia.jpg]({{site.baseurl}}/assets/IMG_0257-kopia.jpg)
 ![IMG_0244-kopia.jpg]({{site.baseurl}}/assets/IMG_0244-kopia.jpg)
 
-![IMG_7966-kopia.jpeg]({{site.baseurl}}/assets/IMG_7966-kopia.jpeg)
+### IPhone stand
 
-![IMG_1202-kopia.jpg]({{site.baseurl}}/assets/IMG_1202-kopia.jpg)
 ![IMG_1258-kopia.jpg]({{site.baseurl}}/assets/IMG_1258-kopia.jpg)
 ![IMG_1257-kopia.jpg]({{site.baseurl}}/assets/IMG_1257-kopia.jpg)
+
+### Toy basketball
+
 ![IMG_1369-kopia.jpg]({{site.baseurl}}/assets/IMG_1369-kopia.jpg)
 ![IMG_1404-kopia.jpg]({{site.baseurl}}/assets/IMG_1404-kopia.jpg)
-![IMG_1869-kopia.jpg]({{site.baseurl}}/assets/IMG_1869-kopia.jpg)
+
+### 
 
 
 ![54663018336__5DC693D7-4D41-4F05-892A-8F50D3250512-kopia.jpg]({{site.baseurl}}/assets/54663018336__5DC693D7-4D41-4F05-892A-8F50D3250512-kopia.jpg)
