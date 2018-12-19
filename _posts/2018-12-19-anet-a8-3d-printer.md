@@ -34,4 +34,25 @@ It took some time to measure the part but it was really quick and easy to print 
 
 ![IMG_7966-kopia.jpeg]({{site.baseurl}}/assets/IMG_7966-kopia.jpeg)
 
+![IMG_1202-kopia.jpg]({{site.baseurl}}/assets/IMG_1202-kopia.jpg)
+![IMG_1258-kopia.jpg]({{site.baseurl}}/assets/IMG_1258-kopia.jpg)
+![IMG_1257-kopia.jpg]({{site.baseurl}}/assets/IMG_1257-kopia.jpg)
+![IMG_1369-kopia.jpg]({{site.baseurl}}/assets/IMG_1369-kopia.jpg)
+![IMG_1404-kopia.jpg]({{site.baseurl}}/assets/IMG_1404-kopia.jpg)
+![IMG_1512-kopia.jpg]({{site.baseurl}}/assets/IMG_1512-kopia.jpg)
+![IMG_1816-kopia.jpg]({{site.baseurl}}/assets/IMG_1816-kopia.jpg)
+![IMG_1869-kopia.jpg]({{site.baseurl}}/assets/IMG_1869-kopia.jpg)
+![IMG_3046-kopia.jpg]({{site.baseurl}}/assets/IMG_3046-kopia.jpg)
+![IMG_3284-kopia.jpg]({{site.baseurl}}/assets/IMG_3284-kopia.jpg)
+![IMG_3885-kopia.jpg]({{site.baseurl}}/assets/IMG_3885-kopia.jpg)
+![IMG_3889-kopia.jpg]({{site.baseurl}}/assets/IMG_3889-kopia.jpg)
+![IMG_3895-kopia.jpg]({{site.baseurl}}/assets/IMG_3895-kopia.jpg)
+![IMG_1828-kopia.jpg]({{site.baseurl}}/assets/IMG_1828-kopia.jpg)
+![54663018022__ACE20FC8-1EA1-4131-9089-979FF5A8F279-kopia.jpg]
+
+({{site.baseurl}}/assets/54663018022__ACE20FC8-1EA1-4131-9089-979FF5A8F279-kopia.jpg)
+
+![54663018336__5DC693D7-4D41-4F05-892A-8F50D3250512-kopia.jpg]({{site.baseurl}}/assets/54663018336__5DC693D7-4D41-4F05-892A-8F50D3250512-kopia.jpg)
+
+
 
