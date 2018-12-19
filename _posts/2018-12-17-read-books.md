@@ -24,6 +24,12 @@ W jaki sposób silny kręgosłup moralny pozwala odnieść sukces?
 Książka znakomitego profesora psychologii o 12 pięknych zasadach, które nie ułatwiają, ale na pewno nadają nowy sens życiu.
 <div style="clear:both;"></div>
 
+## Głaskologia
+
+![glaskologia.jpg]({{site.baseurl}}/assets/glaskologia.jpg){: .small-image}
+
+Książka - zaskakująco twarda, pomimo "miękkiego tytułu". Każdy powinien ją przeczytać, ponieważ 65% pracowników nigdy nie usłyszało od swojego pracodawcy pochwały na temat wykonywania obowiązków zawodowych. Powoduje to spadek motywacji. W Polsce ten wskaźnik pewnie jest jeszcze wyższy. Gdyby każdy menedżer przeczytał tą książkę, pracowalibyśmy o połowę lepiej. 
+
 
 ## Siła nawyku - Charles Duhigg
 
@@ -59,6 +65,7 @@ Scruma znamy wszyscy - co można jeszcze wymyślić? Ano, jeśli uważasz, że t
 
 ## The pyramid principle - Barbara Minto
 ![pyramid-principle.jpg]({{site.baseurl}}/assets/pyramid-principle.jpg){: .small-image}
+
 
 Jak precyzyjnie niczym laser wyrażać myśli na piśmie, aby docierać do odbiorców. Jeśli szykujesz pitch do CEO - nie możesz tej pozycji pominąć.
 <div style="clear:both;"></div>
