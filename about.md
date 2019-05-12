@@ -3,20 +3,19 @@ layout: page
 title: About
 permalink: /about/
 published: true
-logo: https://user-images.githubusercontent.com/552398/34072535-4fee4702-e289-11e7-9498-472951be485f.jpeg
+logo: >-
+  https://user-images.githubusercontent.com/552398/34072535-4fee4702-e289-11e7-9498-472951be485f.jpeg
 ---
 
 
 ## This site 
 
-This site is dedicated to the *Sexy Software Craftsmanship*. 
-
-SSC is the way of contributing to the smallest details of user experience, internal design, and performance.
-It's the way of thinking opposite to make shitty(but working), underperformant, bloated agile MVP software.
-Read more about [Software Craftmanship](http://manifesto.softwarecraftsmanship.org) and make software fast, usable and sexy!
+On this site I share my thoughts, experience, and predictions related to Software Craftsmanship. 
 
 
 ## Marcin Kliks
+
+![marcinkliks.jpg]({{site.baseurl}}/assets/marcinkliks.jpg)
 
 Passionate programmer since Commodore 64. 
 
