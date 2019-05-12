@@ -3,8 +3,7 @@ layout: page
 title: About
 permalink: /about/
 published: true
-logo: >-
-  https://user-images.githubusercontent.com/552398/34072535-4fee4702-e289-11e7-9498-472951be485f.jpeg
+logo: 'http://vi4m.github.io/assets/marcinkliks.jpg'
 ---
 
 
@@ -15,7 +14,6 @@ On this site I share my thoughts, experience, and predictions related to Softwar
 
 ## Marcin Kliks
 
-![marcinkliks.jpg]({{site.baseurl}}/assets/marcinkliks.jpg)
 
 Passionate programmer since Commodore 64. 
 
@@ -26,21 +24,27 @@ I am the Lead Programmer of [Ralph DCIM/CMDB software]( http://ralph.allegrogrou
 
 ## Media / Publications
 
+* 09/2019 Swifty Microservices in production - https://www.youtube.com/watch?v=vyW-a3N0odk
+
+* 09/2019 Mikrousługi w Swift na serwerze https://www.facebook.com/allegro.tech/videos/mikrousługi-w-swifcie-na-serwerze-/2226305050987804/
+
+* 07/2016 DevOps Poznań #CI/CD - Deploying Python applications https://www.youtube.com/watch?v=OPivMawU2-Q&t=1807s
+
 * 02/2016 - FOSDEM 2016 - Ralph - DCIM Asset Management System 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/j_OQxIoCPgw" frameborder="0" allowfullscreen></iframe>
 
-* 11.2014 pywaw #42 Droga do lepszego oprogramowania(PL) / The road towards better software
+* 11.2014 PyWaw #42 Droga do lepszego oprogramowania(PL) / The road towards better software
 
 <script async class="speakerdeck-embed" data-id="8b88fa6057c501321a5a322b8d7f48cd" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
 http://pywaw.org/site_media/upload/slides/pywaw-42-droga-do-lepszego-oprogramowania.pdf
 
-* 11.2014 Pyra #14 Ralph, Tipboard, and other Open Source projects 
+* 11.2014 Pyra #14 - Ralph, Tipboard, and other Open Source projects 
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/9GH4ba1rYS8" frameborder="0" allowfullscreen></iframe>
 
-* 03.2014 My talk about Understanding the user
+* 03.2014 "Understanding the user" - UX experience
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/nuQaOKzVdyM" frameborder="0" allowfullscreen></iframe>
 
