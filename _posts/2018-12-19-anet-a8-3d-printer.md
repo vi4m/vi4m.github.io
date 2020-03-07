@@ -1,9 +1,10 @@
 ---
+title: Anet A8 3D Printer - 1 year later
+date: 2018-12-19 00:00:00 Z
 layout: post
 comments: true
-published: true
-title: Anet A8 3D Printer - 1 year later
 ---
+
 ## A year with Anet A8 3D Printer
 
 Today, you can buy 3dprinter just under 200$ (Anet A8 self assembly required in this case). This is price territory of generic “desktop printers”. I've used my 3D printer **more** often than desktop printer! After 1 year, I'm really happy with the purchase, and don't regret it. Some parts such as: filament heads, and bearings needed to be replaced, but it was easy to do, and the parts are ready available.

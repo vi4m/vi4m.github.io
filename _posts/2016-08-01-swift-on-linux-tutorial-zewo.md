@@ -1,9 +1,9 @@
 ---
-layout: post
 title: Swift 3 on Linux tutorial - Zewo - part1
+date: 2016-08-01 00:00:00 Z
+layout: post
 comments: true
 ---
-
 
 # Swift 3 Linux tutorial - part 1
 

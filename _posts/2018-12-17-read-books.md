@@ -1,10 +1,9 @@
 ---
+title: Książki warte przeczytania
+date: 2018-12-17 00:00:00 Z
 layout: post
 comments: true
-published: true
-title: Książki warte przeczytania
 ---
-
 
 <style type="text/css">
   .small-image {

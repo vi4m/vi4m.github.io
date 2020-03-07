@@ -1,11 +1,9 @@
 ---
-layout: page
 title: About
-permalink: /about/
-published: true
-logo: 'http://vi4m.github.io/assets/marcinkliks.jpg'
+permalink: "/about/"
+layout: page
+logo: http://vi4m.github.io/assets/marcinkliks.jpg
 ---
-
 
 ## This site 
 

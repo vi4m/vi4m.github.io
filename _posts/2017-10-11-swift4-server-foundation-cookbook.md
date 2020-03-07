@@ -1,11 +1,12 @@
 ---
+title: Swift 4 Cookbook - Linux & MacOS, part 1
+date: 2017-10-11 00:00:00 Z
+tags:
+- swift
 layout: post
-title: "Swift 4 Cookbook - Linux & MacOS, part 1"
-tags: swift
 logo: https://user-images.githubusercontent.com/552398/31557278-5deba14c-b048-11e7-9ab0-b2d115d15bc9.png
 comments: true
 ---
-
 
 Swift is powerful, fast and safe programming language. From version 2 it's open source, and officialy supported on Linux. Its native performance, type safety, interactive (REPL) playground and scripting posibility, is a joy to use. 
 

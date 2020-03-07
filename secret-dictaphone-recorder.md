@@ -1,7 +1,6 @@
 ---
-layout: page
 title: _
-published: true
+layout: page
 ---
 
 # Secret Dictaphone Recorder - Privacy Policy

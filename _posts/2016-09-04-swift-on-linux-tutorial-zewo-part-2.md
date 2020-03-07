@@ -1,10 +1,11 @@
 ---
+title: Swift 3 on Linux tutorial - Zewo - part 2
+date: 2016-09-04 00:00:00 Z
+tags:
+- swift
 layout: post
-title: "Swift 3 on Linux tutorial - Zewo - part 2"
-tags: swift
 comments: true
 ---
-
 
 # Swift 3 Linux tutorial - part 2
 

@@ -1,52 +1,50 @@
-# Site settings
+---
 title: Software Craftsmanship by Marcin Kliks
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    logo: ''
 email: spamlist@icloud.com
-description: "How to make performant, usable and sexy software using Python, Swift and others."
-baseurl: "http://vi4m.github.io"
-url: "http://www.marcinkliks.pl"
+description: How to make performant, usable and sexy software using Python, Swift
+  and others.
+baseurl: http://vi4m.github.io
+url: http://www.marcinkliks.pl
 highlighter: rouge
 is_user_page: true
-
-
-# Build settings
 markdown: kramdown
 permalink: pretty
 theme: minima
-
-author :
-  name : Marcin Kliks
-  email : spamlist@icloud.com
-  github : vi4m
-  twitter : vi4m
+author:
+  name: Marcin Kliks
+  email: spamlist@icloud.com
+  github: vi4m
+  twitter: vi4m
   linkedin: marcin.kliks
   stackoverflow: vi4m
-  
-defaults:
-  -
-    scope:
-      path: ""      # empty string for all files
-      type: posts   # limit to posts
-    values:
-      logo: ""
-      
-      
 prose:
-  siteurl: "http://www.marcinkliks.pl"
-  media: 'assets'
+  siteurl: http://www.marcinkliks.pl
+  media: assets
   metadata:
     _posts:
-      - name: "title"
-        field:
-          element: "text"
-          label: "title"
-      - name: "comments"
-        field:
-          element: "hidden"
-          label: "true"
-        
-      - name: "layout"
-        field:
-          element: "hidden"
-          value: "post"
-        
-    
+    - name: title
+      field:
+        element: text
+        label: title
+    - name: comments
+      field:
+        element: hidden
+        label: 'true'
+    - name: layout
+      field:
+        element: hidden
+        value: post

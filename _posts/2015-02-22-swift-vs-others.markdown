@@ -1,5 +1,6 @@
 ---
 title: Swift vs Go vs Python battle
+date: 2015-02-22 00:00:00 Z
 layout: post
 comments: true
 ---
