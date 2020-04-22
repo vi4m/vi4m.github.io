@@ -1,5 +1,5 @@
 ---
-title: Używanie Ipada w Real Life
+title: Ipad to nie komputer
 date: 2020-04-22 11:17:00 Z
 ---
 
