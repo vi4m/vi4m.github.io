@@ -4,7 +4,7 @@ date: 2020-04-22 11:17:00 Z
 ---
 
 Modularny komputer to marzenie każdego programisty. 
-Ipad Pro jest dla mnie pierwszym komputerem(tak, komputerem) który wnosi coś
+Ipad Pro jest dla mnie pierwszym komputerem(tak, komputerem) który wnosi cośś
 
 Ipad pro ma dla mnie poniższe zalety: 
 
