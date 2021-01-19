@@ -6,6 +6,7 @@ categories:
 tags:
 - swift
 - raspberrypi
+comments: true
 ---
 
 ![574678AA-1A52-4634-84F5-95595B09BCF8.jpeg](/uploads/574678AA-1A52-4634-84F5-95595B09BCF8.jpeg)
