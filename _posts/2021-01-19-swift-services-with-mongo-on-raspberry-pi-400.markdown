@@ -9,7 +9,6 @@ tags:
 ---
 
 
-# Swift on Raspberry PI as a microservices backend
  
 Raspberry Pi 400 has sufficient power to run full-featured microservices written in Swift. Running Swift (together with MongoDB) on such a small gadget is serious fun!
 
