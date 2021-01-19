@@ -245,7 +245,7 @@ a:visited { color: #205caa; }
   font-size: 15px;
 }
 
-.post code { padding: 1px 5px; }
+.post code { padding: 0px; }
 
 .post ul,
 .post ol { margin-left: 1.35em; }
