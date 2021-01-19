@@ -17,14 +17,14 @@ Raspberry Pi 400 has sufficient power to run full-featured microservices written
 I've tested this setup on Raspberry PI 400 which has a quad core processor, 4 GB of RAM and a speedy USB 3.0 SSD, however the instructions below are not limited only to this device. The base configuration was not overclocked.
 
 
-# But why?
+### But why?
 
 I did it just for fun, this was just a trial, but it seems, this setup will stay with me much longer! The potential applications cover: serving home pages, or running a variety of small applications.
 
 To my surprise, Raspberry PI 400 has a great heatsink and allows not only running Swift backends on it, but it also runs Visual Studio Code. 
 
 
-# Installing Swift on Rasperry PI
+## Installing Swift on Rasperry PI
 
 If you want to use the latest Vapor 4, you need to upgrade Raspberry PI OS to 64 bits. Otherwise, this step may be skipped.
 
@@ -44,18 +44,25 @@ For IDE we will use:
 Swift ARM builds are available here: https://packagecloud.io/swift-arm/release. 
 Unfortunatelly, the latest version for Rasperry PI OS (default distribution) is 5.1.3 and it's not usable with the latest Vapor 4 version. We need to upgrade the operating system to 64 bits.
 
-1. Install the beta version of Rasperry PI OS 64 bit https://www.raspberrypi.org/forums/viewtopic.php?p=1668160 if you need the latest Swift. 
-2. Install  ```dpkg -i https://packagecloud.io/swift-arm/release/packages/debian/buster/swiftlang_5.3.1-3-debian-buster_arm64.deb package from packagecloud.io```.
+1. Install the beta version of Rasperry PI OS 64 bit [here](https://www.raspberrypi.org/forums/viewtopic.php?p=1668160) if you need the latest Swift. 
+2. Install swift.
+
+```sh
+dpkg -i https://packagecloud.io/swift-arm/release/packages/debian/buster/swiftlang_5.3.1-3-debian-buster_arm64.deb package from packagecloud.io
+```
+
 3. Swift REPL is not usable at the moment, but it's not a big deal so don't worry. 
 4. Swap file. Swift needs a lot of memory during the compilation, so let's find a spare SSD drive, and create some fast swap files, at least 5 GB. 
 
 ```sh
+
 swapoff -a
 dd if=/dev/zero of=/media/[yourssd]/swap ibs=1M obs=1M count=5000
 mkswap /media/[yourssd]/swap
 swapon /media/[yourssd]/swap
 ```
 5. That's it. Test if your code compiles. Vapor 4 should run just fine!
+
 ```sh
 
 swift package init --type executable
@@ -69,6 +76,7 @@ swift build
 
 This will work for arm64:
 ```sh
+
 swift build -c release -Xcxx -I/usr/lib/swift -Xcxx -I/usr/lib/swift/Block
 cp .build/aarch64-unknown-linux-gnu/release/sourcekit-lsp /usr/local/bin/sourcekit-lsp
 
@@ -87,7 +95,7 @@ SD cards tend to be slow. I recommend to either boot from an SSD entirely, or bo
 
 
 **Directories to move to external faster drive:**
-```
+```sh
 
 ~/.config/Code (for Visual Studio Code)
 ~/.cache  (for various developmnt tasks)
@@ -110,9 +118,12 @@ echo performance > cpu4/cpufreq/scaling_governor
 Ok, this is an optional step. Chances are, your microservice needs a database, such as MongoDB. Yes, it works just fine, but you need to compile it from sources.
 
 1. You need at least 20 GB of free space for compilation. Compilation will take at least 5-10 hours.
-2. We will compile as usual using https://github.com/mongodb/mongo/blob/master/docs/building.md, but have to provide additional flag since there are problems with crc32 because of missing instructions. [More information here](https://jira.mongodb.org/browse/SERVER-30893)
-Using flag ```--use-hardware-crc32=off``` will compile it fine. Full script should look similar to this: 
-```
+2. We will compile as usual using `https://github.com/mongodb/mongo/blob/master/docs/building.md`, but have to provide additional flag since there are problems with crc32 because of missing instructions. [More information here](https://jira.mongodb.org/browse/SERVER-30893)
+
+Using flag `--use-hardware-crc32=off` will compile it fine. Full script should look similar to this: 
+
+```sh
+
 git clone https://github.com/mongodb/mongo.git
 
 python3 -m vevn virtualenv
@@ -121,14 +132,18 @@ source virtualenv/bin/activate
 python3 buildscripts/scons.py install-mongod --disable-warnings-as-errors --use-hardware-crc32=off
 
 ```
+
 3. Congratulations, after 5-10 hours, you will get the 4,2 GB binary file called `mongodb`. It's time to strip it to just ~40 MB with the instructions below:
-```
+
+```sh
+
 root@raspberrypi:/media/pi/rpi/mongo# ls build/install/bin/mongod
 build/install/bin/mongod
 
 root@raspberrypi:/media/pi/rpi/mongo# strip build/install/bin/mongod
 root@raspberrypi:/media/pi/rpi/mongo# cp build/install/bin/mongod /usr/local/bin
 ```
+
 4. Now it's time to prepare a storage space for a database and logs. Use your external drive and mount it somewhere. E.g. create `mongo-data` and `mongo-logs` directories, and use the following configuration files as examples.
 I used the simplest configuration possible. I recommend changing the default user `pi`, for security reasons.
 
@@ -136,6 +151,7 @@ I used the simplest configuration possible. I recommend changing the default use
 ```sh
 root@raspberrypi:/media/pi/rpi/mongo# cat /etc/systemd/system/mongodb.service 
 ```
+
 ```ini
 [Unit]
 Description=MongoDB Database Server
@@ -173,7 +189,9 @@ WantedBy=multi-user.target
 ```
 
 And this is the counterpart `/etc/mongod.conf` file.
+
 ```ini
+
 # mongod.conf
 
 # for documentation of all options, see:
@@ -217,7 +235,8 @@ processManagement:
 
 #snmp:
 ```
-It's time to run it!
+
+Now, it's time to run it!
 
 ```sh
 systemctl daemon-reload
