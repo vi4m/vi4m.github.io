@@ -59,9 +59,10 @@ swift build
 ## IDE on Raspberry PI with Visual Studio Code, LSP and Swift
 
 1. Install ARM64 DEB package from Visual Studio Code [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
-2. You need this package: `https://github.com/apple/sourcekit-lsp` to use the Auto-Completion functionality in Visual Studio Code, because version 5.3.1 is unusably slow. The new version is 10 times more performant. We will compile it from sources using this documentation [https://github.com/apple/sourcekit-lsp/blob/main/Documentation/Development.md](https://github.com/apple/sourcekit-lsp/blob/main/Documentation/Development.md). 
+2. You need this package: `https://github.com/apple/sourcekit-lsp` to use the Auto-Completion functionality in Visual Studio Code, because version 5.3.1 is unusably slow. The new version is 10 times more performant. We will compile it from sources using this documentation [here](https://github.com/apple/sourcekit-lsp/blob/main/Documentation/Development.md). 
 This will work for arm64:
-```sh
+
+```
 swift build -c release -Xcxx -I/usr/lib/swift -Xcxx -I/usr/lib/swift/Block
 cp .build/aarch64-unknown-linux-gnu/release/sourcekit-lsp /usr/local/bin/sourcekit-lsp
 
