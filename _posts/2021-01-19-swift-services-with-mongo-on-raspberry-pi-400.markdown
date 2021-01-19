@@ -98,13 +98,13 @@ echo performance > cpu3/cpufreq/scaling_governor
 echo performance > cpu4/cpufreq/scaling_governor 
 ```
 
-
 ## MongoDB on Raspberry PI
 
 Ok, this is an optional step. Chances are, your microservice needs a database, such as MongoDB. Yes, it works just fine, but you need to compile it from sources.
 
-1. You need at least 20 GB of free space for compilation. Compilation will take at least 5-10 hours.
-2. We will compile as usual using `https://github.com/mongodb/mongo/blob/master/docs/building.md`, but have to provide additional flag since there are problems with crc32 because of missing instructions. [More information here](https://jira.mongodb.org/browse/SERVER-30893)
+You need at least 20 GB of free space for compilation. Compilation will take at least 5-10 hours.
+
+We will compile as usual using `https://github.com/mongodb/mongo/blob/master/docs/building.md`, but have to provide additional flag since there are problems with crc32 because of missing instructions. [More information here](https://jira.mongodb.org/browse/SERVER-30893)
 
 Using flag `--use-hardware-crc32=off` will compile it fine. Full script should look similar to this: 
 
@@ -118,7 +118,7 @@ python3 buildscripts/scons.py install-mongod --disable-warnings-as-errors --use-
 
 ```
 
-3. Congratulations, after 5-10 hours, you will get the 4,2 GB binary file called `mongodb`. It's time to strip it to just ~40 MB with the instructions below:
+Congratulations, after 5-10 hours, you will get the 4,2 GB binary file called `mongodb`. It's time to strip it to just ~40 MB with the instructions below:
 
 ```sh
 root@raspberrypi:/media/pi/rpi/mongo# ls build/install/bin/mongod
@@ -128,9 +128,8 @@ root@raspberrypi:/media/pi/rpi/mongo# strip build/install/bin/mongod
 root@raspberrypi:/media/pi/rpi/mongo# cp build/install/bin/mongod /usr/local/bin
 ```
 
-4. Now it's time to prepare a storage space for a database and logs. Use your external drive and mount it somewhere. E.g. create `mongo-data` and `mongo-logs` directories, and use the following configuration files as examples.
+Now it's time to prepare a storage space for a database and logs. Use your external drive and mount it somewhere. E.g. create `mongo-data` and `mongo-logs` directories, and use the following configuration files as examples.
 I used the simplest configuration possible. I recommend changing the default user `pi`, for security reasons.
-
 
 ```sh
 root@raspberrypi:/media/pi/rpi/mongo# cat /etc/systemd/system/mongodb.service 
