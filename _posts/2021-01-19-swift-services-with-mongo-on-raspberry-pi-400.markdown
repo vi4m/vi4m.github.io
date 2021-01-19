@@ -48,7 +48,6 @@ dpkg -i https://packagecloud.io/swift-arm/release/packages/debian/buster/swiftla
 4. Swap file. Swift needs a lot of memory during the compilation, so let's find a spare SSD drive, and create some fast swap files, at least 5 GB. 
 
 ```sh
-
 swapoff -a
 dd if=/dev/zero of=/media/[yourssd]/swap ibs=1M obs=1M count=5000
 mkswap /media/[yourssd]/swap
@@ -57,7 +56,6 @@ swapon /media/[yourssd]/swap
 5. That's it. Test if your code compiles. Vapor 4 should run just fine!
 
 ```sh
-
 swift package init --type executable
 swift build
 ```
@@ -70,7 +68,6 @@ swift build
 This will work for arm64:
 
 ```sh
-
 swift build -c release -Xcxx -I/usr/lib/swift -Xcxx -I/usr/lib/swift/Block
 cp .build/aarch64-unknown-linux-gnu/release/sourcekit-lsp /usr/local/bin/sourcekit-lsp
 
@@ -91,14 +88,13 @@ SD cards tend to be slow. I recommend to either boot from an SSD entirely, or bo
 
 **Directories to move to external faster drive:**
 ```sh
-
 ~/.config/Code (for Visual Studio Code)
 ~/.cache  (for various developmnt tasks)
 /tmp (e.g. lsp cache)
 ```
 
 You can tune your system for maximum performance:
-```
+```sh
 fs.inotify.max_user_watches=524288
 cd /sys/devices/system/cpu
 echo performance > cpu0/cpufreq/scaling_governor 
@@ -119,7 +115,6 @@ Ok, this is an optional step. Chances are, your microservice needs a database, s
 Using flag `--use-hardware-crc32=off` will compile it fine. Full script should look similar to this: 
 
 ```sh
-
 git clone https://github.com/mongodb/mongo.git
 
 python3 -m vevn virtualenv
@@ -132,7 +127,6 @@ python3 buildscripts/scons.py install-mongod --disable-warnings-as-errors --use-
 3. Congratulations, after 5-10 hours, you will get the 4,2 GB binary file called `mongodb`. It's time to strip it to just ~40 MB with the instructions below:
 
 ```sh
-
 root@raspberrypi:/media/pi/rpi/mongo# ls build/install/bin/mongod
 build/install/bin/mongod
 
@@ -187,7 +181,6 @@ WantedBy=multi-user.target
 And this is the counterpart `/etc/mongod.conf` file.
 
 ```ini
-
 # mongod.conf
 
 # for documentation of all options, see:
