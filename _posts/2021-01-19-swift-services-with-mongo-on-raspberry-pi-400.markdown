@@ -9,7 +9,7 @@ tags:
 ---
 
 
- ![7826C1C7-4D9C-4F23-B560-C8126E75F937.jpeg]![574678AA-1A52-4634-84F5-95595B09BCF8.jpeg](/uploads/574678AA-1A52-4634-84F5-95595B09BCF8.jpeg)
+![574678AA-1A52-4634-84F5-95595B09BCF8.jpeg](/uploads/574678AA-1A52-4634-84F5-95595B09BCF8.jpeg)
 
 Raspberry Pi 400 has sufficient power to run full-featured microservices written in Swift. Running Swift (together with MongoDB) on such a small gadget is serious fun!
 
