@@ -40,7 +40,7 @@ Unfortunatelly, the latest version for Rasperry PI OS (default distribution) is 
 1. Install the beta version of Rasperry PI OS 64 bit [here](https://www.raspberrypi.org/forums/viewtopic.php?p=1668160) if you need the latest Swift. 
 2. Install swift.
 
-```sh
+```
 dpkg -i https://packagecloud.io/swift-arm/release/packages/debian/buster/swiftlang_5.3.1-3-debian-buster_arm64.deb package from packagecloud.io
 ```
 
@@ -94,7 +94,7 @@ SD cards tend to be slow. I recommend to either boot from an SSD entirely, or bo
 ```
 
 You can tune your system for maximum performance:
-```sh
+```
 fs.inotify.max_user_watches=524288
 cd /sys/devices/system/cpu
 echo performance > cpu0/cpufreq/scaling_governor 
