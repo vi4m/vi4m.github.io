@@ -34,19 +34,16 @@ For IDE we will use:
 
 ## Upgrading to Rasperry PI OS 64 bit
 
-Swift ARM builds are available here: https://packagecloud.io/swift-arm/release. 
+Swift ARM builds are available here: [https://packagecloud.io/swift-arm/release](https://packagecloud.io/swift-arm/release). 
 Unfortunatelly, the latest version for Rasperry PI OS (default distribution) is 5.1.3 and it's not usable with the latest Vapor 4 version. We need to upgrade the operating system to 64 bits.
 
 1. Install the beta version of Rasperry PI OS 64 bit [here](https://www.raspberrypi.org/forums/viewtopic.php?p=1668160) if you need the latest Swift. 
 2. Install swift.
-
 ```
 dpkg -i https://packagecloud.io/swift-arm/release/packages/debian/buster/swiftlang_5.3.1-3-debian-buster_arm64.deb package from packagecloud.io
 ```
-
 3. Swift REPL is not usable at the moment, but it's not a big deal so don't worry. 
 4. Swap file. Swift needs a lot of memory during the compilation, so let's find a spare SSD drive, and create some fast swap files, at least 5 GB. 
-
 ```sh
 swapoff -a
 dd if=/dev/zero of=/media/[yourssd]/swap ibs=1M obs=1M count=5000
@@ -54,7 +51,6 @@ mkswap /media/[yourssd]/swap
 swapon /media/[yourssd]/swap
 ```
 5. That's it. Test if your code compiles. Vapor 4 should run just fine!
-
 ```sh
 swift package init --type executable
 swift build
@@ -63,10 +59,8 @@ swift build
 ## IDE on Raspberry PI with Visual Studio Code, LSP and Swift
 
 1. Install ARM64 DEB package from Visual Studio Code [https://code.visualstudio.com/download](https://code.visualstudio.com/download)
-2. You need this package: `https://github.com/apple/sourcekit-lsp` to use the Auto-Completion functionality in Visual Studio Code, because version 5.3.1 is unusably slow. The new version is 10 times more performant. We will compile it from sources using this documentation https://github.com/apple/sourcekit-lsp/blob/main/Documentation/Development.md. 
-
+2. You need this package: `https://github.com/apple/sourcekit-lsp` to use the Auto-Completion functionality in Visual Studio Code, because version 5.3.1 is unusably slow. The new version is 10 times more performant. We will compile it from sources using this documentation [https://github.com/apple/sourcekit-lsp/blob/main/Documentation/Development.md](https://github.com/apple/sourcekit-lsp/blob/main/Documentation/Development.md). 
 This will work for arm64:
-
 ```sh
 swift build -c release -Xcxx -I/usr/lib/swift -Xcxx -I/usr/lib/swift/Block
 cp .build/aarch64-unknown-linux-gnu/release/sourcekit-lsp /usr/local/bin/sourcekit-lsp
@@ -76,7 +70,6 @@ cd Editors/vscode
 npm run createDevPackage
 code --install-extension ./out/sourcekit-lsp-vscode-dev.vsix
 ```
-
 After installation, every feature should work well, including: autocompletion, fix-its, documentation, go to definition.
 If not, it's probably because of the internal card speed - see below how to improve the performance by a factor of 10.
 
