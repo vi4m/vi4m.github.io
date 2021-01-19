@@ -421,5 +421,9 @@ a:visited { color: #205caa; }
 
 
 li {
-  padding-top: 13px;
+  padding-top: 10px;
+}
+
+div.highlight {
+  padding-top: 10px;
 }
