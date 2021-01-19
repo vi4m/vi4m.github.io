@@ -1,5 +1,5 @@
 ---
-title: Swift services with Mongo on Raspberry PI 400
+title: Swift on Raspberry Pi 400
 date: 2021-01-19 16:45:00 Z
 categories:
 - programming
@@ -8,8 +8,9 @@ tags:
 - raspberrypi
 ---
 
-# Swift on Raspberry PI as a microservices backend
 
+# Swift on Raspberry PI as a microservices backend
+ 
 Raspberry Pi 400 has sufficient power to run full-featured microservices written in Swift. Running Swift (together with MongoDB) on such a small gadget is serious fun!
 
 
