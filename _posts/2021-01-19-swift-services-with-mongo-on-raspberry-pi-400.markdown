@@ -16,7 +16,7 @@ Raspberry Pi 400 has sufficient power to run full-featured microservices written
 I've tested this setup on Raspberry PI 400 which has a quad core processor, 4 GB of RAM and a speedy USB 3.0 SSD, however the instructions below are not limited only to this device. \
 Even though base configuration was not overclocked, I've managed to run simple [Vapor-based microservice](http://vapor.codes), and achieve over 10 000 req/sec on this little piece of silicon!
 
-![pi-10k-24fa0e.png](/uploads/pi-10k-24fa0e.png)
+<img src="/uploads/pi-10k-24fa0e.png" width="500"></img>
 
 ## Installing Swift on Rasperry PI
 
