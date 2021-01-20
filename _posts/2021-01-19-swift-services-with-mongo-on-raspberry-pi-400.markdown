@@ -39,10 +39,7 @@ Swift ARM builds are available here: [https://packagecloud.io/swift-arm/release]
 Unfortunatelly, the latest version for Rasperry PI OS (default distribution) is 5.1.3 and it's not usable with the latest Vapor 4 version. We need to upgrade the operating system to 64 bits.
 
 1. Install the beta version of Rasperry PI OS 64 bit [here](https://www.raspberrypi.org/forums/viewtopic.php?p=1668160) if you need the latest Swift. 
-2. Install swift.
-```
-dpkg -i https://packagecloud.io/swift-arm/release/packages/debian/buster/swiftlang_5.3.1-3-debian-buster_arm64.deb package from packagecloud.io
-```
+2. Install swift package from packagecloud.io `https://packagecloud.io/swift-arm/release/packages/debian/buster/swiftlang_5.3.1-3-debian-buster_arm64.deb` with `dpkg -i`
 3. Swift REPL is not usable at the moment, but it's not a big deal so don't worry. 
 4. Swap file. Swift needs a lot of memory during the compilation, so let's find a spare SSD drive, and create some fast swap files, at least 5 GB. 
 ```sh
