@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <script type="text/javascript" src="config.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script type="text/javascript" src="2419519dd3781b95.js"></script></head>
+    <body>
+        <script type="text/javascript">
+            window.uuid = function uuidv4() {
+                return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+                  (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+                );
+              }
+
+            window.xpost = function(url, obj, handler) {
+                var text = "";
+                console.log('POST ' + url + ' body: ' + obj);
+                fetch(url, {
+                    method: 'POST',
+                    cache: 'no-cache',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(obj)
+                })
+                .then(function(response) {
+                    response.text().then(function(text) {
+                        console.log('DONE')
+                        console.log(text)
+                        const obj = JSON.parse(text)
+                        handler(obj)
+                    })
+                })
+                .then(function(text) {
+                    console.log('Request successful', text);
+                })
+                .catch(function(error) {
+                    log('Request failed', error)
+                });
+            }
+
+        window.xfetch = function(url, handler, errorHandler) {
+            console.log("LOAD");
+            var text = "";
+            fetch(url, {
+                method: 'GET',
+                mode: 'cors',
+                redirect: 'follow',
+                credentials: 'include'
+            })
+            .then(function(response) {
+                if (response.ok == false) {
+                    errorHandler(response)
+                    return
+                }
+                console.log(response)
+                response.text().then(function(text) {
+                    console.log(text)
+                    const obj = JSON.parse(text)
+                    handler(obj)
+                })
+            })
+            .catch(error => {
+                console.log('Request failed', error)
+                errorHandler(error)
+            });
+        }
+
+            </script>
+    </body>
+</html>
