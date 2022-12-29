@@ -5,38 +5,38 @@ layout: post
 comments: true
 ---
 
-Don't ask for permission; ask for forgiveness
+## Don't ask for permission; ask for forgiveness
 
 * If it's a good idea, and it doesn't break anything - do it. It's faster to do it and learn from mistakes. 
 * Systems are inflexible by design. But are the only way to drive the organization. If the system accepts it - do it. If the system is broken - ask me to change it. Not everything can be improved right away. Be patient.
 * I forgive people trying to do things and making mistakes. I don't forgive avoiding things.
 
-Release early release often
+## Release early release often
 
 * Shipping early without getting feedback is stupidity. But shipping early just for listening to the customer's feedback is the art of wisdom.
 * Be bold and ship an unpolished version; you are fighting with the market. Don't criticize your colleges for shipping MVP.
 * Always share your proposals early to get initial feedback, before you invest more energy into finishing it.
 
-Focus on things that give results
+## Focus on things that give results
 
 * Working Code beats the best ideas.
 * Written proposal beats every meeting.
 * Building prototypes beats thinking if it's worth doing it.
 
-Communication is not meetings
+## Communication is not meetings
 
 * Review your calendar every month.
 * Avoid being at meetings only for "just in case" / "curiosity".
 * Leave meetings where you don't contribute to.
 * Discussions and processes are not the results; decisions and tools could be the results.
 
-Culture and Strategy
+## Culture and Strategy
 
 * The culture of people beats executive strategy every day. 
 * If you want to know the culture of the company, listen to the jokes, it tells the truth under the surface.
 * The only way to change the culture is to empower good parts of it.
 
-People are not resources
+## People are not resources
 
 The best team is the effect of training, not recruitment.
 
@@ -46,7 +46,7 @@ The best team is the effect of training, not recruitment.
 * If you want to make everyone happy, don't become a leader. Good leaders make decisions that are good for the team in the long term, which can differ from individual goals.
 
 
-Communication
+## Communication
 
 * Communication is such a crucial skill for the developer as the seven layers of the network stack are for microservices.
 * If you are good at communication, you probably need to be corrected. Communication skills cover so many aspects of your job that it's a never-ending skill to develop.
