@@ -35,7 +35,7 @@ jobs:
         mkdir -p ~/.ssh
         echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        scp -P 222 -i ~/.ssh/id_rsa ${{ github.workspace }}/_site ${{ secrets.DEST_SERVER }}:~/domains/marcinkliks.pl/site
+        scp -o StrictHostKeyChecking=no -P 222 -i ~/.ssh/id_rsa ${{ github.workspace }}/_site ${{ secrets.DEST_SERVER }}:~/domains/marcinkliks.pl/site
 
 
           
