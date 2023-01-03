@@ -1,16 +1,12 @@
 name: Jekyll site CI
 run-name: Build Jekyll
 
-
-
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
   workflow_dispatch:
-
-
 
 jobs:
   build:
@@ -39,7 +35,7 @@ jobs:
         mkdir -p ~/.ssh
         echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        scp -i ~/.ssh/id_rsa ${{ github.workspace }}/_site ${{ secrets.DEST_SERVER }}:
+        scp -p 222 -i ~/.ssh/id_rsa ${{ github.workspace }}/_site ${{ secrets.DEST_SERVER }}:
 
 
           
