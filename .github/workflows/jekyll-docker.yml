@@ -1,0 +1,43 @@
+name: Jekyll site CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the site in the jekyll/builder container
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+        
+        
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.1
+      with:
+        name: artifact
+        path: |
+          - ${{ github.workspace }}/_site
+
+    - name: Transfer files using scp
+      env:
+        PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        scp -i ~/.ssh/id_rsa ${{ github.workspace }}/_site ${{ secrets.DEST_SERVER }}:
+
+
+          
+        
+        
+    
