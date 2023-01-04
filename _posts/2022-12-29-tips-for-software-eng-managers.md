@@ -19,16 +19,16 @@ comments: true
 
 ## Focus on things that give results
 
-* Working Code beats the best ideas.
+* Working software beats the best proposals.
 * Written proposal beats every meeting.
-* Building prototypes beats thinking if it's worth doing it.
+* Building prototypes beats thinking, if it's worth doing it.
 
-## Communication is not meetings
+## Meetings
 
 * Review your calendar every month.
-* Avoid being at meetings only for "just in case" / "curiosity".
+* Avoid being at meetings only for "just in case" / [FOMO](https://en.wikipedia.org/wiki/Fear_of_missing_out)
 * Leave meetings where you don't contribute to.
-* Discussions and processes are not the results; decisions and tools could be the results.
+* Only attend the meetings with clear goals. Be brave to give polite feedback on meetings which are waste of time. 
 
 ## Culture and Strategy
 
@@ -40,8 +40,8 @@ comments: true
 
 The best team is the effect of training, not recruitment.
 
-* Don't assume you will just *get* the best developer from the market.  As a leader, your job is to develop and grow your team. Hire potential, and invest into people. 
-* People will remember you for how you grew your team and what kind of teacher you have been. People love great teachers.
+* Don't assume you will just *get* the best developers from the market. As a leader, your job is to develop and grow your team. Hire potential, and invest into people. 
+* People will remember you for how you grew your team and what kind of teacher you have been. People remember managers, but they love great teachers.
 * Build a plan for the development of Junior, Mid, Senior, and Principal engineers. Most people don't build plans not to specify points of failure. 
 * If you want to make everyone happy, don't become a leader. Good leaders make decisions that are good for the team in the long term, which can differ from individual goals.
 
