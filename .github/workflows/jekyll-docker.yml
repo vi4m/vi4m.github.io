@@ -34,13 +34,10 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         echo "$PRIVATE_KEY" > ~/.ssh/id_rsa
+        NAME=`date +%s`
         chmod 600 ~/.ssh/id_rsa
-        ssh -o StrictHostKeyChecking=no -p 222 -i ~/.ssh/id_rsa ${{ secrets.DEST_SERVER }} mv ~/domains/marcinkliks.pl/site ~/domains/marcinkliks.pl/site_old
-
-        scp -o StrictHostKeyChecking=no -P 222 -i ~/.ssh/id_rsa -r ${{ github.workspace }}/_site ${{ secrets.DEST_SERVER }}:~/domains/marcinkliks.pl/site
-
-
-          
+        scp -o StrictHostKeyChecking=no -P 222 -i ~/.ssh/id_rsa -r ${{ github.workspace }}/_site ${{ secrets.DEST_SERVER }}:~/domains/marcinkliks.pl/site_$NAME
+        ssh -o StrictHostKeyChecking=no -p 222 -i ~/.ssh/id_rsa ${{ secrets.DEST_SERVER }} ln -sf ~/domains/marcinkliks.pl/site_$NAME ~/domains/marcinkliks.pl/public_html  
         
         
     
