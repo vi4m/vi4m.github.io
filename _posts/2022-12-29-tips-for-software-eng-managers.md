@@ -49,7 +49,7 @@ The best team is the effect of training, not recruitment.
 ## Communication
 
 * Communication is such a crucial skill for the developer as the seven layers of the network stack are for microservices.
-* If you are good at communication, you probably need to be corrected. Communication skills cover so many aspects of your job that it's a never-ending skill to develop.
+* If you feel, that you're good at communication, think again. Communication skills cover so many aspects of your job that it's a never-ending skill to develop.
 * Invest in developing skills on how to do the best PR review, how to create good commit messages, take a course on how to write tech proposals, ADR, write concise documentation, make screencasts, and even the art of convincing management to  secure the budget.
 * Most of the "the product were great, but management has killed it" problems might come from not understanding how to communicate its features, progress, and problems.
 * Invest every year in building up your communication superpowers.
