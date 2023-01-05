@@ -37,7 +37,9 @@ jobs:
         NAME=`date +%s`
         chmod 600 ~/.ssh/id_rsa
         scp -o StrictHostKeyChecking=no -P 222 -i ~/.ssh/id_rsa -r ${{ github.workspace }}/_site ${{ secrets.DEST_SERVER }}:~/domains/marcinkliks.pl/site_$NAME
-        ssh -o StrictHostKeyChecking=no -p 222 -i ~/.ssh/id_rsa ${{ secrets.DEST_SERVER }} ln -sf ~/domains/marcinkliks.pl/site_$NAME ~/domains/marcinkliks.pl/public_html  
+        ssh -o StrictHostKeyChecking=no -p 222 -i ~/.ssh/id_rsa ${{ secrets.DEST_SERVER }} rm -rf ~/domains/marcinkliks.pl/site
+        ssh -o StrictHostKeyChecking=no -p 222 -i ~/.ssh/id_rsa ${{ secrets.DEST_SERVER }} mv ~/domains/marcinkliks.pl/site_$NAME ~/domains/marcinkliks.pl/site        
+        ssh -o StrictHostKeyChecking=no -p 222 -i ~/.ssh/id_rsa ${{ secrets.DEST_SERVER }} ln -sf ~/domains/marcinkliks.pl/site ~/domains/marcinkliks.pl/public_html  
         
         
     
