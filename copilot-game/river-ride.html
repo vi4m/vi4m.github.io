@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro River Racer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* Stack canvas and controls vertically */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Black background */
+            font-family: 'Press Start 2P', cursive; /* Apply retro font */
+            color: #7869c4; /* C64 Purple for text */
+        }
+        canvas {
+            border: 4px solid #433990; /* C64 Dark Blue border */
+            background-color: #78b470; /* C64 Green for water */
+            display: block; /* Prevent extra space below canvas */
+            max-width: 100%; /* Ensure canvas fits smaller screens */
+            max-height: 80vh; /* Limit height */
+            aspect-ratio: 3 / 4; /* Maintain a vertical aspect ratio */
+        }
+        #controls, #info {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 0.8em;
+        }
+        #info span {
+            margin: 0 15px; /* Space out score and fuel */
+        }
+        button {
+             font-family: 'Press Start 2P', cursive; /* Apply retro font */
+             background-color: #9a8fef; /* C64 Light Purple */
+             color: #000000; /* Black text */
+             border: 2px solid #433990; /* C64 Dark Blue border */
+             padding: 10px 15px;
+             margin-top: 10px;
+             cursor: pointer;
+             box-shadow: 3px 3px 0px #433990; /* Simple shadow */
+             transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        button:hover {
+            background-color: #7869c4; /* C64 Purple */
+        }
+        button:active {
+            box-shadow: 1px 1px 0px #433990;
+            transform: translate(2px, 2px);
+        }
+        /* Basic message box for game over / instructions */
+        #messageBox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ffffff; /* White text */
+            padding: 30px;
+            border: 4px solid #433990;
+            text-align: center;
+            font-size: 1em;
+            display: none; /* Hidden by default */
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="gameCanvas" width="320" height="480"></canvas>
+    <div id="info">
+        <span id="score">SCORE: 0</span>
+        <span id="fuel">FUEL: 100</span>
+    </div>
+    <div id="controls">
+        Use Arrow Keys to Move, Spacebar to Shoot
+    </div>
+    <button id="resetButton" style="display: none;">Restart Game</button>
+
+    <div id="messageBox">
+        <p id="messageText">Get Ready!</p>
+        <button id="startButton">Start Game</button>
+    </div>
+
+    <script>
+        // --- C64 Color Palette (Subset) ---
+        const C64_BLACK = '#000000';
+        const C64_WHITE = '#ffffff';
+        const C64_RED = '#883932';
+        const C64_CYAN = '#87d6dd';
+        const C64_PURPLE = '#7869c4';
+        const C64_GREEN = '#78b470'; // River color
+        const C64_BLUE = '#433990';  // Border, Bank color
+        const C64_YELLOW = '#dff280';
+        const C64_ORANGE = '#a95f38';
+        const C64_BROWN = '#6a4f2a';
+        const C64_LTRED = '#b8796e';
+        const C64_DKGREY = '#505050';
+        const C64_GREY = '#808080';
+        const C64_LTGREEN = '#b4f4ad';
+        const C64_LTBLUE = '#7e70da'; // Player color
+        const C64_LTGREY = '#b0b0b0'; // Enemy color 1
+        const C64_PINK = '#c78d8d';   // Fuel depot color
+
+        // --- Canvas and Context ---
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // --- Game Elements ---
+        let player;
+        let bullets;
+        let enemies;
+        let fuelDepots;
+        let riverBanks; // Array to store bank segment positions and widths
+
+        // --- Game State ---
+        let score;
+        let fuel;
+        let gameOver;
+        let gameRunning; // To control the game loop
+        let keys = {}; // To track pressed keys
+
+        // --- Game Settings ---
+        const playerWidth = 20;
+        const playerHeight = 20;
+        const playerSpeed = 4;
+        const bulletWidth = 4;
+        const bulletHeight = 10;
+        const bulletSpeed = 7;
+        const enemyWidth = 18;
+        const enemyHeight = 18;
+        const enemySpeed = 2;
+        const fuelDepotWidth = 25;
+        const fuelDepotHeight = 15;
+        const fuelDepotSpeed = 1.5; // Slower than enemies
+        const fuelPerDepot = 50;
+        const initialFuel = 100;
+        const fuelConsumptionRate = 0.05; // Fuel used per frame
+        const scrollSpeed = 2; // How fast the river scrolls
+        const bankSegmentHeight = 10; // Height of each river bank segment
+        const minRiverWidth = 80; // Minimum width of the river
+        const maxRiverWidth = canvas.width - 60; // Max width, leaving margin
+        const bankWidthChangeRate = 1; // How quickly banks can narrow/widen per segment
+        const enemySpawnRate = 0.015; // Chance per frame to spawn an enemy
+        const fuelSpawnRate = 0.005; // Chance per frame to spawn fuel
+
+        // --- UI Elements ---
+        const scoreDisplay = document.getElementById('score');
+        const fuelDisplay = document.getElementById('fuel');
+        const messageBox = document.getElementById('messageBox');
+        const messageText = document.getElementById('messageText');
+        const startButton = document.getElementById('startButton');
+        const resetButton = document.getElementById('resetButton');
+
+        // --- Initialization ---
+        function init() {
+            player = {
+                x: canvas.width / 2 - playerWidth / 2,
+                y: canvas.height - playerHeight - 30, // Start near bottom
+                width: playerWidth,
+                height: playerHeight,
+                color: C64_LTBLUE
+            };
+            bullets = [];
+            enemies = [];
+            fuelDepots = [];
+            riverBanks = [];
+            score = 0;
+            fuel = initialFuel;
+            gameOver = false;
+            gameRunning = false; // Start paused
+
+            // Initialize river banks
+            let currentWidth = canvas.width / 2; // Start with medium width
+            for (let y = canvas.height + bankSegmentHeight; y >= -bankSegmentHeight; y -= bankSegmentHeight) {
+                // Add some initial variation
+                 currentWidth += (Math.random() - 0.5) * bankWidthChangeRate * 10;
+                 currentWidth = Math.max(minRiverWidth, Math.min(maxRiverWidth, currentWidth));
+                 const xOffset = (canvas.width - currentWidth) / 2;
+                 riverBanks.push({ y: y, leftX: xOffset, rightX: xOffset + currentWidth });
+            }
+
+            updateUI();
+            messageText.textContent = "Retro River Racer!";
+            messageBox.style.display = 'block';
+            startButton.style.display = 'block';
+            resetButton.style.display = 'none';
+        }
+
+        // --- Event Listeners ---
+        window.addEventListener('keydown', (e) => { keys[e.code] = true; });
+        window.addEventListener('keyup', (e) => { keys[e.code] = false; });
+
+        startButton.addEventListener('click', startGame);
+        resetButton.addEventListener('click', init); // Reset button calls init
+
+        // --- Game Loop ---
+        function gameLoop() {
+            if (!gameRunning) return; // Stop loop if game isn't running
+
+            if (gameOver) {
+                gameRunning = false; // Stop the loop cleanly
+                messageText.textContent = `GAME OVER! Score: ${score}`;
+                messageBox.style.display = 'block';
+                startButton.style.display = 'none'; // Hide start button on game over
+                resetButton.style.display = 'block'; // Show reset button
+                return;
+            }
+
+            // 1. Clear Canvas
+            ctx.fillStyle = C64_GREEN; // River base color
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // 2. Update Elements
+            updateRiverBanks();
+            updatePlayer();
+            updateBullets();
+            updateEnemies();
+            updateFuelDepots();
+            spawnElements();
+            updateFuel(); // Consume fuel
+
+            // 3. Collision Detection
+            checkCollisions();
+
+            // 4. Draw Elements
+            drawRiverBanks();
+            drawPlayer();
+            drawBullets();
+            drawEnemies();
+            drawFuelDepots();
+
+            // 5. Update UI
+            updateUI();
+
+            // 6. Check Game Over Conditions
+            if (fuel <= 0) {
+                gameOver = true;
+                fuel = 0; // Prevent negative fuel display
+            }
+
+            // 7. Request Next Frame
+            requestAnimationFrame(gameLoop);
+        }
+
+        // --- Update Functions ---
+        function updatePlayer() {
+            // Move left/right based on keys
+            if (keys['ArrowLeft'] || keys['KeyA']) {
+                player.x -= playerSpeed;
+            }
+            if (keys['ArrowRight'] || keys['KeyD']) {
+                player.x += playerSpeed;
+            }
+
+            // Shoot bullets
+            if (keys['Space'] || keys['ArrowUp'] || keys['KeyW']) {
+                // Add a simple cooldown later if needed
+                if (bullets.length < 5) { // Limit bullets on screen
+                     bullets.push({
+                        x: player.x + player.width / 2 - bulletWidth / 2,
+                        y: player.y,
+                        width: bulletWidth,
+                        height: bulletHeight,
+                        color: C64_YELLOW
+                    });
+                    keys['Space'] = false; // Prevent holding space for continuous fire (simple debounce)
+                    keys['ArrowUp'] = false;
+                    keys['KeyW'] = false;
+                }
+            }
+
+            // Keep player within canvas bounds (initial check)
+            player.x = Math.max(0, Math.min(canvas.width - player.width, player.x));
+            player.y = Math.max(0, Math.min(canvas.height - player.height, player.y)); // Keep within vertical bounds too
+
+             // Keep player within river banks (more precise check in collision)
+             const currentBank = findCurrentBankSegment(player.y + player.height / 2);
+             if (currentBank) {
+                 player.x = Math.max(currentBank.leftX, Math.min(currentBank.rightX - player.width, player.x));
+             }
+        }
+
+        function updateBullets() {
+            for (let i = bullets.length - 1; i >= 0; i--) {
+                bullets[i].y -= bulletSpeed;
+                // Remove bullets that go off-screen
+                if (bullets[i].y < -bulletHeight) {
+                    bullets.splice(i, 1);
+                }
+            }
+        }
+
+        function updateEnemies() {
+            for (let i = enemies.length - 1; i >= 0; i--) {
+                enemies[i].y += enemySpeed;
+                // Remove enemies that go off-screen
+                if (enemies[i].y > canvas.height) {
+                    enemies.splice(i, 1);
+                }
+            }
+        }
+
+         function updateFuelDepots() {
+            for (let i = fuelDepots.length - 1; i >= 0; i--) {
+                fuelDepots[i].y += fuelDepotSpeed;
+                // Remove depots that go off-screen
+                if (fuelDepots[i].y > canvas.height) {
+                    fuelDepots.splice(i, 1);
+                }
+            }
+        }
+
+        function updateRiverBanks() {
+            let lastBank = riverBanks[riverBanks.length - 1];
+            let newWidth = (lastBank.rightX - lastBank.leftX) + (Math.random() - 0.5) * 2 * bankWidthChangeRate;
+            newWidth = Math.max(minRiverWidth, Math.min(maxRiverWidth, newWidth));
+            const newXOffset = (canvas.width - newWidth) / 2;
+
+            // Add new segment at the top
+             if (riverBanks[0].y > -bankSegmentHeight) {
+                 riverBanks.unshift({ y: riverBanks[0].y - bankSegmentHeight, leftX: newXOffset, rightX: newXOffset + newWidth });
+             }
+
+            // Move all segments down
+            for (let i = riverBanks.length - 1; i >= 0; i--) {
+                riverBanks[i].y += scrollSpeed;
+                // Remove segments that are completely off-screen at the bottom
+                if (riverBanks[i].y > canvas.height + bankSegmentHeight) {
+                    riverBanks.splice(i, 1);
+                }
+            }
+        }
+
+        function spawnElements() {
+            // Spawn enemies
+            if (Math.random() < enemySpawnRate) {
+                const currentTopBank = riverBanks[0]; // Use top bank for width reference
+                const riverWidth = currentTopBank.rightX - currentTopBank.leftX;
+                const spawnX = currentTopBank.leftX + Math.random() * (riverWidth - enemyWidth);
+                enemies.push({
+                    x: spawnX,
+                    y: -enemyHeight, // Start just above the screen
+                    width: enemyWidth,
+                    height: enemyHeight,
+                    color: C64_LTGREY
+                });
+            }
+
+            // Spawn fuel depots
+             if (Math.random() < fuelSpawnRate) {
+                const currentTopBank = riverBanks[0];
+                const riverWidth = currentTopBank.rightX - currentTopBank.leftX;
+                const spawnX = currentTopBank.leftX + Math.random() * (riverWidth - fuelDepotWidth);
+                fuelDepots.push({
+                    x: spawnX,
+                    y: -fuelDepotHeight,
+                    width: fuelDepotWidth,
+                    height: fuelDepotHeight,
+                    color: C64_PINK
+                });
+            }
+        }
+
+        function updateFuel() {
+            fuel -= fuelConsumptionRate;
+            fuel = Math.max(0, fuel); // Don't go below 0
+            // Add score based on survival (distance)
+            score += 0.1; // Small score increase per frame survived
+        }
+
+
+        // --- Drawing Functions ---
+        function drawPlayer() {
+            ctx.fillStyle = player.color;
+            // Simple triangle shape for player jet
+            ctx.beginPath();
+            ctx.moveTo(player.x + player.width / 2, player.y);
+            ctx.lineTo(player.x, player.y + player.height);
+            ctx.lineTo(player.x + player.width, player.y + player.height);
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        function drawBullets() {
+            bullets.forEach(bullet => {
+                ctx.fillStyle = bullet.color;
+                ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+            });
+        }
+
+        function drawEnemies() {
+            enemies.forEach(enemy => {
+                ctx.fillStyle = enemy.color;
+                ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height); // Simple square enemies
+            });
+        }
+
+         function drawFuelDepots() {
+            fuelDepots.forEach(depot => {
+                ctx.fillStyle = depot.color;
+                ctx.fillRect(depot.x, depot.y, depot.width, depot.height);
+                // Add 'F' symbol
+                ctx.fillStyle = C64_BLACK;
+                ctx.font = "10px 'Press Start 2P'";
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText("F", depot.x + depot.width / 2, depot.y + depot.height / 2 + 1); // +1 for better vertical centering
+            });
+        }
+
+        function drawRiverBanks() {
+            ctx.fillStyle = C64_BLUE; // Bank color
+            for (let i = 0; i < riverBanks.length; i++) {
+                const bank = riverBanks[i];
+                // Draw left bank segment
+                ctx.fillRect(0, bank.y, bank.leftX, bankSegmentHeight + 1); // +1 to avoid gaps
+                // Draw right bank segment
+                ctx.fillRect(bank.rightX, bank.y, canvas.width - bank.rightX, bankSegmentHeight + 1);
+            }
+        }
+
+        // --- Collision Detection ---
+        function checkCollisions() {
+            // Player vs River Banks
+            const playerBottomBank = findCurrentBankSegment(player.y + player.height);
+            const playerCenterBank = findCurrentBankSegment(player.y + player.height / 2);
+
+            if (playerBottomBank) {
+                 if (player.x < playerBottomBank.leftX || player.x + player.width > playerBottomBank.rightX) {
+                    console.log("Collision with bank!");
+                    gameOver = true;
+                    return; // Stop further checks if game over
+                 }
+            }
+             if (playerCenterBank) { // Check center too, in case player gets stuck sideways
+                 if (player.x < playerCenterBank.leftX || player.x + player.width > playerCenterBank.rightX) {
+                    console.log("Collision with bank (center)!");
+                    gameOver = true;
+                    return;
+                 }
+            }
+
+
+            // Bullets vs Enemies
+            for (let i = bullets.length - 1; i >= 0; i--) {
+                for (let j = enemies.length - 1; j >= 0; j--) {
+                    if (isColliding(bullets[i], enemies[j])) {
+                        // Collision detected!
+                        enemies.splice(j, 1); // Remove enemy
+                        bullets.splice(i, 1); // Remove bullet
+                        score += 10; // Add score
+                        // Optional: Add explosion effect here
+                        break; // Exit inner loop since bullet is gone
+                    }
+                }
+            }
+
+            // Player vs Enemies
+            for (let i = enemies.length - 1; i >= 0; i--) {
+                if (isColliding(player, enemies[i])) {
+                    console.log("Collision with enemy!");
+                    gameOver = true;
+                    // Optional: Player explosion effect
+                    return; // Stop further checks
+                }
+            }
+
+             // Player vs Fuel Depots
+            for (let i = fuelDepots.length - 1; i >= 0; i--) {
+                if (isColliding(player, fuelDepots[i])) {
+                    fuelDepots.splice(i, 1); // Remove depot
+                    fuel += fuelPerDepot;
+                    fuel = Math.min(fuel, initialFuel * 1.5); // Cap fuel slightly above initial
+                    score += 5; // Small bonus for fuel
+                    // Optional: Fuel pickup sound/effect
+                }
+            }
+        }
+
+        // Helper function for Axis-Aligned Bounding Box (AABB) collision
+        function isColliding(rect1, rect2) {
+            return rect1.x < rect2.x + rect2.width &&
+                   rect1.x + rect1.width > rect2.x &&
+                   rect1.y < rect2.y + rect2.height &&
+                   rect1.y + rect1.height > rect2.y;
+        }
+
+         // Helper to find the bank segment at a specific Y coordinate
+        function findCurrentBankSegment(yPos) {
+            // Find the bank segment whose Y range contains the player's Y
+            // Iterate backwards as lower Y values are higher on screen
+            for (let i = 0; i < riverBanks.length; i++) {
+                 const bank = riverBanks[i];
+                 if (yPos >= bank.y && yPos < bank.y + bankSegmentHeight) {
+                     return bank;
+                 }
+             }
+            return null; // Not over a known bank segment (shouldn't happen in normal play)
+        }
+
+
+        // --- UI Update ---
+        function updateUI() {
+            scoreDisplay.textContent = `SCORE: ${Math.floor(score)}`;
+            fuelDisplay.textContent = `FUEL: ${Math.floor(fuel)}`;
+        }
+
+        // --- Start Game ---
+        function startGame() {
+            messageBox.style.display = 'none'; // Hide message box
+            if (!gameRunning) { // Prevent multiple starts if already running
+                 if (gameOver) init(); // If game was over, re-initialize everything first
+                 gameOver = false;
+                 gameRunning = true;
+                 requestAnimationFrame(gameLoop); // Start the loop
+            }
+        }
+
+        // --- Initial Setup ---
+        init(); // Call init when the script loads to set up the start screen
+
+    </script>
+
+</body>
+</html>
