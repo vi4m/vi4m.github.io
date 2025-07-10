@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Pracy: Programista Analogowy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        .font-mono {
+            font-family: 'Source Code Pro', monospace;
+        }
+        .job-ad-container {
+            transition: all 0.3s ease-in-out;
+        }
+        .job-ad-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+
+    <div class="job-ad-container w-full max-w-3xl bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border-4 border-transparent hover:border-indigo-500">
+        <!-- Nagłówek ogłoszenia -->
+        <div class="p-8 bg-indigo-600 text-white text-center">
+            <h1 class="text-3xl sm:text-4xl font-bold">Zatrudnimy programistę, który potrafi programować bez AI.</h1>
+            <p class="mt-2 text-indigo-200 text-lg">Jesteś cyfrowym rzemieślnikiem? Aplikuj!</p>
+        </div>
+
+        <div class="p-8 space-y-8">
+            <!-- Opis stanowiska -->
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white">O co chodzi?</h2>
+                <p class="mt-3 text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
+                    Z uwagi na to, że tokeny LLM do developmentu stały się zbyt drogie, a nasze firmowe agenty AI zbyt szybko je wyczerpują, postanowiliśmy wrócić do korzeni. Szukamy kogoś, kto pamięta, jak wygląda składnia pętli `for` bez podpowiedzi i potrafi samodzielnie zamknąć nawias.
+                </p>
+            </div>
+
+            <!-- Zadanie rekrutacyjne -->
+            <div class="bg-gray-50 dark:bg-gray-700 p-6 rounded-xl border border-gray-200 dark:border-gray-600">
+                <h3 class="text-xl font-bold text-gray-800 dark:text-white">Zadanie rekrutacyjne (poziom: HARD)</h3>
+                <p class="mt-2 text-gray-600 dark:text-gray-300">Udowodnij swoje umiejętności. Prosimy o wykonanie poniższego zadania <strong>bez użycia AI, autouzupełniania i Stack Overflow</strong> (no dobra, ze Stack Overflow można, ale tylko jedna zakładka naraz).</p>
+                <div class="mt-4 bg-gray-900 text-white p-4 rounded-lg font-mono text-sm sm:text-base">
+                    <code>
+                        // Twoja misja, jeśli się jej podejmiesz:<br>
+                        // 1. Otwórz swój ulubiony edytor kodu.<br>
+                        // 2. Wybierz dowolny język programowania.<br>
+                        // 3. Napisz program, który wyświetli "Hello, World!".<br>
+                        // 4. Skompiluj i uruchom bez błędów za pierwszym razem.<br>
+                        // 5. Wyślij nam dowód w postaci zrzutu ekranu lub nagrania.
+                    </code>
+                </div>
+            </div>
+
+            <!-- Wymagania i oferta -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Wymagane kwalifikacje:</h3>
+                    <ul class="mt-3 list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Biegła znajomość co najmniej jednego języka programowania.</li>
+                        <li>Umiejętność debugowania przy użyciu `print()` lub `console.log()`.</li>
+                        <li>Zdolność do pisania kodu bez ciągłego wsparcia AI.</li>
+                        <li>Niezachwiana pewność siebie podczas pisania średników.</li>
+                        <li>Odporność na syndrom oszusta po samodzielnym napisaniu funkcji.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 dark:text-white">Co oferujemy:</h3>
+                    <ul class="mt-3 list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                        <li>Stabilne zatrudnienie i umowę o pracę.</li>
+                        <li>Nielimitowany dostęp do firmowej klawiatury mechanicznej.</li>
+                        <li>Darmową kawę, która pomoże w samodzielnym myśleniu.</li>
+                        <li>Satysfakcję z kodu napisanego w 100% przez człowieka.</li>
+                        <li>Brak konieczności tłumaczenia się, dlaczego AI wygenerowało dziwny kod.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Przycisk do aplikowania -->
+            <div class="text-center pt-6">
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-transform transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300">
+                    Aplikuj teraz (jeśli potrafisz)
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
